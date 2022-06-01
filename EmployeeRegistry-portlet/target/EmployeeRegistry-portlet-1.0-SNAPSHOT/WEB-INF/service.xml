@@ -1,0 +1,62 @@
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN"
+        "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+
+<service-builder package-path="ru.kotikov.registry">
+    <namespace>registry</namespace>
+
+    <entity name="Employee" local-service="true" remote-service="false">
+        <column name="employeeId" type="long" primary="true"/>
+        <column name="lastName" type="String"/>
+        <column name="firstName" type="String"/>
+        <column name="patronymic" type="String"/>
+        <column name="sex" type="String"/>
+        <column name="dateOfBirth" type="String"/>
+        <column name="positionId" type="long"/>
+        <column name="dateOfEmployment" type="String"/>
+        <column name="salary" type="int"/>
+        <column name="workPhoneNumber" type="String"/>
+        <column name="mobilePhoneNumber" type="String"/>
+        <column name="bankId" type="long"/>
+        <column name="archiveStatus" type="boolean"/>
+
+        <order by="asc">
+            <order-column name="lastName"/>
+        </order>
+
+        <finder name="ArchiveStatus" return-type="Collection">
+            <finder-column name="archiveStatus"/>
+        </finder>
+
+        <finder name="BankId" return-type="Collection">
+            <finder-column name="bankId"/>
+        </finder>
+        <finder name="PositionId" return-type="Collection">
+            <finder-column name="positionId"/>
+        </finder>
+    </entity>
+
+    <entity name="Bank" local-service="true" remote-service="false">
+        <column name="bankId" type="long" primary="true"/>
+        <column name="bankName" type="String"/>
+        <column name="bik" type="String"/>
+        <column name="bankAddress" type="String"/>
+
+        <order by="asc">
+            <order-column name="bankName"/>
+        </order>
+    </entity>
+
+    <entity name="Position" local-service="true" remote-service="false">
+        <column name="positionId" type="long" primary="true"/>
+        <column name="positionName" type="String"/>
+        <column name="archiveStatus" type="boolean"/>
+
+        <order by="asc">
+            <order-column name="positionName"/>
+        </order>
+
+        <finder name="ArchiveStatus" return-type="Collection">
+            <finder-column name="archiveStatus"/>
+        </finder>
+    </entity>
+</service-builder>

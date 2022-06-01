@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="ru.kotikov.registry.model.Bank">
+		<field name="bankId" type="long" />
+		<field name="bankName" type="String" />
+		<field name="bik" type="String" />
+		<field name="bankAddress" type="String" />
+	</model>
+	<model name="ru.kotikov.registry.model.Employee">
+		<field name="employeeId" type="long" />
+		<field name="lastName" type="String" />
+		<field name="firstName" type="String" />
+		<field name="patronymic" type="String" />
+		<field name="sex" type="String" />
+		<field name="dateOfBirth" type="String" />
+		<field name="positionId" type="long" />
+		<field name="dateOfEmployment" type="String" />
+		<field name="salary" type="int" />
+		<field name="workPhoneNumber" type="String" />
+		<field name="mobilePhoneNumber" type="String" />
+		<field name="bankId" type="long" />
+		<field name="archiveStatus" type="boolean" />
+	</model>
+	<model name="ru.kotikov.registry.model.Position">
+		<field name="positionId" type="long" />
+		<field name="positionName" type="String" />
+		<field name="archiveStatus" type="boolean" />
+	</model>
+</model-hints>
