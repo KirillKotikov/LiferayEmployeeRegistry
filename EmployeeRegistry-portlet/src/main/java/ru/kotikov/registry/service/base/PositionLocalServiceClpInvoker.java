@@ -47,6 +47,8 @@ public class PositionLocalServiceClpInvoker {
     private String[] _methodParameterTypes41;
     private String _methodName46;
     private String[] _methodParameterTypes46;
+    private String _methodName47;
+    private String[] _methodParameterTypes47;
 
     public PositionLocalServiceClpInvoker() {
         _methodName0 = "addPosition";
@@ -142,6 +144,10 @@ public class PositionLocalServiceClpInvoker {
         _methodName46 = "getByArchiveStatus";
 
         _methodParameterTypes46 = new String[] { "boolean" };
+
+        _methodName47 = "getPositionEmployees";
+
+        _methodParameterTypes47 = new String[] { "java.lang.Long" };
     }
 
     public Object invokeMethod(String name, String[] parameterTypes,
@@ -248,6 +254,11 @@ public class PositionLocalServiceClpInvoker {
         if (_methodName46.equals(name) &&
                 Arrays.deepEquals(_methodParameterTypes46, parameterTypes)) {
             return PositionLocalServiceUtil.getByArchiveStatus(((Boolean) arguments[0]).booleanValue());
+        }
+
+        if (_methodName47.equals(name) &&
+                Arrays.deepEquals(_methodParameterTypes47, parameterTypes)) {
+            return PositionLocalServiceUtil.getPositionEmployees((java.lang.Long) arguments[0]);
         }
 
         throw new UnsupportedOperationException();

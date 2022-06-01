@@ -7,7 +7,7 @@
 
     <aui:fieldset>
         <aui:input name="Bank id" value="<%= currentBank.getBank_id() %>" type="hidden"/>
-        <aui:input name="Bank name" value="<%= currentBank.getBank_name() %>"/>
+        <aui:input name="Bank name" value="<%= currentBank.getBank_name() %>" type="hidden"/>
         <aui:input name="BIK" value="<%= currentBank.getBik() %>"/>
         <aui:input name="Bank address" value="<%= currentBank.getBank_address() %>"/>
     </aui:fieldset>

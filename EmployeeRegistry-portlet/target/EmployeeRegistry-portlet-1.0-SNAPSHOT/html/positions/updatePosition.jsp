@@ -1,11 +1,17 @@
 <%@include file="/html/init.jsp" %>
 
 <jsp:useBean id="currentPosition" type="ru.kotikov.registry.model.Position" scope="request"/>
+<jsp:useBean id="employeesAvailable" type="java.lang.Integer" scope="request"/>
+
+<% String label;
+    if (employeesAvailable == 1) label = "Attention! There are employees with this position!";
+    else label = "";
+%>
 
 <portlet:actionURL name="updatePosition" var="updatePositionURL"/>
 <aui:form action="<%= updatePositionURL %>" name="<portlet:namespace />fm">
 
-    <aui:fieldset>
+    <aui:fieldset label="<%=label%>">
         <aui:input name="Position id" value="<%= currentPosition.getPosition_id() %>" type="hidden"/>
         <aui:input name="Position name" value="<%= currentPosition.getPosition_name() %>"/>
         <aui:input name="Archive status" value="<%= currentPosition.getArchive_status() %>"/>

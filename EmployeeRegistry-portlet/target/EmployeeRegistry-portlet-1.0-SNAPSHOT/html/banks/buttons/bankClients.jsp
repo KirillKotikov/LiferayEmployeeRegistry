@@ -9,5 +9,5 @@
     <portlet:actionURL name="getCurrentBankClients" var="getCurrentBankClientsURL">
         <portlet:param name="currentBankClientsId" value="<%=bankId%>"/>
     </portlet:actionURL>
-    <liferay-ui:icon image="Employees" message="Employees" url="<%=getCurrentBankClientsURL %>"/>
+    <liferay-ui:icon image="Bank clients" message="Employees" url="<%=getCurrentBankClientsURL %>"/>
 </liferay-ui:icon-menu>

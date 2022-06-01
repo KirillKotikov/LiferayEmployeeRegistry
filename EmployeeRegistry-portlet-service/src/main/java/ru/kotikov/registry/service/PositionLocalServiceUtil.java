@@ -269,6 +269,12 @@ public class PositionLocalServiceUtil {
         return getService().getByArchiveStatus(archive);
     }
 
+    public static java.util.List<ru.kotikov.registry.model.Employee> getPositionEmployees(
+        java.lang.Long positionId)
+        throws com.liferay.portal.kernel.exception.SystemException {
+        return getService().getPositionEmployees(positionId);
+    }
+
     public static void clearService() {
         _service = null;
     }

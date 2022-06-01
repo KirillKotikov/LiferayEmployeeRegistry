@@ -277,6 +277,13 @@ public class PositionLocalServiceWrapper implements PositionLocalService,
         return _positionLocalService.getByArchiveStatus(archive);
     }
 
+    @Override
+    public java.util.List<ru.kotikov.registry.model.Employee> getPositionEmployees(
+        java.lang.Long positionId)
+        throws com.liferay.portal.kernel.exception.SystemException {
+        return _positionLocalService.getPositionEmployees(positionId);
+    }
+
     /**
      * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
      */

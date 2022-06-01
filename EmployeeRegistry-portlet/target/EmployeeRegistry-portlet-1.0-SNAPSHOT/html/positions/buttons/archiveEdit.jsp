@@ -8,7 +8,7 @@
 %>
 
 <liferay-ui:icon-menu>
-    <portlet:actionURL name="changeArchiveStatus" var="changeArchiveStatusURL">
+    <portlet:actionURL name="changePositionArchiveStatus" var="changeArchiveStatusURL">
         <portlet:param name="currentPositionId" value="<%=positionId%>"/>
         <portlet:param name="currentArchiveStatus" value="<%=positionArchiveStatus%>"/>
     </portlet:actionURL>

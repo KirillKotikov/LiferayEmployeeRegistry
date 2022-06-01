@@ -117,7 +117,9 @@ public class EmployeesPortlet extends MVCPortlet {
 
     public void getCurrentPosition(ActionRequest request, ActionResponse response) throws SystemException, PortalException {
         Position currentPosition = PositionLocalServiceUtil.getPosition(Long.parseLong(request.getParameter("currentPositionId")));
-
+        if (PositionLocalServiceUtil.getPositionEmployees(currentPosition.getPosition_id()).size() < 1) {
+            request.setAttribute("employeesAvailable", 0);
+        } else  request.setAttribute("employeesAvailable", 1);
         request.setAttribute("currentPosition", currentPosition);
         response.setRenderParameter("jspPage", "/html/positions/updatePosition.jsp");
     }
@@ -126,7 +128,6 @@ public class EmployeesPortlet extends MVCPortlet {
         Position position = PositionLocalServiceUtil.getPosition(ParamUtil.getLong(request, "Position id"));
         position.setPosition_name(ParamUtil.getString(request, "Position name"));
         position.setArchive_status(ParamUtil.getBoolean(request, "Archive status"));
-
         PositionLocalServiceUtil.updatePosition(position);
         response.setRenderParameter("jspPage", "/html/positions/allPositions.jsp");
     }
@@ -139,11 +140,13 @@ public class EmployeesPortlet extends MVCPortlet {
         response.setRenderParameter("jspPage", "/html/employees/allEmployees.jsp");
     }
 
-    public void changeArchiveStatus(ActionRequest request, ActionResponse response) throws SystemException, PortalException {
+    public void changePositionArchiveStatus(ActionRequest request, ActionResponse response) throws SystemException, PortalException {
         Position currentPosition = PositionLocalServiceUtil.getPosition(Long.parseLong(request.getParameter("currentPositionId")));
         currentPosition.setArchive_status(!request.getParameter("currentArchiveStatus").equals("true"));
-
         PositionLocalServiceUtil.updatePosition(currentPosition);
+        if (PositionLocalServiceUtil.getPositionEmployees(currentPosition.getPosition_id()).size() < 1) {
+            request.setAttribute("employeesAvailable", 1);
+        } else  request.setAttribute("employeesAvailable", 0);
         response.setRenderParameter("jspPage", "/html/positions/allPositions.jsp");
     }
 

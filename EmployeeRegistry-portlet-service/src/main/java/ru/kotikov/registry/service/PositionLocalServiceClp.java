@@ -46,6 +46,8 @@ public class PositionLocalServiceClp implements PositionLocalService {
     private String[] _methodParameterTypes17;
     private String _methodName19;
     private String[] _methodParameterTypes19;
+    private String _methodName20;
+    private String[] _methodParameterTypes20;
 
     public PositionLocalServiceClp(InvokableLocalService invokableLocalService) {
         _invokableLocalService = invokableLocalService;
@@ -143,6 +145,10 @@ public class PositionLocalServiceClp implements PositionLocalService {
         _methodName19 = "getByArchiveStatus";
 
         _methodParameterTypes19 = new String[] { "boolean" };
+
+        _methodName20 = "getPositionEmployees";
+
+        _methodParameterTypes20 = new String[] { "java.lang.Long" };
     }
 
     @Override
@@ -680,5 +686,33 @@ public class PositionLocalServiceClp implements PositionLocalService {
         }
 
         return (java.util.List<ru.kotikov.registry.model.Position>) ClpSerializer.translateOutput(returnObj);
+    }
+
+    @Override
+    public java.util.List<ru.kotikov.registry.model.Employee> getPositionEmployees(
+        java.lang.Long positionId)
+        throws com.liferay.portal.kernel.exception.SystemException {
+        Object returnObj = null;
+
+        try {
+            returnObj = _invokableLocalService.invokeMethod(_methodName20,
+                    _methodParameterTypes20,
+                    new Object[] { ClpSerializer.translateInput(positionId) });
+        } catch (Throwable t) {
+            t = ClpSerializer.translateThrowable(t);
+
+            if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+                throw (com.liferay.portal.kernel.exception.SystemException) t;
+            }
+
+            if (t instanceof RuntimeException) {
+                throw (RuntimeException) t;
+            } else {
+                throw new RuntimeException(t.getClass().getName() +
+                    " is not a valid exception");
+            }
+        }
+
+        return (java.util.List<ru.kotikov.registry.model.Employee>) ClpSerializer.translateOutput(returnObj);
     }
 }

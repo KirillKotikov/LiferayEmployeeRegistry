@@ -241,4 +241,9 @@ public interface PositionLocalService extends BaseLocalService,
     public java.util.List<ru.kotikov.registry.model.Position> getByArchiveStatus(
         boolean archive)
         throws com.liferay.portal.kernel.exception.SystemException;
+
+    @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+    public java.util.List<ru.kotikov.registry.model.Employee> getPositionEmployees(
+        java.lang.Long positionId)
+        throws com.liferay.portal.kernel.exception.SystemException;
 }
