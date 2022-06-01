@@ -48,21 +48,21 @@ public interface BankLocalService extends BaseLocalService, InvokableLocalServic
     /**
     * Creates a new bank with the primary key. Does not add the bank to the database.
     *
-    * @param bankId the primary key for the new bank
+    * @param bank_id the primary key for the new bank
     * @return the new bank
     */
-    public ru.kotikov.registry.model.Bank createBank(long bankId);
+    public ru.kotikov.registry.model.Bank createBank(long bank_id);
 
     /**
     * Deletes the bank with the primary key from the database. Also notifies the appropriate model listeners.
     *
-    * @param bankId the primary key of the bank
+    * @param bank_id the primary key of the bank
     * @return the bank that was removed
     * @throws PortalException if a bank with the primary key could not be found
     * @throws SystemException if a system exception occurred
     */
     @com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
-    public ru.kotikov.registry.model.Bank deleteBank(long bankId)
+    public ru.kotikov.registry.model.Bank deleteBank(long bank_id)
         throws com.liferay.portal.kernel.exception.PortalException,
             com.liferay.portal.kernel.exception.SystemException;
 
@@ -156,19 +156,19 @@ public interface BankLocalService extends BaseLocalService, InvokableLocalServic
         throws com.liferay.portal.kernel.exception.SystemException;
 
     @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
-    public ru.kotikov.registry.model.Bank fetchBank(long bankId)
+    public ru.kotikov.registry.model.Bank fetchBank(long bank_id)
         throws com.liferay.portal.kernel.exception.SystemException;
 
     /**
     * Returns the bank with the primary key.
     *
-    * @param bankId the primary key of the bank
+    * @param bank_id the primary key of the bank
     * @return the bank
     * @throws PortalException if a bank with the primary key could not be found
     * @throws SystemException if a system exception occurred
     */
     @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
-    public ru.kotikov.registry.model.Bank getBank(long bankId)
+    public ru.kotikov.registry.model.Bank getBank(long bank_id)
         throws com.liferay.portal.kernel.exception.PortalException,
             com.liferay.portal.kernel.exception.SystemException;
 

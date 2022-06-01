@@ -84,13 +84,13 @@ public class PositionPersistenceImpl extends BasePersistenceImpl<Position>
             PositionModelImpl.FINDER_CACHE_ENABLED, PositionImpl.class,
             FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "findByArchiveStatus",
             new String[] { Boolean.class.getName() },
-            PositionModelImpl.ARCHIVESTATUS_COLUMN_BITMASK |
-            PositionModelImpl.POSITIONNAME_COLUMN_BITMASK);
+            PositionModelImpl.ARCHIVE_STATUS_COLUMN_BITMASK |
+            PositionModelImpl.POSITION_NAME_COLUMN_BITMASK);
     public static final FinderPath FINDER_PATH_COUNT_BY_ARCHIVESTATUS = new FinderPath(PositionModelImpl.ENTITY_CACHE_ENABLED,
             PositionModelImpl.FINDER_CACHE_ENABLED, Long.class,
             FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "countByArchiveStatus",
             new String[] { Boolean.class.getName() });
-    private static final String _FINDER_COLUMN_ARCHIVESTATUS_ARCHIVESTATUS_2 = "position.archiveStatus = ?";
+    private static final String _FINDER_COLUMN_ARCHIVESTATUS_ARCHIVE_STATUS_2 = "position.archive_status = ?";
     private static final String _SQL_SELECT_POSITION = "SELECT position FROM Position position";
     private static final String _SQL_SELECT_POSITION_WHERE = "SELECT position FROM Position position WHERE ";
     private static final String _SQL_COUNT_POSITION = "SELECT COUNT(position) FROM Position position";
@@ -125,46 +125,46 @@ public class PositionPersistenceImpl extends BasePersistenceImpl<Position>
     }
 
     /**
-     * Returns all the positions where archiveStatus = &#63;.
+     * Returns all the positions where archive_status = &#63;.
      *
-     * @param archiveStatus the archive status
+     * @param archive_status the archive_status
      * @return the matching positions
      * @throws SystemException if a system exception occurred
      */
     @Override
-    public List<Position> findByArchiveStatus(boolean archiveStatus)
+    public List<Position> findByArchiveStatus(boolean archive_status)
         throws SystemException {
-        return findByArchiveStatus(archiveStatus, QueryUtil.ALL_POS,
+        return findByArchiveStatus(archive_status, QueryUtil.ALL_POS,
             QueryUtil.ALL_POS, null);
     }
 
     /**
-     * Returns a range of all the positions where archiveStatus = &#63;.
+     * Returns a range of all the positions where archive_status = &#63;.
      *
      * <p>
      * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link ru.kotikov.registry.model.impl.PositionModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
      * </p>
      *
-     * @param archiveStatus the archive status
+     * @param archive_status the archive_status
      * @param start the lower bound of the range of positions
      * @param end the upper bound of the range of positions (not inclusive)
      * @return the range of matching positions
      * @throws SystemException if a system exception occurred
      */
     @Override
-    public List<Position> findByArchiveStatus(boolean archiveStatus, int start,
-        int end) throws SystemException {
-        return findByArchiveStatus(archiveStatus, start, end, null);
+    public List<Position> findByArchiveStatus(boolean archive_status,
+        int start, int end) throws SystemException {
+        return findByArchiveStatus(archive_status, start, end, null);
     }
 
     /**
-     * Returns an ordered range of all the positions where archiveStatus = &#63;.
+     * Returns an ordered range of all the positions where archive_status = &#63;.
      *
      * <p>
      * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link ru.kotikov.registry.model.impl.PositionModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
      * </p>
      *
-     * @param archiveStatus the archive status
+     * @param archive_status the archive_status
      * @param start the lower bound of the range of positions
      * @param end the upper bound of the range of positions (not inclusive)
      * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
@@ -172,8 +172,9 @@ public class PositionPersistenceImpl extends BasePersistenceImpl<Position>
      * @throws SystemException if a system exception occurred
      */
     @Override
-    public List<Position> findByArchiveStatus(boolean archiveStatus, int start,
-        int end, OrderByComparator orderByComparator) throws SystemException {
+    public List<Position> findByArchiveStatus(boolean archive_status,
+        int start, int end, OrderByComparator orderByComparator)
+        throws SystemException {
         boolean pagination = true;
         FinderPath finderPath = null;
         Object[] finderArgs = null;
@@ -182,11 +183,11 @@ public class PositionPersistenceImpl extends BasePersistenceImpl<Position>
                 (orderByComparator == null)) {
             pagination = false;
             finderPath = FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_ARCHIVESTATUS;
-            finderArgs = new Object[] { archiveStatus };
+            finderArgs = new Object[] { archive_status };
         } else {
             finderPath = FINDER_PATH_WITH_PAGINATION_FIND_BY_ARCHIVESTATUS;
             finderArgs = new Object[] {
-                    archiveStatus,
+                    archive_status,
                     
                     start, end, orderByComparator
                 };
@@ -197,7 +198,7 @@ public class PositionPersistenceImpl extends BasePersistenceImpl<Position>
 
         if ((list != null) && !list.isEmpty()) {
             for (Position position : list) {
-                if ((archiveStatus != position.getArchiveStatus())) {
+                if ((archive_status != position.getArchive_status())) {
                     list = null;
 
                     break;
@@ -217,7 +218,7 @@ public class PositionPersistenceImpl extends BasePersistenceImpl<Position>
 
             query.append(_SQL_SELECT_POSITION_WHERE);
 
-            query.append(_FINDER_COLUMN_ARCHIVESTATUS_ARCHIVESTATUS_2);
+            query.append(_FINDER_COLUMN_ARCHIVESTATUS_ARCHIVE_STATUS_2);
 
             if (orderByComparator != null) {
                 appendOrderByComparator(query, _ORDER_BY_ENTITY_ALIAS,
@@ -238,7 +239,7 @@ public class PositionPersistenceImpl extends BasePersistenceImpl<Position>
 
                 QueryPos qPos = QueryPos.getInstance(q);
 
-                qPos.add(archiveStatus);
+                qPos.add(archive_status);
 
                 if (!pagination) {
                     list = (List<Position>) QueryUtil.list(q, getDialect(),
@@ -268,19 +269,19 @@ public class PositionPersistenceImpl extends BasePersistenceImpl<Position>
     }
 
     /**
-     * Returns the first position in the ordered set where archiveStatus = &#63;.
+     * Returns the first position in the ordered set where archive_status = &#63;.
      *
-     * @param archiveStatus the archive status
+     * @param archive_status the archive_status
      * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
      * @return the first matching position
      * @throws ru.kotikov.registry.NoSuchPositionException if a matching position could not be found
      * @throws SystemException if a system exception occurred
      */
     @Override
-    public Position findByArchiveStatus_First(boolean archiveStatus,
+    public Position findByArchiveStatus_First(boolean archive_status,
         OrderByComparator orderByComparator)
         throws NoSuchPositionException, SystemException {
-        Position position = fetchByArchiveStatus_First(archiveStatus,
+        Position position = fetchByArchiveStatus_First(archive_status,
                 orderByComparator);
 
         if (position != null) {
@@ -291,8 +292,8 @@ public class PositionPersistenceImpl extends BasePersistenceImpl<Position>
 
         msg.append(_NO_SUCH_ENTITY_WITH_KEY);
 
-        msg.append("archiveStatus=");
-        msg.append(archiveStatus);
+        msg.append("archive_status=");
+        msg.append(archive_status);
 
         msg.append(StringPool.CLOSE_CURLY_BRACE);
 
@@ -300,17 +301,17 @@ public class PositionPersistenceImpl extends BasePersistenceImpl<Position>
     }
 
     /**
-     * Returns the first position in the ordered set where archiveStatus = &#63;.
+     * Returns the first position in the ordered set where archive_status = &#63;.
      *
-     * @param archiveStatus the archive status
+     * @param archive_status the archive_status
      * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
      * @return the first matching position, or <code>null</code> if a matching position could not be found
      * @throws SystemException if a system exception occurred
      */
     @Override
-    public Position fetchByArchiveStatus_First(boolean archiveStatus,
+    public Position fetchByArchiveStatus_First(boolean archive_status,
         OrderByComparator orderByComparator) throws SystemException {
-        List<Position> list = findByArchiveStatus(archiveStatus, 0, 1,
+        List<Position> list = findByArchiveStatus(archive_status, 0, 1,
                 orderByComparator);
 
         if (!list.isEmpty()) {
@@ -321,19 +322,19 @@ public class PositionPersistenceImpl extends BasePersistenceImpl<Position>
     }
 
     /**
-     * Returns the last position in the ordered set where archiveStatus = &#63;.
+     * Returns the last position in the ordered set where archive_status = &#63;.
      *
-     * @param archiveStatus the archive status
+     * @param archive_status the archive_status
      * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
      * @return the last matching position
      * @throws ru.kotikov.registry.NoSuchPositionException if a matching position could not be found
      * @throws SystemException if a system exception occurred
      */
     @Override
-    public Position findByArchiveStatus_Last(boolean archiveStatus,
+    public Position findByArchiveStatus_Last(boolean archive_status,
         OrderByComparator orderByComparator)
         throws NoSuchPositionException, SystemException {
-        Position position = fetchByArchiveStatus_Last(archiveStatus,
+        Position position = fetchByArchiveStatus_Last(archive_status,
                 orderByComparator);
 
         if (position != null) {
@@ -344,8 +345,8 @@ public class PositionPersistenceImpl extends BasePersistenceImpl<Position>
 
         msg.append(_NO_SUCH_ENTITY_WITH_KEY);
 
-        msg.append("archiveStatus=");
-        msg.append(archiveStatus);
+        msg.append("archive_status=");
+        msg.append(archive_status);
 
         msg.append(StringPool.CLOSE_CURLY_BRACE);
 
@@ -353,23 +354,23 @@ public class PositionPersistenceImpl extends BasePersistenceImpl<Position>
     }
 
     /**
-     * Returns the last position in the ordered set where archiveStatus = &#63;.
+     * Returns the last position in the ordered set where archive_status = &#63;.
      *
-     * @param archiveStatus the archive status
+     * @param archive_status the archive_status
      * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
      * @return the last matching position, or <code>null</code> if a matching position could not be found
      * @throws SystemException if a system exception occurred
      */
     @Override
-    public Position fetchByArchiveStatus_Last(boolean archiveStatus,
+    public Position fetchByArchiveStatus_Last(boolean archive_status,
         OrderByComparator orderByComparator) throws SystemException {
-        int count = countByArchiveStatus(archiveStatus);
+        int count = countByArchiveStatus(archive_status);
 
         if (count == 0) {
             return null;
         }
 
-        List<Position> list = findByArchiveStatus(archiveStatus, count - 1,
+        List<Position> list = findByArchiveStatus(archive_status, count - 1,
                 count, orderByComparator);
 
         if (!list.isEmpty()) {
@@ -380,20 +381,20 @@ public class PositionPersistenceImpl extends BasePersistenceImpl<Position>
     }
 
     /**
-     * Returns the positions before and after the current position in the ordered set where archiveStatus = &#63;.
+     * Returns the positions before and after the current position in the ordered set where archive_status = &#63;.
      *
-     * @param positionId the primary key of the current position
-     * @param archiveStatus the archive status
+     * @param position_id the primary key of the current position
+     * @param archive_status the archive_status
      * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
      * @return the previous, current, and next position
      * @throws ru.kotikov.registry.NoSuchPositionException if a position with the primary key could not be found
      * @throws SystemException if a system exception occurred
      */
     @Override
-    public Position[] findByArchiveStatus_PrevAndNext(long positionId,
-        boolean archiveStatus, OrderByComparator orderByComparator)
+    public Position[] findByArchiveStatus_PrevAndNext(long position_id,
+        boolean archive_status, OrderByComparator orderByComparator)
         throws NoSuchPositionException, SystemException {
-        Position position = findByPrimaryKey(positionId);
+        Position position = findByPrimaryKey(position_id);
 
         Session session = null;
 
@@ -403,12 +404,12 @@ public class PositionPersistenceImpl extends BasePersistenceImpl<Position>
             Position[] array = new PositionImpl[3];
 
             array[0] = getByArchiveStatus_PrevAndNext(session, position,
-                    archiveStatus, orderByComparator, true);
+                    archive_status, orderByComparator, true);
 
             array[1] = position;
 
             array[2] = getByArchiveStatus_PrevAndNext(session, position,
-                    archiveStatus, orderByComparator, false);
+                    archive_status, orderByComparator, false);
 
             return array;
         } catch (Exception e) {
@@ -419,7 +420,7 @@ public class PositionPersistenceImpl extends BasePersistenceImpl<Position>
     }
 
     protected Position getByArchiveStatus_PrevAndNext(Session session,
-        Position position, boolean archiveStatus,
+        Position position, boolean archive_status,
         OrderByComparator orderByComparator, boolean previous) {
         StringBundler query = null;
 
@@ -432,7 +433,7 @@ public class PositionPersistenceImpl extends BasePersistenceImpl<Position>
 
         query.append(_SQL_SELECT_POSITION_WHERE);
 
-        query.append(_FINDER_COLUMN_ARCHIVESTATUS_ARCHIVESTATUS_2);
+        query.append(_FINDER_COLUMN_ARCHIVESTATUS_ARCHIVE_STATUS_2);
 
         if (orderByComparator != null) {
             String[] orderByConditionFields = orderByComparator.getOrderByConditionFields();
@@ -495,7 +496,7 @@ public class PositionPersistenceImpl extends BasePersistenceImpl<Position>
 
         QueryPos qPos = QueryPos.getInstance(q);
 
-        qPos.add(archiveStatus);
+        qPos.add(archive_status);
 
         if (orderByComparator != null) {
             Object[] values = orderByComparator.getOrderByConditionValues(position);
@@ -515,33 +516,33 @@ public class PositionPersistenceImpl extends BasePersistenceImpl<Position>
     }
 
     /**
-     * Removes all the positions where archiveStatus = &#63; from the database.
+     * Removes all the positions where archive_status = &#63; from the database.
      *
-     * @param archiveStatus the archive status
+     * @param archive_status the archive_status
      * @throws SystemException if a system exception occurred
      */
     @Override
-    public void removeByArchiveStatus(boolean archiveStatus)
+    public void removeByArchiveStatus(boolean archive_status)
         throws SystemException {
-        for (Position position : findByArchiveStatus(archiveStatus,
+        for (Position position : findByArchiveStatus(archive_status,
                 QueryUtil.ALL_POS, QueryUtil.ALL_POS, null)) {
             remove(position);
         }
     }
 
     /**
-     * Returns the number of positions where archiveStatus = &#63;.
+     * Returns the number of positions where archive_status = &#63;.
      *
-     * @param archiveStatus the archive status
+     * @param archive_status the archive_status
      * @return the number of matching positions
      * @throws SystemException if a system exception occurred
      */
     @Override
-    public int countByArchiveStatus(boolean archiveStatus)
+    public int countByArchiveStatus(boolean archive_status)
         throws SystemException {
         FinderPath finderPath = FINDER_PATH_COUNT_BY_ARCHIVESTATUS;
 
-        Object[] finderArgs = new Object[] { archiveStatus };
+        Object[] finderArgs = new Object[] { archive_status };
 
         Long count = (Long) FinderCacheUtil.getResult(finderPath, finderArgs,
                 this);
@@ -551,7 +552,7 @@ public class PositionPersistenceImpl extends BasePersistenceImpl<Position>
 
             query.append(_SQL_COUNT_POSITION_WHERE);
 
-            query.append(_FINDER_COLUMN_ARCHIVESTATUS_ARCHIVESTATUS_2);
+            query.append(_FINDER_COLUMN_ARCHIVESTATUS_ARCHIVE_STATUS_2);
 
             String sql = query.toString();
 
@@ -564,7 +565,7 @@ public class PositionPersistenceImpl extends BasePersistenceImpl<Position>
 
                 QueryPos qPos = QueryPos.getInstance(q);
 
-                qPos.add(archiveStatus);
+                qPos.add(archive_status);
 
                 count = (Long) q.uniqueResult();
 
@@ -662,15 +663,15 @@ public class PositionPersistenceImpl extends BasePersistenceImpl<Position>
     /**
      * Creates a new position with the primary key. Does not add the position to the database.
      *
-     * @param positionId the primary key for the new position
+     * @param position_id the primary key for the new position
      * @return the new position
      */
     @Override
-    public Position create(long positionId) {
+    public Position create(long position_id) {
         Position position = new PositionImpl();
 
         position.setNew(true);
-        position.setPrimaryKey(positionId);
+        position.setPrimaryKey(position_id);
 
         return position;
     }
@@ -678,15 +679,15 @@ public class PositionPersistenceImpl extends BasePersistenceImpl<Position>
     /**
      * Removes the position with the primary key from the database. Also notifies the appropriate model listeners.
      *
-     * @param positionId the primary key of the position
+     * @param position_id the primary key of the position
      * @return the position that was removed
      * @throws ru.kotikov.registry.NoSuchPositionException if a position with the primary key could not be found
      * @throws SystemException if a system exception occurred
      */
     @Override
-    public Position remove(long positionId)
+    public Position remove(long position_id)
         throws NoSuchPositionException, SystemException {
-        return remove((Serializable) positionId);
+        return remove((Serializable) position_id);
     }
 
     /**
@@ -793,7 +794,7 @@ public class PositionPersistenceImpl extends BasePersistenceImpl<Position>
             if ((positionModelImpl.getColumnBitmask() &
                     FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_ARCHIVESTATUS.getColumnBitmask()) != 0) {
                 Object[] args = new Object[] {
-                        positionModelImpl.getOriginalArchiveStatus()
+                        positionModelImpl.getOriginalArchive_status()
                     };
 
                 FinderCacheUtil.removeResult(FINDER_PATH_COUNT_BY_ARCHIVESTATUS,
@@ -801,7 +802,7 @@ public class PositionPersistenceImpl extends BasePersistenceImpl<Position>
                 FinderCacheUtil.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_ARCHIVESTATUS,
                     args);
 
-                args = new Object[] { positionModelImpl.getArchiveStatus() };
+                args = new Object[] { positionModelImpl.getArchive_status() };
 
                 FinderCacheUtil.removeResult(FINDER_PATH_COUNT_BY_ARCHIVESTATUS,
                     args);
@@ -826,9 +827,9 @@ public class PositionPersistenceImpl extends BasePersistenceImpl<Position>
         positionImpl.setNew(position.isNew());
         positionImpl.setPrimaryKey(position.getPrimaryKey());
 
-        positionImpl.setPositionId(position.getPositionId());
-        positionImpl.setPositionName(position.getPositionName());
-        positionImpl.setArchiveStatus(position.isArchiveStatus());
+        positionImpl.setPosition_id(position.getPosition_id());
+        positionImpl.setPosition_name(position.getPosition_name());
+        positionImpl.setArchive_status(position.isArchive_status());
 
         return positionImpl;
     }
@@ -861,15 +862,15 @@ public class PositionPersistenceImpl extends BasePersistenceImpl<Position>
     /**
      * Returns the position with the primary key or throws a {@link ru.kotikov.registry.NoSuchPositionException} if it could not be found.
      *
-     * @param positionId the primary key of the position
+     * @param position_id the primary key of the position
      * @return the position
      * @throws ru.kotikov.registry.NoSuchPositionException if a position with the primary key could not be found
      * @throws SystemException if a system exception occurred
      */
     @Override
-    public Position findByPrimaryKey(long positionId)
+    public Position findByPrimaryKey(long position_id)
         throws NoSuchPositionException, SystemException {
-        return findByPrimaryKey((Serializable) positionId);
+        return findByPrimaryKey((Serializable) position_id);
     }
 
     /**
@@ -919,14 +920,14 @@ public class PositionPersistenceImpl extends BasePersistenceImpl<Position>
     /**
      * Returns the position with the primary key or returns <code>null</code> if it could not be found.
      *
-     * @param positionId the primary key of the position
+     * @param position_id the primary key of the position
      * @return the position, or <code>null</code> if a position with the primary key could not be found
      * @throws SystemException if a system exception occurred
      */
     @Override
-    public Position fetchByPrimaryKey(long positionId)
+    public Position fetchByPrimaryKey(long position_id)
         throws SystemException {
-        return fetchByPrimaryKey((Serializable) positionId);
+        return fetchByPrimaryKey((Serializable) position_id);
     }
 
     /**

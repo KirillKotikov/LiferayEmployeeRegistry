@@ -18,6 +18,6 @@ public abstract class BankActionableDynamicQuery
 
         setClassLoader(ru.kotikov.registry.service.ClpSerializer.class.getClassLoader());
 
-        setPrimaryKeyPropertyName("bankId");
+        setPrimaryKeyPropertyName("bank_id");
     }
 }

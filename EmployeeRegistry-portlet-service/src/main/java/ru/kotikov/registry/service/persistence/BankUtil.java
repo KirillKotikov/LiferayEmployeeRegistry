@@ -118,25 +118,25 @@ public class BankUtil {
     /**
     * Creates a new bank with the primary key. Does not add the bank to the database.
     *
-    * @param bankId the primary key for the new bank
+    * @param bank_id the primary key for the new bank
     * @return the new bank
     */
-    public static ru.kotikov.registry.model.Bank create(long bankId) {
-        return getPersistence().create(bankId);
+    public static ru.kotikov.registry.model.Bank create(long bank_id) {
+        return getPersistence().create(bank_id);
     }
 
     /**
     * Removes the bank with the primary key from the database. Also notifies the appropriate model listeners.
     *
-    * @param bankId the primary key of the bank
+    * @param bank_id the primary key of the bank
     * @return the bank that was removed
     * @throws ru.kotikov.registry.NoSuchBankException if a bank with the primary key could not be found
     * @throws SystemException if a system exception occurred
     */
-    public static ru.kotikov.registry.model.Bank remove(long bankId)
+    public static ru.kotikov.registry.model.Bank remove(long bank_id)
         throws com.liferay.portal.kernel.exception.SystemException,
             ru.kotikov.registry.NoSuchBankException {
-        return getPersistence().remove(bankId);
+        return getPersistence().remove(bank_id);
     }
 
     public static ru.kotikov.registry.model.Bank updateImpl(
@@ -148,27 +148,27 @@ public class BankUtil {
     /**
     * Returns the bank with the primary key or throws a {@link ru.kotikov.registry.NoSuchBankException} if it could not be found.
     *
-    * @param bankId the primary key of the bank
+    * @param bank_id the primary key of the bank
     * @return the bank
     * @throws ru.kotikov.registry.NoSuchBankException if a bank with the primary key could not be found
     * @throws SystemException if a system exception occurred
     */
-    public static ru.kotikov.registry.model.Bank findByPrimaryKey(long bankId)
+    public static ru.kotikov.registry.model.Bank findByPrimaryKey(long bank_id)
         throws com.liferay.portal.kernel.exception.SystemException,
             ru.kotikov.registry.NoSuchBankException {
-        return getPersistence().findByPrimaryKey(bankId);
+        return getPersistence().findByPrimaryKey(bank_id);
     }
 
     /**
     * Returns the bank with the primary key or returns <code>null</code> if it could not be found.
     *
-    * @param bankId the primary key of the bank
+    * @param bank_id the primary key of the bank
     * @return the bank, or <code>null</code> if a bank with the primary key could not be found
     * @throws SystemException if a system exception occurred
     */
-    public static ru.kotikov.registry.model.Bank fetchByPrimaryKey(long bankId)
+    public static ru.kotikov.registry.model.Bank fetchByPrimaryKey(long bank_id)
         throws com.liferay.portal.kernel.exception.SystemException {
-        return getPersistence().fetchByPrimaryKey(bankId);
+        return getPersistence().fetchByPrimaryKey(bank_id);
     }
 
     /**

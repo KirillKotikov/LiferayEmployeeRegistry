@@ -3,7 +3,7 @@
 <%
     ResultRow res = (ResultRow) request.getAttribute(WebKeys.SEARCH_CONTAINER_RESULT_ROW);
     Bank bank = (Bank) res.getObject();
-    String bankId = String.valueOf(bank.getBankId());
+    String bankId = String.valueOf(bank.getBank_id());
 %>
 <liferay-ui:icon-menu>
     <portlet:actionURL name="getCurrentBankClients" var="getCurrentBankClientsURL">

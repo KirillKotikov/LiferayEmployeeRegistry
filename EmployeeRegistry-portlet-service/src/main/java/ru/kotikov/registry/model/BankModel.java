@@ -44,33 +44,33 @@ public interface BankModel extends BaseModel<Bank> {
     public void setPrimaryKey(long primaryKey);
 
     /**
-     * Returns the bank ID of this bank.
+     * Returns the bank_id of this bank.
      *
-     * @return the bank ID of this bank
+     * @return the bank_id of this bank
      */
-    public long getBankId();
+    public long getBank_id();
 
     /**
-     * Sets the bank ID of this bank.
+     * Sets the bank_id of this bank.
      *
-     * @param bankId the bank ID of this bank
+     * @param bank_id the bank_id of this bank
      */
-    public void setBankId(long bankId);
+    public void setBank_id(long bank_id);
 
     /**
-     * Returns the bank name of this bank.
+     * Returns the bank_name of this bank.
      *
-     * @return the bank name of this bank
+     * @return the bank_name of this bank
      */
     @AutoEscape
-    public String getBankName();
+    public String getBank_name();
 
     /**
-     * Sets the bank name of this bank.
+     * Sets the bank_name of this bank.
      *
-     * @param bankName the bank name of this bank
+     * @param bank_name the bank_name of this bank
      */
-    public void setBankName(String bankName);
+    public void setBank_name(String bank_name);
 
     /**
      * Returns the bik of this bank.
@@ -88,19 +88,19 @@ public interface BankModel extends BaseModel<Bank> {
     public void setBik(String bik);
 
     /**
-     * Returns the bank address of this bank.
+     * Returns the bank_address of this bank.
      *
-     * @return the bank address of this bank
+     * @return the bank_address of this bank
      */
     @AutoEscape
-    public String getBankAddress();
+    public String getBank_address();
 
     /**
-     * Sets the bank address of this bank.
+     * Sets the bank_address of this bank.
      *
-     * @param bankAddress the bank address of this bank
+     * @param bank_address the bank_address of this bank
      */
-    public void setBankAddress(String bankAddress);
+    public void setBank_address(String bank_address);
 
     @Override
     public boolean isNew();

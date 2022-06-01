@@ -180,12 +180,12 @@ public class EmployeeLocalServiceClp implements EmployeeLocalService {
     }
 
     @Override
-    public ru.kotikov.registry.model.Employee createEmployee(long employeeId) {
+    public ru.kotikov.registry.model.Employee createEmployee(long employee_id) {
         Object returnObj = null;
 
         try {
             returnObj = _invokableLocalService.invokeMethod(_methodName1,
-                    _methodParameterTypes1, new Object[] { employeeId });
+                    _methodParameterTypes1, new Object[] { employee_id });
         } catch (Throwable t) {
             t = ClpSerializer.translateThrowable(t);
 
@@ -201,14 +201,14 @@ public class EmployeeLocalServiceClp implements EmployeeLocalService {
     }
 
     @Override
-    public ru.kotikov.registry.model.Employee deleteEmployee(long employeeId)
+    public ru.kotikov.registry.model.Employee deleteEmployee(long employee_id)
         throws com.liferay.portal.kernel.exception.PortalException,
             com.liferay.portal.kernel.exception.SystemException {
         Object returnObj = null;
 
         try {
             returnObj = _invokableLocalService.invokeMethod(_methodName2,
-                    _methodParameterTypes2, new Object[] { employeeId });
+                    _methodParameterTypes2, new Object[] { employee_id });
         } catch (Throwable t) {
             t = ClpSerializer.translateThrowable(t);
 
@@ -445,13 +445,13 @@ public class EmployeeLocalServiceClp implements EmployeeLocalService {
     }
 
     @Override
-    public ru.kotikov.registry.model.Employee fetchEmployee(long employeeId)
+    public ru.kotikov.registry.model.Employee fetchEmployee(long employee_id)
         throws com.liferay.portal.kernel.exception.SystemException {
         Object returnObj = null;
 
         try {
             returnObj = _invokableLocalService.invokeMethod(_methodName10,
-                    _methodParameterTypes10, new Object[] { employeeId });
+                    _methodParameterTypes10, new Object[] { employee_id });
         } catch (Throwable t) {
             t = ClpSerializer.translateThrowable(t);
 
@@ -471,14 +471,14 @@ public class EmployeeLocalServiceClp implements EmployeeLocalService {
     }
 
     @Override
-    public ru.kotikov.registry.model.Employee getEmployee(long employeeId)
+    public ru.kotikov.registry.model.Employee getEmployee(long employee_id)
         throws com.liferay.portal.kernel.exception.PortalException,
             com.liferay.portal.kernel.exception.SystemException {
         Object returnObj = null;
 
         try {
             returnObj = _invokableLocalService.invokeMethod(_methodName11,
-                    _methodParameterTypes11, new Object[] { employeeId });
+                    _methodParameterTypes11, new Object[] { employee_id });
         } catch (Throwable t) {
             t = ClpSerializer.translateThrowable(t);
 

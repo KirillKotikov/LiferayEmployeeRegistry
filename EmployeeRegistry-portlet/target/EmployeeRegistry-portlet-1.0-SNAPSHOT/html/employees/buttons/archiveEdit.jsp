@@ -4,7 +4,7 @@
     ResultRow res = (ResultRow) request.getAttribute(WebKeys.SEARCH_CONTAINER_RESULT_ROW);
     Employee employee = (Employee) res.getObject();
     String employeeId = String.valueOf(employee.getPrimaryKey());
-    String employeeArchiveStatus = String.valueOf(employee.getArchiveStatus());
+    String employeeArchiveStatus = String.valueOf(employee.getArchive_status());
 %>
 
 <liferay-ui:icon-menu>

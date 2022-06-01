@@ -93,27 +93,27 @@ public abstract class PositionLocalServiceBaseImpl extends BaseLocalServiceImpl
     /**
      * Creates a new position with the primary key. Does not add the position to the database.
      *
-     * @param positionId the primary key for the new position
+     * @param position_id the primary key for the new position
      * @return the new position
      */
     @Override
-    public Position createPosition(long positionId) {
-        return positionPersistence.create(positionId);
+    public Position createPosition(long position_id) {
+        return positionPersistence.create(position_id);
     }
 
     /**
      * Deletes the position with the primary key from the database. Also notifies the appropriate model listeners.
      *
-     * @param positionId the primary key of the position
+     * @param position_id the primary key of the position
      * @return the position that was removed
      * @throws PortalException if a position with the primary key could not be found
      * @throws SystemException if a system exception occurred
      */
     @Indexable(type = IndexableType.DELETE)
     @Override
-    public Position deletePosition(long positionId)
+    public Position deletePosition(long position_id)
         throws PortalException, SystemException {
-        return positionPersistence.remove(positionId);
+        return positionPersistence.remove(position_id);
     }
 
     /**
@@ -222,22 +222,22 @@ public abstract class PositionLocalServiceBaseImpl extends BaseLocalServiceImpl
     }
 
     @Override
-    public Position fetchPosition(long positionId) throws SystemException {
-        return positionPersistence.fetchByPrimaryKey(positionId);
+    public Position fetchPosition(long position_id) throws SystemException {
+        return positionPersistence.fetchByPrimaryKey(position_id);
     }
 
     /**
      * Returns the position with the primary key.
      *
-     * @param positionId the primary key of the position
+     * @param position_id the primary key of the position
      * @return the position
      * @throws PortalException if a position with the primary key could not be found
      * @throws SystemException if a system exception occurred
      */
     @Override
-    public Position getPosition(long positionId)
+    public Position getPosition(long position_id)
         throws PortalException, SystemException {
-        return positionPersistence.findByPrimaryKey(positionId);
+        return positionPersistence.findByPrimaryKey(position_id);
     }
 
     @Override

@@ -35,27 +35,27 @@ public class PositionLocalServiceWrapper implements PositionLocalService,
     /**
     * Creates a new position with the primary key. Does not add the position to the database.
     *
-    * @param positionId the primary key for the new position
+    * @param position_id the primary key for the new position
     * @return the new position
     */
     @Override
-    public ru.kotikov.registry.model.Position createPosition(long positionId) {
-        return _positionLocalService.createPosition(positionId);
+    public ru.kotikov.registry.model.Position createPosition(long position_id) {
+        return _positionLocalService.createPosition(position_id);
     }
 
     /**
     * Deletes the position with the primary key from the database. Also notifies the appropriate model listeners.
     *
-    * @param positionId the primary key of the position
+    * @param position_id the primary key of the position
     * @return the position that was removed
     * @throws PortalException if a position with the primary key could not be found
     * @throws SystemException if a system exception occurred
     */
     @Override
-    public ru.kotikov.registry.model.Position deletePosition(long positionId)
+    public ru.kotikov.registry.model.Position deletePosition(long position_id)
         throws com.liferay.portal.kernel.exception.PortalException,
             com.liferay.portal.kernel.exception.SystemException {
-        return _positionLocalService.deletePosition(positionId);
+        return _positionLocalService.deletePosition(position_id);
     }
 
     /**
@@ -169,24 +169,24 @@ public class PositionLocalServiceWrapper implements PositionLocalService,
     }
 
     @Override
-    public ru.kotikov.registry.model.Position fetchPosition(long positionId)
+    public ru.kotikov.registry.model.Position fetchPosition(long position_id)
         throws com.liferay.portal.kernel.exception.SystemException {
-        return _positionLocalService.fetchPosition(positionId);
+        return _positionLocalService.fetchPosition(position_id);
     }
 
     /**
     * Returns the position with the primary key.
     *
-    * @param positionId the primary key of the position
+    * @param position_id the primary key of the position
     * @return the position
     * @throws PortalException if a position with the primary key could not be found
     * @throws SystemException if a system exception occurred
     */
     @Override
-    public ru.kotikov.registry.model.Position getPosition(long positionId)
+    public ru.kotikov.registry.model.Position getPosition(long position_id)
         throws com.liferay.portal.kernel.exception.PortalException,
             com.liferay.portal.kernel.exception.SystemException {
-        return _positionLocalService.getPosition(positionId);
+        return _positionLocalService.getPosition(position_id);
     }
 
     @Override

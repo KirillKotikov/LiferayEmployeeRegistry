@@ -43,15 +43,15 @@ public class BankModelImpl extends BaseModelImpl<Bank> implements BankModel {
      */
     public static final String TABLE_NAME = "registry_Bank";
     public static final Object[][] TABLE_COLUMNS = {
-            { "bankId", Types.BIGINT },
-            { "bankName", Types.VARCHAR },
+            { "bank_id", Types.BIGINT },
+            { "bank_name", Types.VARCHAR },
             { "bik", Types.VARCHAR },
-            { "bankAddress", Types.VARCHAR }
+            { "bank_address", Types.VARCHAR }
         };
-    public static final String TABLE_SQL_CREATE = "create table registry_Bank (bankId LONG not null primary key,bankName VARCHAR(75) null,bik VARCHAR(75) null,bankAddress VARCHAR(75) null)";
+    public static final String TABLE_SQL_CREATE = "create table registry_Bank (bank_id LONG not null primary key,bank_name VARCHAR(75) null,bik VARCHAR(75) null,bank_address VARCHAR(75) null)";
     public static final String TABLE_SQL_DROP = "drop table registry_Bank";
-    public static final String ORDER_BY_JPQL = " ORDER BY bank.bankName ASC";
-    public static final String ORDER_BY_SQL = " ORDER BY registry_Bank.bankName ASC";
+    public static final String ORDER_BY_JPQL = " ORDER BY bank.bank_name ASC";
+    public static final String ORDER_BY_SQL = " ORDER BY registry_Bank.bank_name ASC";
     public static final String DATA_SOURCE = "liferayDataSource";
     public static final String SESSION_FACTORY = "liferaySessionFactory";
     public static final String TX_MANAGER = "liferayTransactionManager";
@@ -66,10 +66,10 @@ public class BankModelImpl extends BaseModelImpl<Bank> implements BankModel {
                 "lock.expiration.time.ru.kotikov.registry.model.Bank"));
     private static ClassLoader _classLoader = Bank.class.getClassLoader();
     private static Class<?>[] _escapedModelInterfaces = new Class[] { Bank.class };
-    private long _bankId;
-    private String _bankName;
+    private long _bank_id;
+    private String _bank_name;
     private String _bik;
-    private String _bankAddress;
+    private String _bank_address;
     private Bank _escapedModel;
 
     public BankModelImpl() {
@@ -77,17 +77,17 @@ public class BankModelImpl extends BaseModelImpl<Bank> implements BankModel {
 
     @Override
     public long getPrimaryKey() {
-        return _bankId;
+        return _bank_id;
     }
 
     @Override
     public void setPrimaryKey(long primaryKey) {
-        setBankId(primaryKey);
+        setBank_id(primaryKey);
     }
 
     @Override
     public Serializable getPrimaryKeyObj() {
-        return _bankId;
+        return _bank_id;
     }
 
     @Override
@@ -109,26 +109,26 @@ public class BankModelImpl extends BaseModelImpl<Bank> implements BankModel {
     public Map<String, Object> getModelAttributes() {
         Map<String, Object> attributes = new HashMap<String, Object>();
 
-        attributes.put("bankId", getBankId());
-        attributes.put("bankName", getBankName());
+        attributes.put("bank_id", getBank_id());
+        attributes.put("bank_name", getBank_name());
         attributes.put("bik", getBik());
-        attributes.put("bankAddress", getBankAddress());
+        attributes.put("bank_address", getBank_address());
 
         return attributes;
     }
 
     @Override
     public void setModelAttributes(Map<String, Object> attributes) {
-        Long bankId = (Long) attributes.get("bankId");
+        Long bank_id = (Long) attributes.get("bank_id");
 
-        if (bankId != null) {
-            setBankId(bankId);
+        if (bank_id != null) {
+            setBank_id(bank_id);
         }
 
-        String bankName = (String) attributes.get("bankName");
+        String bank_name = (String) attributes.get("bank_name");
 
-        if (bankName != null) {
-            setBankName(bankName);
+        if (bank_name != null) {
+            setBank_name(bank_name);
         }
 
         String bik = (String) attributes.get("bik");
@@ -137,35 +137,35 @@ public class BankModelImpl extends BaseModelImpl<Bank> implements BankModel {
             setBik(bik);
         }
 
-        String bankAddress = (String) attributes.get("bankAddress");
+        String bank_address = (String) attributes.get("bank_address");
 
-        if (bankAddress != null) {
-            setBankAddress(bankAddress);
+        if (bank_address != null) {
+            setBank_address(bank_address);
         }
     }
 
     @Override
-    public long getBankId() {
-        return _bankId;
+    public long getBank_id() {
+        return _bank_id;
     }
 
     @Override
-    public void setBankId(long bankId) {
-        _bankId = bankId;
+    public void setBank_id(long bank_id) {
+        _bank_id = bank_id;
     }
 
     @Override
-    public String getBankName() {
-        if (_bankName == null) {
+    public String getBank_name() {
+        if (_bank_name == null) {
             return StringPool.BLANK;
         } else {
-            return _bankName;
+            return _bank_name;
         }
     }
 
     @Override
-    public void setBankName(String bankName) {
-        _bankName = bankName;
+    public void setBank_name(String bank_name) {
+        _bank_name = bank_name;
     }
 
     @Override
@@ -183,17 +183,17 @@ public class BankModelImpl extends BaseModelImpl<Bank> implements BankModel {
     }
 
     @Override
-    public String getBankAddress() {
-        if (_bankAddress == null) {
+    public String getBank_address() {
+        if (_bank_address == null) {
             return StringPool.BLANK;
         } else {
-            return _bankAddress;
+            return _bank_address;
         }
     }
 
     @Override
-    public void setBankAddress(String bankAddress) {
-        _bankAddress = bankAddress;
+    public void setBank_address(String bank_address) {
+        _bank_address = bank_address;
     }
 
     @Override
@@ -223,10 +223,10 @@ public class BankModelImpl extends BaseModelImpl<Bank> implements BankModel {
     public Object clone() {
         BankImpl bankImpl = new BankImpl();
 
-        bankImpl.setBankId(getBankId());
-        bankImpl.setBankName(getBankName());
+        bankImpl.setBank_id(getBank_id());
+        bankImpl.setBank_name(getBank_name());
         bankImpl.setBik(getBik());
-        bankImpl.setBankAddress(getBankAddress());
+        bankImpl.setBank_address(getBank_address());
 
         bankImpl.resetOriginalValues();
 
@@ -237,7 +237,7 @@ public class BankModelImpl extends BaseModelImpl<Bank> implements BankModel {
     public int compareTo(Bank bank) {
         int value = 0;
 
-        value = getBankName().compareTo(bank.getBankName());
+        value = getBank_name().compareTo(bank.getBank_name());
 
         if (value != 0) {
             return value;
@@ -280,14 +280,14 @@ public class BankModelImpl extends BaseModelImpl<Bank> implements BankModel {
     public CacheModel<Bank> toCacheModel() {
         BankCacheModel bankCacheModel = new BankCacheModel();
 
-        bankCacheModel.bankId = getBankId();
+        bankCacheModel.bank_id = getBank_id();
 
-        bankCacheModel.bankName = getBankName();
+        bankCacheModel.bank_name = getBank_name();
 
-        String bankName = bankCacheModel.bankName;
+        String bank_name = bankCacheModel.bank_name;
 
-        if ((bankName != null) && (bankName.length() == 0)) {
-            bankCacheModel.bankName = null;
+        if ((bank_name != null) && (bank_name.length() == 0)) {
+            bankCacheModel.bank_name = null;
         }
 
         bankCacheModel.bik = getBik();
@@ -298,12 +298,12 @@ public class BankModelImpl extends BaseModelImpl<Bank> implements BankModel {
             bankCacheModel.bik = null;
         }
 
-        bankCacheModel.bankAddress = getBankAddress();
+        bankCacheModel.bank_address = getBank_address();
 
-        String bankAddress = bankCacheModel.bankAddress;
+        String bank_address = bankCacheModel.bank_address;
 
-        if ((bankAddress != null) && (bankAddress.length() == 0)) {
-            bankCacheModel.bankAddress = null;
+        if ((bank_address != null) && (bank_address.length() == 0)) {
+            bankCacheModel.bank_address = null;
         }
 
         return bankCacheModel;
@@ -313,14 +313,14 @@ public class BankModelImpl extends BaseModelImpl<Bank> implements BankModel {
     public String toString() {
         StringBundler sb = new StringBundler(9);
 
-        sb.append("{bankId=");
-        sb.append(getBankId());
-        sb.append(", bankName=");
-        sb.append(getBankName());
+        sb.append("{bank_id=");
+        sb.append(getBank_id());
+        sb.append(", bank_name=");
+        sb.append(getBank_name());
         sb.append(", bik=");
         sb.append(getBik());
-        sb.append(", bankAddress=");
-        sb.append(getBankAddress());
+        sb.append(", bank_address=");
+        sb.append(getBank_address());
         sb.append("}");
 
         return sb.toString();
@@ -335,20 +335,20 @@ public class BankModelImpl extends BaseModelImpl<Bank> implements BankModel {
         sb.append("</model-name>");
 
         sb.append(
-            "<column><column-name>bankId</column-name><column-value><![CDATA[");
-        sb.append(getBankId());
+            "<column><column-name>bank_id</column-name><column-value><![CDATA[");
+        sb.append(getBank_id());
         sb.append("]]></column-value></column>");
         sb.append(
-            "<column><column-name>bankName</column-name><column-value><![CDATA[");
-        sb.append(getBankName());
+            "<column><column-name>bank_name</column-name><column-value><![CDATA[");
+        sb.append(getBank_name());
         sb.append("]]></column-value></column>");
         sb.append(
             "<column><column-name>bik</column-name><column-value><![CDATA[");
         sb.append(getBik());
         sb.append("]]></column-value></column>");
         sb.append(
-            "<column><column-name>bankAddress</column-name><column-value><![CDATA[");
-        sb.append(getBankAddress());
+            "<column><column-name>bank_address</column-name><column-value><![CDATA[");
+        sb.append(getBank_address());
         sb.append("]]></column-value></column>");
 
         sb.append("</model>");

@@ -19,10 +19,10 @@ import java.util.Map;
 
 
 public class BankClp extends BaseModelImpl<Bank> implements Bank {
-    private long _bankId;
-    private String _bankName;
+    private long _bank_id;
+    private String _bank_name;
     private String _bik;
-    private String _bankAddress;
+    private String _bank_address;
     private BaseModel<?> _bankRemoteModel;
     private Class<?> _clpSerializerClass = ru.kotikov.registry.service.ClpSerializer.class;
 
@@ -41,17 +41,17 @@ public class BankClp extends BaseModelImpl<Bank> implements Bank {
 
     @Override
     public long getPrimaryKey() {
-        return _bankId;
+        return _bank_id;
     }
 
     @Override
     public void setPrimaryKey(long primaryKey) {
-        setBankId(primaryKey);
+        setBank_id(primaryKey);
     }
 
     @Override
     public Serializable getPrimaryKeyObj() {
-        return _bankId;
+        return _bank_id;
     }
 
     @Override
@@ -63,26 +63,26 @@ public class BankClp extends BaseModelImpl<Bank> implements Bank {
     public Map<String, Object> getModelAttributes() {
         Map<String, Object> attributes = new HashMap<String, Object>();
 
-        attributes.put("bankId", getBankId());
-        attributes.put("bankName", getBankName());
+        attributes.put("bank_id", getBank_id());
+        attributes.put("bank_name", getBank_name());
         attributes.put("bik", getBik());
-        attributes.put("bankAddress", getBankAddress());
+        attributes.put("bank_address", getBank_address());
 
         return attributes;
     }
 
     @Override
     public void setModelAttributes(Map<String, Object> attributes) {
-        Long bankId = (Long) attributes.get("bankId");
+        Long bank_id = (Long) attributes.get("bank_id");
 
-        if (bankId != null) {
-            setBankId(bankId);
+        if (bank_id != null) {
+            setBank_id(bank_id);
         }
 
-        String bankName = (String) attributes.get("bankName");
+        String bank_name = (String) attributes.get("bank_name");
 
-        if (bankName != null) {
-            setBankName(bankName);
+        if (bank_name != null) {
+            setBank_name(bank_name);
         }
 
         String bik = (String) attributes.get("bik");
@@ -91,29 +91,29 @@ public class BankClp extends BaseModelImpl<Bank> implements Bank {
             setBik(bik);
         }
 
-        String bankAddress = (String) attributes.get("bankAddress");
+        String bank_address = (String) attributes.get("bank_address");
 
-        if (bankAddress != null) {
-            setBankAddress(bankAddress);
+        if (bank_address != null) {
+            setBank_address(bank_address);
         }
     }
 
     @Override
-    public long getBankId() {
-        return _bankId;
+    public long getBank_id() {
+        return _bank_id;
     }
 
     @Override
-    public void setBankId(long bankId) {
-        _bankId = bankId;
+    public void setBank_id(long bank_id) {
+        _bank_id = bank_id;
 
         if (_bankRemoteModel != null) {
             try {
                 Class<?> clazz = _bankRemoteModel.getClass();
 
-                Method method = clazz.getMethod("setBankId", long.class);
+                Method method = clazz.getMethod("setBank_id", long.class);
 
-                method.invoke(_bankRemoteModel, bankId);
+                method.invoke(_bankRemoteModel, bank_id);
             } catch (Exception e) {
                 throw new UnsupportedOperationException(e);
             }
@@ -121,21 +121,21 @@ public class BankClp extends BaseModelImpl<Bank> implements Bank {
     }
 
     @Override
-    public String getBankName() {
-        return _bankName;
+    public String getBank_name() {
+        return _bank_name;
     }
 
     @Override
-    public void setBankName(String bankName) {
-        _bankName = bankName;
+    public void setBank_name(String bank_name) {
+        _bank_name = bank_name;
 
         if (_bankRemoteModel != null) {
             try {
                 Class<?> clazz = _bankRemoteModel.getClass();
 
-                Method method = clazz.getMethod("setBankName", String.class);
+                Method method = clazz.getMethod("setBank_name", String.class);
 
-                method.invoke(_bankRemoteModel, bankName);
+                method.invoke(_bankRemoteModel, bank_name);
             } catch (Exception e) {
                 throw new UnsupportedOperationException(e);
             }
@@ -165,21 +165,21 @@ public class BankClp extends BaseModelImpl<Bank> implements Bank {
     }
 
     @Override
-    public String getBankAddress() {
-        return _bankAddress;
+    public String getBank_address() {
+        return _bank_address;
     }
 
     @Override
-    public void setBankAddress(String bankAddress) {
-        _bankAddress = bankAddress;
+    public void setBank_address(String bank_address) {
+        _bank_address = bank_address;
 
         if (_bankRemoteModel != null) {
             try {
                 Class<?> clazz = _bankRemoteModel.getClass();
 
-                Method method = clazz.getMethod("setBankAddress", String.class);
+                Method method = clazz.getMethod("setBank_address", String.class);
 
-                method.invoke(_bankRemoteModel, bankAddress);
+                method.invoke(_bankRemoteModel, bank_address);
             } catch (Exception e) {
                 throw new UnsupportedOperationException(e);
             }
@@ -253,10 +253,10 @@ public class BankClp extends BaseModelImpl<Bank> implements Bank {
     public Object clone() {
         BankClp clone = new BankClp();
 
-        clone.setBankId(getBankId());
-        clone.setBankName(getBankName());
+        clone.setBank_id(getBank_id());
+        clone.setBank_name(getBank_name());
         clone.setBik(getBik());
-        clone.setBankAddress(getBankAddress());
+        clone.setBank_address(getBank_address());
 
         return clone;
     }
@@ -265,7 +265,7 @@ public class BankClp extends BaseModelImpl<Bank> implements Bank {
     public int compareTo(Bank bank) {
         int value = 0;
 
-        value = getBankName().compareTo(bank.getBankName());
+        value = getBank_name().compareTo(bank.getBank_name());
 
         if (value != 0) {
             return value;
@@ -308,14 +308,14 @@ public class BankClp extends BaseModelImpl<Bank> implements Bank {
     public String toString() {
         StringBundler sb = new StringBundler(9);
 
-        sb.append("{bankId=");
-        sb.append(getBankId());
-        sb.append(", bankName=");
-        sb.append(getBankName());
+        sb.append("{bank_id=");
+        sb.append(getBank_id());
+        sb.append(", bank_name=");
+        sb.append(getBank_name());
         sb.append(", bik=");
         sb.append(getBik());
-        sb.append(", bankAddress=");
-        sb.append(getBankAddress());
+        sb.append(", bank_address=");
+        sb.append(getBank_address());
         sb.append("}");
 
         return sb.toString();
@@ -330,20 +330,20 @@ public class BankClp extends BaseModelImpl<Bank> implements Bank {
         sb.append("</model-name>");
 
         sb.append(
-            "<column><column-name>bankId</column-name><column-value><![CDATA[");
-        sb.append(getBankId());
+            "<column><column-name>bank_id</column-name><column-value><![CDATA[");
+        sb.append(getBank_id());
         sb.append("]]></column-value></column>");
         sb.append(
-            "<column><column-name>bankName</column-name><column-value><![CDATA[");
-        sb.append(getBankName());
+            "<column><column-name>bank_name</column-name><column-value><![CDATA[");
+        sb.append(getBank_name());
         sb.append("]]></column-value></column>");
         sb.append(
             "<column><column-name>bik</column-name><column-value><![CDATA[");
         sb.append(getBik());
         sb.append("]]></column-value></column>");
         sb.append(
-            "<column><column-name>bankAddress</column-name><column-value><![CDATA[");
-        sb.append(getBankAddress());
+            "<column><column-name>bank_address</column-name><column-value><![CDATA[");
+        sb.append(getBank_address());
         sb.append("]]></column-value></column>");
 
         sb.append("</model>");

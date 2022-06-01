@@ -21,18 +21,18 @@ public class EmployeesPortlet extends MVCPortlet {
 
         try {
             Employee employee = EmployeeLocalServiceUtil.createEmployee(EmployeeLocalServiceUtil.getEmployeesCount() + 1);
-            employee.setLastName(ParamUtil.getString(request, "Last name"));
-            employee.setFirstName(ParamUtil.getString(request, "First name"));
+            employee.setLast_name(ParamUtil.getString(request, "Last name"));
+            employee.setFirst_name(ParamUtil.getString(request, "First name"));
             employee.setPatronymic(ParamUtil.getString(request, "Patronymic"));
             employee.setSex(ParamUtil.getString(request, "Sex"));
-            employee.setDateOfBirth(ParamUtil.getString(request, "Date of birth"));
-            employee.setPositionId(ParamUtil.getInteger(request, "Position id"));
-            employee.setDateOfEmployment(ParamUtil.getString(request, "Date of employment"));
+            employee.setDate_of_birth(ParamUtil.getString(request, "Date of birth"));
+            employee.setPosition_id(ParamUtil.getInteger(request, "Position id"));
+            employee.setDate_of_employment(ParamUtil.getString(request, "Date of employment"));
             employee.setSalary(ParamUtil.getInteger(request, "Salary"));
-            employee.setWorkPhoneNumber(ParamUtil.getString(request, "Work phone number"));
-            employee.setMobilePhoneNumber(ParamUtil.getString(request, "Mobile phone number"));
-            employee.setBankId(ParamUtil.getInteger(request, "Bank id"));
-            employee.setArchiveStatus(ParamUtil.getBoolean(request, "Archive status"));
+            employee.setWork_phone_number(ParamUtil.getString(request, "Work phone number"));
+            employee.setMobile_phone_number(ParamUtil.getString(request, "Mobile phone number"));
+            employee.setBank_id(ParamUtil.getInteger(request, "Bank id"));
+            employee.setArchive_status(ParamUtil.getBoolean(request, "Archive status"));
 
             EmployeeLocalServiceUtil.addEmployee(employee);
             response.setRenderParameter("jspPage", "/html/employees/allEmployees.jsp");
@@ -46,9 +46,9 @@ public class EmployeesPortlet extends MVCPortlet {
 
         try {
             Bank bank = BankLocalServiceUtil.createBank(BankLocalServiceUtil.getBanksCount() + 1);
-            bank.setBankName(ParamUtil.getString(request, "Bank name"));
+            bank.setBank_name(ParamUtil.getString(request, "Bank name"));
             bank.setBik(ParamUtil.getString(request, "BIK"));
-            bank.setBankAddress(ParamUtil.getString(request, "The bank address"));
+            bank.setBank_address(ParamUtil.getString(request, "The bank address"));
 
             BankLocalServiceUtil.addBank(bank);
             response.setRenderParameter("jspPage", "/html/banks/allBanks.jsp");
@@ -62,8 +62,8 @@ public class EmployeesPortlet extends MVCPortlet {
 
         try {
             Position position = PositionLocalServiceUtil.createPosition(PositionLocalServiceUtil.getPositionsCount() + 1);
-            position.setPositionName(ParamUtil.getString(request, "Position name"));
-            position.setArchiveStatus(ParamUtil.getBoolean(request, "Archive status"));
+            position.setPosition_name(ParamUtil.getString(request, "Position name"));
+            position.setArchive_status(ParamUtil.getBoolean(request, "Archive status"));
 
             PositionLocalServiceUtil.addPosition(position);
             response.setRenderParameter("jspPage", "/html/positions/allPositions.jsp");
@@ -81,18 +81,18 @@ public class EmployeesPortlet extends MVCPortlet {
 
     public void updateEmployee(ActionRequest request, ActionResponse response) throws SystemException, PortalException {
         Employee employee = EmployeeLocalServiceUtil.getEmployee(ParamUtil.getLong(request, "Employee id"));
-        employee.setLastName(ParamUtil.getString(request, "Last name"));
-        employee.setFirstName(ParamUtil.getString(request, "First name"));
+        employee.setLast_name(ParamUtil.getString(request, "Last name"));
+        employee.setFirst_name(ParamUtil.getString(request, "First name"));
         employee.setPatronymic(ParamUtil.getString(request, "Patronymic"));
         employee.setSex(ParamUtil.getString(request, "Sex"));
-        employee.setDateOfBirth(ParamUtil.getString(request, "Date of birth"));
-        employee.setPositionId(ParamUtil.getInteger(request, "Position id"));
-        employee.setDateOfEmployment(ParamUtil.getString(request, "Date of employment"));
+        employee.setDate_of_birth(ParamUtil.getString(request, "Date of birth"));
+        employee.setPosition_id(ParamUtil.getInteger(request, "Position id"));
+        employee.setDate_of_employment(ParamUtil.getString(request, "Date of employment"));
         employee.setSalary(ParamUtil.getInteger(request, "Salary"));
-        employee.setWorkPhoneNumber(ParamUtil.getString(request, "Work phone number"));
-        employee.setMobilePhoneNumber(ParamUtil.getString(request, "Mobile phone number"));
-        employee.setBankId(ParamUtil.getInteger(request, "Bank id"));
-        employee.setArchiveStatus(ParamUtil.getBoolean(request, "Archive status"));
+        employee.setWork_phone_number(ParamUtil.getString(request, "Work phone number"));
+        employee.setMobile_phone_number(ParamUtil.getString(request, "Mobile phone number"));
+        employee.setBank_id(ParamUtil.getInteger(request, "Bank id"));
+        employee.setArchive_status(ParamUtil.getBoolean(request, "Archive status"));
 
         EmployeeLocalServiceUtil.updateEmployee(employee);
         response.setRenderParameter("jspPage", "/html/employees/allEmployees.jsp");
@@ -107,9 +107,9 @@ public class EmployeesPortlet extends MVCPortlet {
 
     public void updateBank(ActionRequest request, ActionResponse response) throws SystemException, PortalException {
         Bank bank = BankLocalServiceUtil.getBank(ParamUtil.getLong(request, "Bank id"));
-        bank.setBankName(ParamUtil.getString(request, "Bank name"));
+        bank.setBank_name(ParamUtil.getString(request, "Bank name"));
         bank.setBik(ParamUtil.getString(request, "BIK"));
-        bank.setBankAddress(ParamUtil.getString(request, "Bank address"));
+        bank.setBank_address(ParamUtil.getString(request, "Bank address"));
 
         BankLocalServiceUtil.updateBank(bank);
         response.setRenderParameter("jspPage", "/html/banks/allBanks.jsp");
@@ -117,14 +117,15 @@ public class EmployeesPortlet extends MVCPortlet {
 
     public void getCurrentPosition(ActionRequest request, ActionResponse response) throws SystemException, PortalException {
         Position currentPosition = PositionLocalServiceUtil.getPosition(Long.parseLong(request.getParameter("currentPositionId")));
+
         request.setAttribute("currentPosition", currentPosition);
         response.setRenderParameter("jspPage", "/html/positions/updatePosition.jsp");
     }
 
     public void updatePosition(ActionRequest request, ActionResponse response) throws SystemException, PortalException {
         Position position = PositionLocalServiceUtil.getPosition(ParamUtil.getLong(request, "Position id"));
-        position.setPositionName(ParamUtil.getString(request, "Position name"));
-        position.setArchiveStatus(ParamUtil.getBoolean(request, "Archive status"));
+        position.setPosition_name(ParamUtil.getString(request, "Position name"));
+        position.setArchive_status(ParamUtil.getBoolean(request, "Archive status"));
 
         PositionLocalServiceUtil.updatePosition(position);
         response.setRenderParameter("jspPage", "/html/positions/allPositions.jsp");
@@ -132,24 +133,24 @@ public class EmployeesPortlet extends MVCPortlet {
 
     public void changeEmployeeArchiveStatus(ActionRequest request, ActionResponse response) throws SystemException, PortalException {
         Employee currentEmployee = EmployeeLocalServiceUtil.getEmployee(Long.parseLong(request.getParameter("currentEmployeeId")));
-        currentEmployee.setArchiveStatus(!request.getParameter("currentEmployeeArchiveStatus").equals("true"));
+        currentEmployee.setArchive_status(!request.getParameter("currentEmployeeArchiveStatus").equals("true"));
 
         EmployeeLocalServiceUtil.updateEmployee(currentEmployee);
-        response.setRenderParameter("jspPage", "/html/employees/archive.jsp");
+        response.setRenderParameter("jspPage", "/html/employees/allEmployees.jsp");
     }
 
-    public void changePositionArchiveStatus(ActionRequest request, ActionResponse response) throws SystemException, PortalException {
+    public void changeArchiveStatus(ActionRequest request, ActionResponse response) throws SystemException, PortalException {
         Position currentPosition = PositionLocalServiceUtil.getPosition(Long.parseLong(request.getParameter("currentPositionId")));
-        currentPosition.setArchiveStatus(!request.getParameter("currentPositionFlag").equals("true"));
+        currentPosition.setArchive_status(!request.getParameter("currentArchiveStatus").equals("true"));
 
         PositionLocalServiceUtil.updatePosition(currentPosition);
-        response.setRenderParameter("jspPage", "/html/positions/main.jsp");
+        response.setRenderParameter("jspPage", "/html/positions/allPositions.jsp");
     }
 
     public void getCurrentBankClients(ActionRequest request, ActionResponse response) throws SystemException, PortalException {
         String bankId = request.getParameter("currentBankClientsId");
         Bank currentBank = BankLocalServiceUtil.getBank(Long.parseLong(bankId));
-        request.setAttribute("currentBankClients", currentBank);
+        request.setAttribute("currentBank", currentBank);
         response.setRenderParameter("jspPage", "/html/banks/bankClients.jsp");
     }
 

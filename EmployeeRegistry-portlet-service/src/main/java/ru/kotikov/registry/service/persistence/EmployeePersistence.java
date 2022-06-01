@@ -24,41 +24,41 @@ public interface EmployeePersistence extends BasePersistence<Employee> {
      */
 
     /**
-    * Returns all the employees where archiveStatus = &#63;.
+    * Returns all the employees where archive_status = &#63;.
     *
-    * @param archiveStatus the archive status
+    * @param archive_status the archive_status
     * @return the matching employees
     * @throws SystemException if a system exception occurred
     */
     public java.util.List<ru.kotikov.registry.model.Employee> findByArchiveStatus(
-        boolean archiveStatus)
+        boolean archive_status)
         throws com.liferay.portal.kernel.exception.SystemException;
 
     /**
-    * Returns a range of all the employees where archiveStatus = &#63;.
+    * Returns a range of all the employees where archive_status = &#63;.
     *
     * <p>
     * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link ru.kotikov.registry.model.impl.EmployeeModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
     * </p>
     *
-    * @param archiveStatus the archive status
+    * @param archive_status the archive_status
     * @param start the lower bound of the range of employees
     * @param end the upper bound of the range of employees (not inclusive)
     * @return the range of matching employees
     * @throws SystemException if a system exception occurred
     */
     public java.util.List<ru.kotikov.registry.model.Employee> findByArchiveStatus(
-        boolean archiveStatus, int start, int end)
+        boolean archive_status, int start, int end)
         throws com.liferay.portal.kernel.exception.SystemException;
 
     /**
-    * Returns an ordered range of all the employees where archiveStatus = &#63;.
+    * Returns an ordered range of all the employees where archive_status = &#63;.
     *
     * <p>
     * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link ru.kotikov.registry.model.impl.EmployeeModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
     * </p>
     *
-    * @param archiveStatus the archive status
+    * @param archive_status the archive_status
     * @param start the lower bound of the range of employees
     * @param end the upper bound of the range of employees (not inclusive)
     * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
@@ -66,136 +66,137 @@ public interface EmployeePersistence extends BasePersistence<Employee> {
     * @throws SystemException if a system exception occurred
     */
     public java.util.List<ru.kotikov.registry.model.Employee> findByArchiveStatus(
-        boolean archiveStatus, int start, int end,
+        boolean archive_status, int start, int end,
         com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
         throws com.liferay.portal.kernel.exception.SystemException;
 
     /**
-    * Returns the first employee in the ordered set where archiveStatus = &#63;.
+    * Returns the first employee in the ordered set where archive_status = &#63;.
     *
-    * @param archiveStatus the archive status
+    * @param archive_status the archive_status
     * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
     * @return the first matching employee
     * @throws ru.kotikov.registry.NoSuchEmployeeException if a matching employee could not be found
     * @throws SystemException if a system exception occurred
     */
     public ru.kotikov.registry.model.Employee findByArchiveStatus_First(
-        boolean archiveStatus,
+        boolean archive_status,
         com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
         throws com.liferay.portal.kernel.exception.SystemException,
             ru.kotikov.registry.NoSuchEmployeeException;
 
     /**
-    * Returns the first employee in the ordered set where archiveStatus = &#63;.
+    * Returns the first employee in the ordered set where archive_status = &#63;.
     *
-    * @param archiveStatus the archive status
+    * @param archive_status the archive_status
     * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
     * @return the first matching employee, or <code>null</code> if a matching employee could not be found
     * @throws SystemException if a system exception occurred
     */
     public ru.kotikov.registry.model.Employee fetchByArchiveStatus_First(
-        boolean archiveStatus,
+        boolean archive_status,
         com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
         throws com.liferay.portal.kernel.exception.SystemException;
 
     /**
-    * Returns the last employee in the ordered set where archiveStatus = &#63;.
+    * Returns the last employee in the ordered set where archive_status = &#63;.
     *
-    * @param archiveStatus the archive status
+    * @param archive_status the archive_status
     * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
     * @return the last matching employee
     * @throws ru.kotikov.registry.NoSuchEmployeeException if a matching employee could not be found
     * @throws SystemException if a system exception occurred
     */
     public ru.kotikov.registry.model.Employee findByArchiveStatus_Last(
-        boolean archiveStatus,
+        boolean archive_status,
         com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
         throws com.liferay.portal.kernel.exception.SystemException,
             ru.kotikov.registry.NoSuchEmployeeException;
 
     /**
-    * Returns the last employee in the ordered set where archiveStatus = &#63;.
+    * Returns the last employee in the ordered set where archive_status = &#63;.
     *
-    * @param archiveStatus the archive status
+    * @param archive_status the archive_status
     * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
     * @return the last matching employee, or <code>null</code> if a matching employee could not be found
     * @throws SystemException if a system exception occurred
     */
     public ru.kotikov.registry.model.Employee fetchByArchiveStatus_Last(
-        boolean archiveStatus,
+        boolean archive_status,
         com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
         throws com.liferay.portal.kernel.exception.SystemException;
 
     /**
-    * Returns the employees before and after the current employee in the ordered set where archiveStatus = &#63;.
+    * Returns the employees before and after the current employee in the ordered set where archive_status = &#63;.
     *
-    * @param employeeId the primary key of the current employee
-    * @param archiveStatus the archive status
+    * @param employee_id the primary key of the current employee
+    * @param archive_status the archive_status
     * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
     * @return the previous, current, and next employee
     * @throws ru.kotikov.registry.NoSuchEmployeeException if a employee with the primary key could not be found
     * @throws SystemException if a system exception occurred
     */
     public ru.kotikov.registry.model.Employee[] findByArchiveStatus_PrevAndNext(
-        long employeeId, boolean archiveStatus,
+        long employee_id, boolean archive_status,
         com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
         throws com.liferay.portal.kernel.exception.SystemException,
             ru.kotikov.registry.NoSuchEmployeeException;
 
     /**
-    * Removes all the employees where archiveStatus = &#63; from the database.
+    * Removes all the employees where archive_status = &#63; from the database.
     *
-    * @param archiveStatus the archive status
+    * @param archive_status the archive_status
     * @throws SystemException if a system exception occurred
     */
-    public void removeByArchiveStatus(boolean archiveStatus)
+    public void removeByArchiveStatus(boolean archive_status)
         throws com.liferay.portal.kernel.exception.SystemException;
 
     /**
-    * Returns the number of employees where archiveStatus = &#63;.
+    * Returns the number of employees where archive_status = &#63;.
     *
-    * @param archiveStatus the archive status
+    * @param archive_status the archive_status
     * @return the number of matching employees
     * @throws SystemException if a system exception occurred
     */
-    public int countByArchiveStatus(boolean archiveStatus)
+    public int countByArchiveStatus(boolean archive_status)
         throws com.liferay.portal.kernel.exception.SystemException;
 
     /**
-    * Returns all the employees where bankId = &#63;.
+    * Returns all the employees where bank_id = &#63;.
     *
-    * @param bankId the bank ID
+    * @param bank_id the bank_id
     * @return the matching employees
     * @throws SystemException if a system exception occurred
     */
     public java.util.List<ru.kotikov.registry.model.Employee> findByBankId(
-        long bankId) throws com.liferay.portal.kernel.exception.SystemException;
+        long bank_id)
+        throws com.liferay.portal.kernel.exception.SystemException;
 
     /**
-    * Returns a range of all the employees where bankId = &#63;.
+    * Returns a range of all the employees where bank_id = &#63;.
     *
     * <p>
     * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link ru.kotikov.registry.model.impl.EmployeeModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
     * </p>
     *
-    * @param bankId the bank ID
+    * @param bank_id the bank_id
     * @param start the lower bound of the range of employees
     * @param end the upper bound of the range of employees (not inclusive)
     * @return the range of matching employees
     * @throws SystemException if a system exception occurred
     */
     public java.util.List<ru.kotikov.registry.model.Employee> findByBankId(
-        long bankId, int start, int end)
+        long bank_id, int start, int end)
         throws com.liferay.portal.kernel.exception.SystemException;
 
     /**
-    * Returns an ordered range of all the employees where bankId = &#63;.
+    * Returns an ordered range of all the employees where bank_id = &#63;.
     *
     * <p>
     * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link ru.kotikov.registry.model.impl.EmployeeModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
     * </p>
     *
-    * @param bankId the bank ID
+    * @param bank_id the bank_id
     * @param start the lower bound of the range of employees
     * @param end the upper bound of the range of employees (not inclusive)
     * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
@@ -203,133 +204,134 @@ public interface EmployeePersistence extends BasePersistence<Employee> {
     * @throws SystemException if a system exception occurred
     */
     public java.util.List<ru.kotikov.registry.model.Employee> findByBankId(
-        long bankId, int start, int end,
+        long bank_id, int start, int end,
         com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
         throws com.liferay.portal.kernel.exception.SystemException;
 
     /**
-    * Returns the first employee in the ordered set where bankId = &#63;.
+    * Returns the first employee in the ordered set where bank_id = &#63;.
     *
-    * @param bankId the bank ID
+    * @param bank_id the bank_id
     * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
     * @return the first matching employee
     * @throws ru.kotikov.registry.NoSuchEmployeeException if a matching employee could not be found
     * @throws SystemException if a system exception occurred
     */
-    public ru.kotikov.registry.model.Employee findByBankId_First(long bankId,
+    public ru.kotikov.registry.model.Employee findByBankId_First(long bank_id,
         com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
         throws com.liferay.portal.kernel.exception.SystemException,
             ru.kotikov.registry.NoSuchEmployeeException;
 
     /**
-    * Returns the first employee in the ordered set where bankId = &#63;.
+    * Returns the first employee in the ordered set where bank_id = &#63;.
     *
-    * @param bankId the bank ID
+    * @param bank_id the bank_id
     * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
     * @return the first matching employee, or <code>null</code> if a matching employee could not be found
     * @throws SystemException if a system exception occurred
     */
-    public ru.kotikov.registry.model.Employee fetchByBankId_First(long bankId,
+    public ru.kotikov.registry.model.Employee fetchByBankId_First(
+        long bank_id,
         com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
         throws com.liferay.portal.kernel.exception.SystemException;
 
     /**
-    * Returns the last employee in the ordered set where bankId = &#63;.
+    * Returns the last employee in the ordered set where bank_id = &#63;.
     *
-    * @param bankId the bank ID
+    * @param bank_id the bank_id
     * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
     * @return the last matching employee
     * @throws ru.kotikov.registry.NoSuchEmployeeException if a matching employee could not be found
     * @throws SystemException if a system exception occurred
     */
-    public ru.kotikov.registry.model.Employee findByBankId_Last(long bankId,
+    public ru.kotikov.registry.model.Employee findByBankId_Last(long bank_id,
         com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
         throws com.liferay.portal.kernel.exception.SystemException,
             ru.kotikov.registry.NoSuchEmployeeException;
 
     /**
-    * Returns the last employee in the ordered set where bankId = &#63;.
+    * Returns the last employee in the ordered set where bank_id = &#63;.
     *
-    * @param bankId the bank ID
+    * @param bank_id the bank_id
     * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
     * @return the last matching employee, or <code>null</code> if a matching employee could not be found
     * @throws SystemException if a system exception occurred
     */
-    public ru.kotikov.registry.model.Employee fetchByBankId_Last(long bankId,
+    public ru.kotikov.registry.model.Employee fetchByBankId_Last(long bank_id,
         com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
         throws com.liferay.portal.kernel.exception.SystemException;
 
     /**
-    * Returns the employees before and after the current employee in the ordered set where bankId = &#63;.
+    * Returns the employees before and after the current employee in the ordered set where bank_id = &#63;.
     *
-    * @param employeeId the primary key of the current employee
-    * @param bankId the bank ID
+    * @param employee_id the primary key of the current employee
+    * @param bank_id the bank_id
     * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
     * @return the previous, current, and next employee
     * @throws ru.kotikov.registry.NoSuchEmployeeException if a employee with the primary key could not be found
     * @throws SystemException if a system exception occurred
     */
     public ru.kotikov.registry.model.Employee[] findByBankId_PrevAndNext(
-        long employeeId, long bankId,
+        long employee_id, long bank_id,
         com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
         throws com.liferay.portal.kernel.exception.SystemException,
             ru.kotikov.registry.NoSuchEmployeeException;
 
     /**
-    * Removes all the employees where bankId = &#63; from the database.
+    * Removes all the employees where bank_id = &#63; from the database.
     *
-    * @param bankId the bank ID
+    * @param bank_id the bank_id
     * @throws SystemException if a system exception occurred
     */
-    public void removeByBankId(long bankId)
+    public void removeByBankId(long bank_id)
         throws com.liferay.portal.kernel.exception.SystemException;
 
     /**
-    * Returns the number of employees where bankId = &#63;.
+    * Returns the number of employees where bank_id = &#63;.
     *
-    * @param bankId the bank ID
+    * @param bank_id the bank_id
     * @return the number of matching employees
     * @throws SystemException if a system exception occurred
     */
-    public int countByBankId(long bankId)
+    public int countByBankId(long bank_id)
         throws com.liferay.portal.kernel.exception.SystemException;
 
     /**
-    * Returns all the employees where positionId = &#63;.
+    * Returns all the employees where position_id = &#63;.
     *
-    * @param positionId the position ID
+    * @param position_id the position_id
     * @return the matching employees
     * @throws SystemException if a system exception occurred
     */
     public java.util.List<ru.kotikov.registry.model.Employee> findByPositionId(
-        long positionId)
+        long position_id)
         throws com.liferay.portal.kernel.exception.SystemException;
 
     /**
-    * Returns a range of all the employees where positionId = &#63;.
+    * Returns a range of all the employees where position_id = &#63;.
     *
     * <p>
     * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link ru.kotikov.registry.model.impl.EmployeeModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
     * </p>
     *
-    * @param positionId the position ID
+    * @param position_id the position_id
     * @param start the lower bound of the range of employees
     * @param end the upper bound of the range of employees (not inclusive)
     * @return the range of matching employees
     * @throws SystemException if a system exception occurred
     */
     public java.util.List<ru.kotikov.registry.model.Employee> findByPositionId(
-        long positionId, int start, int end)
+        long position_id, int start, int end)
         throws com.liferay.portal.kernel.exception.SystemException;
 
     /**
-    * Returns an ordered range of all the employees where positionId = &#63;.
+    * Returns an ordered range of all the employees where position_id = &#63;.
     *
     * <p>
     * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link ru.kotikov.registry.model.impl.EmployeeModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
     * </p>
     *
-    * @param positionId the position ID
+    * @param position_id the position_id
     * @param start the lower bound of the range of employees
     * @param end the upper bound of the range of employees (not inclusive)
     * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
@@ -337,99 +339,99 @@ public interface EmployeePersistence extends BasePersistence<Employee> {
     * @throws SystemException if a system exception occurred
     */
     public java.util.List<ru.kotikov.registry.model.Employee> findByPositionId(
-        long positionId, int start, int end,
+        long position_id, int start, int end,
         com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
         throws com.liferay.portal.kernel.exception.SystemException;
 
     /**
-    * Returns the first employee in the ordered set where positionId = &#63;.
+    * Returns the first employee in the ordered set where position_id = &#63;.
     *
-    * @param positionId the position ID
+    * @param position_id the position_id
     * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
     * @return the first matching employee
     * @throws ru.kotikov.registry.NoSuchEmployeeException if a matching employee could not be found
     * @throws SystemException if a system exception occurred
     */
     public ru.kotikov.registry.model.Employee findByPositionId_First(
-        long positionId,
+        long position_id,
         com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
         throws com.liferay.portal.kernel.exception.SystemException,
             ru.kotikov.registry.NoSuchEmployeeException;
 
     /**
-    * Returns the first employee in the ordered set where positionId = &#63;.
+    * Returns the first employee in the ordered set where position_id = &#63;.
     *
-    * @param positionId the position ID
+    * @param position_id the position_id
     * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
     * @return the first matching employee, or <code>null</code> if a matching employee could not be found
     * @throws SystemException if a system exception occurred
     */
     public ru.kotikov.registry.model.Employee fetchByPositionId_First(
-        long positionId,
+        long position_id,
         com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
         throws com.liferay.portal.kernel.exception.SystemException;
 
     /**
-    * Returns the last employee in the ordered set where positionId = &#63;.
+    * Returns the last employee in the ordered set where position_id = &#63;.
     *
-    * @param positionId the position ID
+    * @param position_id the position_id
     * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
     * @return the last matching employee
     * @throws ru.kotikov.registry.NoSuchEmployeeException if a matching employee could not be found
     * @throws SystemException if a system exception occurred
     */
     public ru.kotikov.registry.model.Employee findByPositionId_Last(
-        long positionId,
+        long position_id,
         com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
         throws com.liferay.portal.kernel.exception.SystemException,
             ru.kotikov.registry.NoSuchEmployeeException;
 
     /**
-    * Returns the last employee in the ordered set where positionId = &#63;.
+    * Returns the last employee in the ordered set where position_id = &#63;.
     *
-    * @param positionId the position ID
+    * @param position_id the position_id
     * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
     * @return the last matching employee, or <code>null</code> if a matching employee could not be found
     * @throws SystemException if a system exception occurred
     */
     public ru.kotikov.registry.model.Employee fetchByPositionId_Last(
-        long positionId,
+        long position_id,
         com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
         throws com.liferay.portal.kernel.exception.SystemException;
 
     /**
-    * Returns the employees before and after the current employee in the ordered set where positionId = &#63;.
+    * Returns the employees before and after the current employee in the ordered set where position_id = &#63;.
     *
-    * @param employeeId the primary key of the current employee
-    * @param positionId the position ID
+    * @param employee_id the primary key of the current employee
+    * @param position_id the position_id
     * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
     * @return the previous, current, and next employee
     * @throws ru.kotikov.registry.NoSuchEmployeeException if a employee with the primary key could not be found
     * @throws SystemException if a system exception occurred
     */
     public ru.kotikov.registry.model.Employee[] findByPositionId_PrevAndNext(
-        long employeeId, long positionId,
+        long employee_id, long position_id,
         com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
         throws com.liferay.portal.kernel.exception.SystemException,
             ru.kotikov.registry.NoSuchEmployeeException;
 
     /**
-    * Removes all the employees where positionId = &#63; from the database.
+    * Removes all the employees where position_id = &#63; from the database.
     *
-    * @param positionId the position ID
+    * @param position_id the position_id
     * @throws SystemException if a system exception occurred
     */
-    public void removeByPositionId(long positionId)
+    public void removeByPositionId(long position_id)
         throws com.liferay.portal.kernel.exception.SystemException;
 
     /**
-    * Returns the number of employees where positionId = &#63;.
+    * Returns the number of employees where position_id = &#63;.
     *
-    * @param positionId the position ID
+    * @param position_id the position_id
     * @return the number of matching employees
     * @throws SystemException if a system exception occurred
     */
-    public int countByPositionId(long positionId)
+    public int countByPositionId(long position_id)
         throws com.liferay.portal.kernel.exception.SystemException;
 
     /**
@@ -450,20 +452,20 @@ public interface EmployeePersistence extends BasePersistence<Employee> {
     /**
     * Creates a new employee with the primary key. Does not add the employee to the database.
     *
-    * @param employeeId the primary key for the new employee
+    * @param employee_id the primary key for the new employee
     * @return the new employee
     */
-    public ru.kotikov.registry.model.Employee create(long employeeId);
+    public ru.kotikov.registry.model.Employee create(long employee_id);
 
     /**
     * Removes the employee with the primary key from the database. Also notifies the appropriate model listeners.
     *
-    * @param employeeId the primary key of the employee
+    * @param employee_id the primary key of the employee
     * @return the employee that was removed
     * @throws ru.kotikov.registry.NoSuchEmployeeException if a employee with the primary key could not be found
     * @throws SystemException if a system exception occurred
     */
-    public ru.kotikov.registry.model.Employee remove(long employeeId)
+    public ru.kotikov.registry.model.Employee remove(long employee_id)
         throws com.liferay.portal.kernel.exception.SystemException,
             ru.kotikov.registry.NoSuchEmployeeException;
 
@@ -474,23 +476,24 @@ public interface EmployeePersistence extends BasePersistence<Employee> {
     /**
     * Returns the employee with the primary key or throws a {@link ru.kotikov.registry.NoSuchEmployeeException} if it could not be found.
     *
-    * @param employeeId the primary key of the employee
+    * @param employee_id the primary key of the employee
     * @return the employee
     * @throws ru.kotikov.registry.NoSuchEmployeeException if a employee with the primary key could not be found
     * @throws SystemException if a system exception occurred
     */
-    public ru.kotikov.registry.model.Employee findByPrimaryKey(long employeeId)
+    public ru.kotikov.registry.model.Employee findByPrimaryKey(long employee_id)
         throws com.liferay.portal.kernel.exception.SystemException,
             ru.kotikov.registry.NoSuchEmployeeException;
 
     /**
     * Returns the employee with the primary key or returns <code>null</code> if it could not be found.
     *
-    * @param employeeId the primary key of the employee
+    * @param employee_id the primary key of the employee
     * @return the employee, or <code>null</code> if a employee with the primary key could not be found
     * @throws SystemException if a system exception occurred
     */
-    public ru.kotikov.registry.model.Employee fetchByPrimaryKey(long employeeId)
+    public ru.kotikov.registry.model.Employee fetchByPrimaryKey(
+        long employee_id)
         throws com.liferay.portal.kernel.exception.SystemException;
 
     /**

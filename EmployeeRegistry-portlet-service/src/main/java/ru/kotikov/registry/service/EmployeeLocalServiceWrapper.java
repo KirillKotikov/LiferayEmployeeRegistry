@@ -35,27 +35,27 @@ public class EmployeeLocalServiceWrapper implements EmployeeLocalService,
     /**
     * Creates a new employee with the primary key. Does not add the employee to the database.
     *
-    * @param employeeId the primary key for the new employee
+    * @param employee_id the primary key for the new employee
     * @return the new employee
     */
     @Override
-    public ru.kotikov.registry.model.Employee createEmployee(long employeeId) {
-        return _employeeLocalService.createEmployee(employeeId);
+    public ru.kotikov.registry.model.Employee createEmployee(long employee_id) {
+        return _employeeLocalService.createEmployee(employee_id);
     }
 
     /**
     * Deletes the employee with the primary key from the database. Also notifies the appropriate model listeners.
     *
-    * @param employeeId the primary key of the employee
+    * @param employee_id the primary key of the employee
     * @return the employee that was removed
     * @throws PortalException if a employee with the primary key could not be found
     * @throws SystemException if a system exception occurred
     */
     @Override
-    public ru.kotikov.registry.model.Employee deleteEmployee(long employeeId)
+    public ru.kotikov.registry.model.Employee deleteEmployee(long employee_id)
         throws com.liferay.portal.kernel.exception.PortalException,
             com.liferay.portal.kernel.exception.SystemException {
-        return _employeeLocalService.deleteEmployee(employeeId);
+        return _employeeLocalService.deleteEmployee(employee_id);
     }
 
     /**
@@ -169,24 +169,24 @@ public class EmployeeLocalServiceWrapper implements EmployeeLocalService,
     }
 
     @Override
-    public ru.kotikov.registry.model.Employee fetchEmployee(long employeeId)
+    public ru.kotikov.registry.model.Employee fetchEmployee(long employee_id)
         throws com.liferay.portal.kernel.exception.SystemException {
-        return _employeeLocalService.fetchEmployee(employeeId);
+        return _employeeLocalService.fetchEmployee(employee_id);
     }
 
     /**
     * Returns the employee with the primary key.
     *
-    * @param employeeId the primary key of the employee
+    * @param employee_id the primary key of the employee
     * @return the employee
     * @throws PortalException if a employee with the primary key could not be found
     * @throws SystemException if a system exception occurred
     */
     @Override
-    public ru.kotikov.registry.model.Employee getEmployee(long employeeId)
+    public ru.kotikov.registry.model.Employee getEmployee(long employee_id)
         throws com.liferay.portal.kernel.exception.PortalException,
             com.liferay.portal.kernel.exception.SystemException {
-        return _employeeLocalService.getEmployee(employeeId);
+        return _employeeLocalService.getEmployee(employee_id);
     }
 
     @Override

@@ -19,23 +19,23 @@ import java.io.ObjectOutput;
  * @generated
  */
 public class BankCacheModel implements CacheModel<Bank>, Externalizable {
-    public long bankId;
-    public String bankName;
+    public long bank_id;
+    public String bank_name;
     public String bik;
-    public String bankAddress;
+    public String bank_address;
 
     @Override
     public String toString() {
         StringBundler sb = new StringBundler(9);
 
-        sb.append("{bankId=");
-        sb.append(bankId);
-        sb.append(", bankName=");
-        sb.append(bankName);
+        sb.append("{bank_id=");
+        sb.append(bank_id);
+        sb.append(", bank_name=");
+        sb.append(bank_name);
         sb.append(", bik=");
         sb.append(bik);
-        sb.append(", bankAddress=");
-        sb.append(bankAddress);
+        sb.append(", bank_address=");
+        sb.append(bank_address);
         sb.append("}");
 
         return sb.toString();
@@ -45,12 +45,12 @@ public class BankCacheModel implements CacheModel<Bank>, Externalizable {
     public Bank toEntityModel() {
         BankImpl bankImpl = new BankImpl();
 
-        bankImpl.setBankId(bankId);
+        bankImpl.setBank_id(bank_id);
 
-        if (bankName == null) {
-            bankImpl.setBankName(StringPool.BLANK);
+        if (bank_name == null) {
+            bankImpl.setBank_name(StringPool.BLANK);
         } else {
-            bankImpl.setBankName(bankName);
+            bankImpl.setBank_name(bank_name);
         }
 
         if (bik == null) {
@@ -59,10 +59,10 @@ public class BankCacheModel implements CacheModel<Bank>, Externalizable {
             bankImpl.setBik(bik);
         }
 
-        if (bankAddress == null) {
-            bankImpl.setBankAddress(StringPool.BLANK);
+        if (bank_address == null) {
+            bankImpl.setBank_address(StringPool.BLANK);
         } else {
-            bankImpl.setBankAddress(bankAddress);
+            bankImpl.setBank_address(bank_address);
         }
 
         bankImpl.resetOriginalValues();
@@ -72,21 +72,21 @@ public class BankCacheModel implements CacheModel<Bank>, Externalizable {
 
     @Override
     public void readExternal(ObjectInput objectInput) throws IOException {
-        bankId = objectInput.readLong();
-        bankName = objectInput.readUTF();
+        bank_id = objectInput.readLong();
+        bank_name = objectInput.readUTF();
         bik = objectInput.readUTF();
-        bankAddress = objectInput.readUTF();
+        bank_address = objectInput.readUTF();
     }
 
     @Override
     public void writeExternal(ObjectOutput objectOutput)
         throws IOException {
-        objectOutput.writeLong(bankId);
+        objectOutput.writeLong(bank_id);
 
-        if (bankName == null) {
+        if (bank_name == null) {
             objectOutput.writeUTF(StringPool.BLANK);
         } else {
-            objectOutput.writeUTF(bankName);
+            objectOutput.writeUTF(bank_name);
         }
 
         if (bik == null) {
@@ -95,10 +95,10 @@ public class BankCacheModel implements CacheModel<Bank>, Externalizable {
             objectOutput.writeUTF(bik);
         }
 
-        if (bankAddress == null) {
+        if (bank_address == null) {
             objectOutput.writeUTF(StringPool.BLANK);
         } else {
-            objectOutput.writeUTF(bankAddress);
+            objectOutput.writeUTF(bank_address);
         }
     }
 }

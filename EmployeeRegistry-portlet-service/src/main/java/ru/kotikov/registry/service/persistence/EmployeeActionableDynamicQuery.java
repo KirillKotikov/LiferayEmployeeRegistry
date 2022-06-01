@@ -18,6 +18,6 @@ public abstract class EmployeeActionableDynamicQuery
 
         setClassLoader(ru.kotikov.registry.service.ClpSerializer.class.getClassLoader());
 
-        setPrimaryKeyPropertyName("employeeId");
+        setPrimaryKeyPropertyName("employee_id");
     }
 }

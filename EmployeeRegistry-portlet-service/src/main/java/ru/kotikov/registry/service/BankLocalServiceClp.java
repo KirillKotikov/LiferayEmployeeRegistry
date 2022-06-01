@@ -162,12 +162,12 @@ public class BankLocalServiceClp implements BankLocalService {
     }
 
     @Override
-    public ru.kotikov.registry.model.Bank createBank(long bankId) {
+    public ru.kotikov.registry.model.Bank createBank(long bank_id) {
         Object returnObj = null;
 
         try {
             returnObj = _invokableLocalService.invokeMethod(_methodName1,
-                    _methodParameterTypes1, new Object[] { bankId });
+                    _methodParameterTypes1, new Object[] { bank_id });
         } catch (Throwable t) {
             t = ClpSerializer.translateThrowable(t);
 
@@ -183,14 +183,14 @@ public class BankLocalServiceClp implements BankLocalService {
     }
 
     @Override
-    public ru.kotikov.registry.model.Bank deleteBank(long bankId)
+    public ru.kotikov.registry.model.Bank deleteBank(long bank_id)
         throws com.liferay.portal.kernel.exception.PortalException,
             com.liferay.portal.kernel.exception.SystemException {
         Object returnObj = null;
 
         try {
             returnObj = _invokableLocalService.invokeMethod(_methodName2,
-                    _methodParameterTypes2, new Object[] { bankId });
+                    _methodParameterTypes2, new Object[] { bank_id });
         } catch (Throwable t) {
             t = ClpSerializer.translateThrowable(t);
 
@@ -427,13 +427,13 @@ public class BankLocalServiceClp implements BankLocalService {
     }
 
     @Override
-    public ru.kotikov.registry.model.Bank fetchBank(long bankId)
+    public ru.kotikov.registry.model.Bank fetchBank(long bank_id)
         throws com.liferay.portal.kernel.exception.SystemException {
         Object returnObj = null;
 
         try {
             returnObj = _invokableLocalService.invokeMethod(_methodName10,
-                    _methodParameterTypes10, new Object[] { bankId });
+                    _methodParameterTypes10, new Object[] { bank_id });
         } catch (Throwable t) {
             t = ClpSerializer.translateThrowable(t);
 
@@ -453,14 +453,14 @@ public class BankLocalServiceClp implements BankLocalService {
     }
 
     @Override
-    public ru.kotikov.registry.model.Bank getBank(long bankId)
+    public ru.kotikov.registry.model.Bank getBank(long bank_id)
         throws com.liferay.portal.kernel.exception.PortalException,
             com.liferay.portal.kernel.exception.SystemException {
         Object returnObj = null;
 
         try {
             returnObj = _invokableLocalService.invokeMethod(_methodName11,
-                    _methodParameterTypes11, new Object[] { bankId });
+                    _methodParameterTypes11, new Object[] { bank_id });
         } catch (Throwable t) {
             t = ClpSerializer.translateThrowable(t);
 

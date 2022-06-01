@@ -84,13 +84,13 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
             EmployeeModelImpl.FINDER_CACHE_ENABLED, EmployeeImpl.class,
             FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "findByArchiveStatus",
             new String[] { Boolean.class.getName() },
-            EmployeeModelImpl.ARCHIVESTATUS_COLUMN_BITMASK |
-            EmployeeModelImpl.LASTNAME_COLUMN_BITMASK);
+            EmployeeModelImpl.ARCHIVE_STATUS_COLUMN_BITMASK |
+            EmployeeModelImpl.LAST_NAME_COLUMN_BITMASK);
     public static final FinderPath FINDER_PATH_COUNT_BY_ARCHIVESTATUS = new FinderPath(EmployeeModelImpl.ENTITY_CACHE_ENABLED,
             EmployeeModelImpl.FINDER_CACHE_ENABLED, Long.class,
             FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "countByArchiveStatus",
             new String[] { Boolean.class.getName() });
-    private static final String _FINDER_COLUMN_ARCHIVESTATUS_ARCHIVESTATUS_2 = "employee.archiveStatus = ?";
+    private static final String _FINDER_COLUMN_ARCHIVESTATUS_ARCHIVE_STATUS_2 = "employee.archive_status = ?";
     public static final FinderPath FINDER_PATH_WITH_PAGINATION_FIND_BY_BANKID = new FinderPath(EmployeeModelImpl.ENTITY_CACHE_ENABLED,
             EmployeeModelImpl.FINDER_CACHE_ENABLED, EmployeeImpl.class,
             FINDER_CLASS_NAME_LIST_WITH_PAGINATION, "findByBankId",
@@ -105,13 +105,13 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
             EmployeeModelImpl.FINDER_CACHE_ENABLED, EmployeeImpl.class,
             FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "findByBankId",
             new String[] { Long.class.getName() },
-            EmployeeModelImpl.BANKID_COLUMN_BITMASK |
-            EmployeeModelImpl.LASTNAME_COLUMN_BITMASK);
+            EmployeeModelImpl.BANK_ID_COLUMN_BITMASK |
+            EmployeeModelImpl.LAST_NAME_COLUMN_BITMASK);
     public static final FinderPath FINDER_PATH_COUNT_BY_BANKID = new FinderPath(EmployeeModelImpl.ENTITY_CACHE_ENABLED,
             EmployeeModelImpl.FINDER_CACHE_ENABLED, Long.class,
             FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "countByBankId",
             new String[] { Long.class.getName() });
-    private static final String _FINDER_COLUMN_BANKID_BANKID_2 = "employee.bankId = ?";
+    private static final String _FINDER_COLUMN_BANKID_BANK_ID_2 = "employee.bank_id = ?";
     public static final FinderPath FINDER_PATH_WITH_PAGINATION_FIND_BY_POSITIONID =
         new FinderPath(EmployeeModelImpl.ENTITY_CACHE_ENABLED,
             EmployeeModelImpl.FINDER_CACHE_ENABLED, EmployeeImpl.class,
@@ -127,13 +127,13 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
             EmployeeModelImpl.FINDER_CACHE_ENABLED, EmployeeImpl.class,
             FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "findByPositionId",
             new String[] { Long.class.getName() },
-            EmployeeModelImpl.POSITIONID_COLUMN_BITMASK |
-            EmployeeModelImpl.LASTNAME_COLUMN_BITMASK);
+            EmployeeModelImpl.POSITION_ID_COLUMN_BITMASK |
+            EmployeeModelImpl.LAST_NAME_COLUMN_BITMASK);
     public static final FinderPath FINDER_PATH_COUNT_BY_POSITIONID = new FinderPath(EmployeeModelImpl.ENTITY_CACHE_ENABLED,
             EmployeeModelImpl.FINDER_CACHE_ENABLED, Long.class,
             FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "countByPositionId",
             new String[] { Long.class.getName() });
-    private static final String _FINDER_COLUMN_POSITIONID_POSITIONID_2 = "employee.positionId = ?";
+    private static final String _FINDER_COLUMN_POSITIONID_POSITION_ID_2 = "employee.position_id = ?";
     private static final String _SQL_SELECT_EMPLOYEE = "SELECT employee FROM Employee employee";
     private static final String _SQL_SELECT_EMPLOYEE_WHERE = "SELECT employee FROM Employee employee WHERE ";
     private static final String _SQL_COUNT_EMPLOYEE = "SELECT COUNT(employee) FROM Employee employee";
@@ -168,46 +168,46 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
     }
 
     /**
-     * Returns all the employees where archiveStatus = &#63;.
+     * Returns all the employees where archive_status = &#63;.
      *
-     * @param archiveStatus the archive status
+     * @param archive_status the archive_status
      * @return the matching employees
      * @throws SystemException if a system exception occurred
      */
     @Override
-    public List<Employee> findByArchiveStatus(boolean archiveStatus)
+    public List<Employee> findByArchiveStatus(boolean archive_status)
         throws SystemException {
-        return findByArchiveStatus(archiveStatus, QueryUtil.ALL_POS,
+        return findByArchiveStatus(archive_status, QueryUtil.ALL_POS,
             QueryUtil.ALL_POS, null);
     }
 
     /**
-     * Returns a range of all the employees where archiveStatus = &#63;.
+     * Returns a range of all the employees where archive_status = &#63;.
      *
      * <p>
      * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link ru.kotikov.registry.model.impl.EmployeeModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
      * </p>
      *
-     * @param archiveStatus the archive status
+     * @param archive_status the archive_status
      * @param start the lower bound of the range of employees
      * @param end the upper bound of the range of employees (not inclusive)
      * @return the range of matching employees
      * @throws SystemException if a system exception occurred
      */
     @Override
-    public List<Employee> findByArchiveStatus(boolean archiveStatus, int start,
-        int end) throws SystemException {
-        return findByArchiveStatus(archiveStatus, start, end, null);
+    public List<Employee> findByArchiveStatus(boolean archive_status,
+        int start, int end) throws SystemException {
+        return findByArchiveStatus(archive_status, start, end, null);
     }
 
     /**
-     * Returns an ordered range of all the employees where archiveStatus = &#63;.
+     * Returns an ordered range of all the employees where archive_status = &#63;.
      *
      * <p>
      * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link ru.kotikov.registry.model.impl.EmployeeModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
      * </p>
      *
-     * @param archiveStatus the archive status
+     * @param archive_status the archive_status
      * @param start the lower bound of the range of employees
      * @param end the upper bound of the range of employees (not inclusive)
      * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
@@ -215,8 +215,9 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
      * @throws SystemException if a system exception occurred
      */
     @Override
-    public List<Employee> findByArchiveStatus(boolean archiveStatus, int start,
-        int end, OrderByComparator orderByComparator) throws SystemException {
+    public List<Employee> findByArchiveStatus(boolean archive_status,
+        int start, int end, OrderByComparator orderByComparator)
+        throws SystemException {
         boolean pagination = true;
         FinderPath finderPath = null;
         Object[] finderArgs = null;
@@ -225,11 +226,11 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
                 (orderByComparator == null)) {
             pagination = false;
             finderPath = FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_ARCHIVESTATUS;
-            finderArgs = new Object[] { archiveStatus };
+            finderArgs = new Object[] { archive_status };
         } else {
             finderPath = FINDER_PATH_WITH_PAGINATION_FIND_BY_ARCHIVESTATUS;
             finderArgs = new Object[] {
-                    archiveStatus,
+                    archive_status,
                     
                     start, end, orderByComparator
                 };
@@ -240,7 +241,7 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
 
         if ((list != null) && !list.isEmpty()) {
             for (Employee employee : list) {
-                if ((archiveStatus != employee.getArchiveStatus())) {
+                if ((archive_status != employee.getArchive_status())) {
                     list = null;
 
                     break;
@@ -260,7 +261,7 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
 
             query.append(_SQL_SELECT_EMPLOYEE_WHERE);
 
-            query.append(_FINDER_COLUMN_ARCHIVESTATUS_ARCHIVESTATUS_2);
+            query.append(_FINDER_COLUMN_ARCHIVESTATUS_ARCHIVE_STATUS_2);
 
             if (orderByComparator != null) {
                 appendOrderByComparator(query, _ORDER_BY_ENTITY_ALIAS,
@@ -281,7 +282,7 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
 
                 QueryPos qPos = QueryPos.getInstance(q);
 
-                qPos.add(archiveStatus);
+                qPos.add(archive_status);
 
                 if (!pagination) {
                     list = (List<Employee>) QueryUtil.list(q, getDialect(),
@@ -311,19 +312,19 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
     }
 
     /**
-     * Returns the first employee in the ordered set where archiveStatus = &#63;.
+     * Returns the first employee in the ordered set where archive_status = &#63;.
      *
-     * @param archiveStatus the archive status
+     * @param archive_status the archive_status
      * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
      * @return the first matching employee
      * @throws ru.kotikov.registry.NoSuchEmployeeException if a matching employee could not be found
      * @throws SystemException if a system exception occurred
      */
     @Override
-    public Employee findByArchiveStatus_First(boolean archiveStatus,
+    public Employee findByArchiveStatus_First(boolean archive_status,
         OrderByComparator orderByComparator)
         throws NoSuchEmployeeException, SystemException {
-        Employee employee = fetchByArchiveStatus_First(archiveStatus,
+        Employee employee = fetchByArchiveStatus_First(archive_status,
                 orderByComparator);
 
         if (employee != null) {
@@ -334,8 +335,8 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
 
         msg.append(_NO_SUCH_ENTITY_WITH_KEY);
 
-        msg.append("archiveStatus=");
-        msg.append(archiveStatus);
+        msg.append("archive_status=");
+        msg.append(archive_status);
 
         msg.append(StringPool.CLOSE_CURLY_BRACE);
 
@@ -343,17 +344,17 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
     }
 
     /**
-     * Returns the first employee in the ordered set where archiveStatus = &#63;.
+     * Returns the first employee in the ordered set where archive_status = &#63;.
      *
-     * @param archiveStatus the archive status
+     * @param archive_status the archive_status
      * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
      * @return the first matching employee, or <code>null</code> if a matching employee could not be found
      * @throws SystemException if a system exception occurred
      */
     @Override
-    public Employee fetchByArchiveStatus_First(boolean archiveStatus,
+    public Employee fetchByArchiveStatus_First(boolean archive_status,
         OrderByComparator orderByComparator) throws SystemException {
-        List<Employee> list = findByArchiveStatus(archiveStatus, 0, 1,
+        List<Employee> list = findByArchiveStatus(archive_status, 0, 1,
                 orderByComparator);
 
         if (!list.isEmpty()) {
@@ -364,19 +365,19 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
     }
 
     /**
-     * Returns the last employee in the ordered set where archiveStatus = &#63;.
+     * Returns the last employee in the ordered set where archive_status = &#63;.
      *
-     * @param archiveStatus the archive status
+     * @param archive_status the archive_status
      * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
      * @return the last matching employee
      * @throws ru.kotikov.registry.NoSuchEmployeeException if a matching employee could not be found
      * @throws SystemException if a system exception occurred
      */
     @Override
-    public Employee findByArchiveStatus_Last(boolean archiveStatus,
+    public Employee findByArchiveStatus_Last(boolean archive_status,
         OrderByComparator orderByComparator)
         throws NoSuchEmployeeException, SystemException {
-        Employee employee = fetchByArchiveStatus_Last(archiveStatus,
+        Employee employee = fetchByArchiveStatus_Last(archive_status,
                 orderByComparator);
 
         if (employee != null) {
@@ -387,8 +388,8 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
 
         msg.append(_NO_SUCH_ENTITY_WITH_KEY);
 
-        msg.append("archiveStatus=");
-        msg.append(archiveStatus);
+        msg.append("archive_status=");
+        msg.append(archive_status);
 
         msg.append(StringPool.CLOSE_CURLY_BRACE);
 
@@ -396,23 +397,23 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
     }
 
     /**
-     * Returns the last employee in the ordered set where archiveStatus = &#63;.
+     * Returns the last employee in the ordered set where archive_status = &#63;.
      *
-     * @param archiveStatus the archive status
+     * @param archive_status the archive_status
      * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
      * @return the last matching employee, or <code>null</code> if a matching employee could not be found
      * @throws SystemException if a system exception occurred
      */
     @Override
-    public Employee fetchByArchiveStatus_Last(boolean archiveStatus,
+    public Employee fetchByArchiveStatus_Last(boolean archive_status,
         OrderByComparator orderByComparator) throws SystemException {
-        int count = countByArchiveStatus(archiveStatus);
+        int count = countByArchiveStatus(archive_status);
 
         if (count == 0) {
             return null;
         }
 
-        List<Employee> list = findByArchiveStatus(archiveStatus, count - 1,
+        List<Employee> list = findByArchiveStatus(archive_status, count - 1,
                 count, orderByComparator);
 
         if (!list.isEmpty()) {
@@ -423,20 +424,20 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
     }
 
     /**
-     * Returns the employees before and after the current employee in the ordered set where archiveStatus = &#63;.
+     * Returns the employees before and after the current employee in the ordered set where archive_status = &#63;.
      *
-     * @param employeeId the primary key of the current employee
-     * @param archiveStatus the archive status
+     * @param employee_id the primary key of the current employee
+     * @param archive_status the archive_status
      * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
      * @return the previous, current, and next employee
      * @throws ru.kotikov.registry.NoSuchEmployeeException if a employee with the primary key could not be found
      * @throws SystemException if a system exception occurred
      */
     @Override
-    public Employee[] findByArchiveStatus_PrevAndNext(long employeeId,
-        boolean archiveStatus, OrderByComparator orderByComparator)
+    public Employee[] findByArchiveStatus_PrevAndNext(long employee_id,
+        boolean archive_status, OrderByComparator orderByComparator)
         throws NoSuchEmployeeException, SystemException {
-        Employee employee = findByPrimaryKey(employeeId);
+        Employee employee = findByPrimaryKey(employee_id);
 
         Session session = null;
 
@@ -446,12 +447,12 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
             Employee[] array = new EmployeeImpl[3];
 
             array[0] = getByArchiveStatus_PrevAndNext(session, employee,
-                    archiveStatus, orderByComparator, true);
+                    archive_status, orderByComparator, true);
 
             array[1] = employee;
 
             array[2] = getByArchiveStatus_PrevAndNext(session, employee,
-                    archiveStatus, orderByComparator, false);
+                    archive_status, orderByComparator, false);
 
             return array;
         } catch (Exception e) {
@@ -462,7 +463,7 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
     }
 
     protected Employee getByArchiveStatus_PrevAndNext(Session session,
-        Employee employee, boolean archiveStatus,
+        Employee employee, boolean archive_status,
         OrderByComparator orderByComparator, boolean previous) {
         StringBundler query = null;
 
@@ -475,7 +476,7 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
 
         query.append(_SQL_SELECT_EMPLOYEE_WHERE);
 
-        query.append(_FINDER_COLUMN_ARCHIVESTATUS_ARCHIVESTATUS_2);
+        query.append(_FINDER_COLUMN_ARCHIVESTATUS_ARCHIVE_STATUS_2);
 
         if (orderByComparator != null) {
             String[] orderByConditionFields = orderByComparator.getOrderByConditionFields();
@@ -538,7 +539,7 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
 
         QueryPos qPos = QueryPos.getInstance(q);
 
-        qPos.add(archiveStatus);
+        qPos.add(archive_status);
 
         if (orderByComparator != null) {
             Object[] values = orderByComparator.getOrderByConditionValues(employee);
@@ -558,33 +559,33 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
     }
 
     /**
-     * Removes all the employees where archiveStatus = &#63; from the database.
+     * Removes all the employees where archive_status = &#63; from the database.
      *
-     * @param archiveStatus the archive status
+     * @param archive_status the archive_status
      * @throws SystemException if a system exception occurred
      */
     @Override
-    public void removeByArchiveStatus(boolean archiveStatus)
+    public void removeByArchiveStatus(boolean archive_status)
         throws SystemException {
-        for (Employee employee : findByArchiveStatus(archiveStatus,
+        for (Employee employee : findByArchiveStatus(archive_status,
                 QueryUtil.ALL_POS, QueryUtil.ALL_POS, null)) {
             remove(employee);
         }
     }
 
     /**
-     * Returns the number of employees where archiveStatus = &#63;.
+     * Returns the number of employees where archive_status = &#63;.
      *
-     * @param archiveStatus the archive status
+     * @param archive_status the archive_status
      * @return the number of matching employees
      * @throws SystemException if a system exception occurred
      */
     @Override
-    public int countByArchiveStatus(boolean archiveStatus)
+    public int countByArchiveStatus(boolean archive_status)
         throws SystemException {
         FinderPath finderPath = FINDER_PATH_COUNT_BY_ARCHIVESTATUS;
 
-        Object[] finderArgs = new Object[] { archiveStatus };
+        Object[] finderArgs = new Object[] { archive_status };
 
         Long count = (Long) FinderCacheUtil.getResult(finderPath, finderArgs,
                 this);
@@ -594,7 +595,7 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
 
             query.append(_SQL_COUNT_EMPLOYEE_WHERE);
 
-            query.append(_FINDER_COLUMN_ARCHIVESTATUS_ARCHIVESTATUS_2);
+            query.append(_FINDER_COLUMN_ARCHIVESTATUS_ARCHIVE_STATUS_2);
 
             String sql = query.toString();
 
@@ -607,7 +608,7 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
 
                 QueryPos qPos = QueryPos.getInstance(q);
 
-                qPos.add(archiveStatus);
+                qPos.add(archive_status);
 
                 count = (Long) q.uniqueResult();
 
@@ -625,44 +626,44 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
     }
 
     /**
-     * Returns all the employees where bankId = &#63;.
+     * Returns all the employees where bank_id = &#63;.
      *
-     * @param bankId the bank ID
+     * @param bank_id the bank_id
      * @return the matching employees
      * @throws SystemException if a system exception occurred
      */
     @Override
-    public List<Employee> findByBankId(long bankId) throws SystemException {
-        return findByBankId(bankId, QueryUtil.ALL_POS, QueryUtil.ALL_POS, null);
+    public List<Employee> findByBankId(long bank_id) throws SystemException {
+        return findByBankId(bank_id, QueryUtil.ALL_POS, QueryUtil.ALL_POS, null);
     }
 
     /**
-     * Returns a range of all the employees where bankId = &#63;.
+     * Returns a range of all the employees where bank_id = &#63;.
      *
      * <p>
      * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link ru.kotikov.registry.model.impl.EmployeeModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
      * </p>
      *
-     * @param bankId the bank ID
+     * @param bank_id the bank_id
      * @param start the lower bound of the range of employees
      * @param end the upper bound of the range of employees (not inclusive)
      * @return the range of matching employees
      * @throws SystemException if a system exception occurred
      */
     @Override
-    public List<Employee> findByBankId(long bankId, int start, int end)
+    public List<Employee> findByBankId(long bank_id, int start, int end)
         throws SystemException {
-        return findByBankId(bankId, start, end, null);
+        return findByBankId(bank_id, start, end, null);
     }
 
     /**
-     * Returns an ordered range of all the employees where bankId = &#63;.
+     * Returns an ordered range of all the employees where bank_id = &#63;.
      *
      * <p>
      * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link ru.kotikov.registry.model.impl.EmployeeModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
      * </p>
      *
-     * @param bankId the bank ID
+     * @param bank_id the bank_id
      * @param start the lower bound of the range of employees
      * @param end the upper bound of the range of employees (not inclusive)
      * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
@@ -670,7 +671,7 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
      * @throws SystemException if a system exception occurred
      */
     @Override
-    public List<Employee> findByBankId(long bankId, int start, int end,
+    public List<Employee> findByBankId(long bank_id, int start, int end,
         OrderByComparator orderByComparator) throws SystemException {
         boolean pagination = true;
         FinderPath finderPath = null;
@@ -680,10 +681,10 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
                 (orderByComparator == null)) {
             pagination = false;
             finderPath = FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_BANKID;
-            finderArgs = new Object[] { bankId };
+            finderArgs = new Object[] { bank_id };
         } else {
             finderPath = FINDER_PATH_WITH_PAGINATION_FIND_BY_BANKID;
-            finderArgs = new Object[] { bankId, start, end, orderByComparator };
+            finderArgs = new Object[] { bank_id, start, end, orderByComparator };
         }
 
         List<Employee> list = (List<Employee>) FinderCacheUtil.getResult(finderPath,
@@ -691,7 +692,7 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
 
         if ((list != null) && !list.isEmpty()) {
             for (Employee employee : list) {
-                if ((bankId != employee.getBankId())) {
+                if ((bank_id != employee.getBank_id())) {
                     list = null;
 
                     break;
@@ -711,7 +712,7 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
 
             query.append(_SQL_SELECT_EMPLOYEE_WHERE);
 
-            query.append(_FINDER_COLUMN_BANKID_BANKID_2);
+            query.append(_FINDER_COLUMN_BANKID_BANK_ID_2);
 
             if (orderByComparator != null) {
                 appendOrderByComparator(query, _ORDER_BY_ENTITY_ALIAS,
@@ -732,7 +733,7 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
 
                 QueryPos qPos = QueryPos.getInstance(q);
 
-                qPos.add(bankId);
+                qPos.add(bank_id);
 
                 if (!pagination) {
                     list = (List<Employee>) QueryUtil.list(q, getDialect(),
@@ -762,19 +763,19 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
     }
 
     /**
-     * Returns the first employee in the ordered set where bankId = &#63;.
+     * Returns the first employee in the ordered set where bank_id = &#63;.
      *
-     * @param bankId the bank ID
+     * @param bank_id the bank_id
      * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
      * @return the first matching employee
      * @throws ru.kotikov.registry.NoSuchEmployeeException if a matching employee could not be found
      * @throws SystemException if a system exception occurred
      */
     @Override
-    public Employee findByBankId_First(long bankId,
+    public Employee findByBankId_First(long bank_id,
         OrderByComparator orderByComparator)
         throws NoSuchEmployeeException, SystemException {
-        Employee employee = fetchByBankId_First(bankId, orderByComparator);
+        Employee employee = fetchByBankId_First(bank_id, orderByComparator);
 
         if (employee != null) {
             return employee;
@@ -784,8 +785,8 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
 
         msg.append(_NO_SUCH_ENTITY_WITH_KEY);
 
-        msg.append("bankId=");
-        msg.append(bankId);
+        msg.append("bank_id=");
+        msg.append(bank_id);
 
         msg.append(StringPool.CLOSE_CURLY_BRACE);
 
@@ -793,17 +794,17 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
     }
 
     /**
-     * Returns the first employee in the ordered set where bankId = &#63;.
+     * Returns the first employee in the ordered set where bank_id = &#63;.
      *
-     * @param bankId the bank ID
+     * @param bank_id the bank_id
      * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
      * @return the first matching employee, or <code>null</code> if a matching employee could not be found
      * @throws SystemException if a system exception occurred
      */
     @Override
-    public Employee fetchByBankId_First(long bankId,
+    public Employee fetchByBankId_First(long bank_id,
         OrderByComparator orderByComparator) throws SystemException {
-        List<Employee> list = findByBankId(bankId, 0, 1, orderByComparator);
+        List<Employee> list = findByBankId(bank_id, 0, 1, orderByComparator);
 
         if (!list.isEmpty()) {
             return list.get(0);
@@ -813,19 +814,19 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
     }
 
     /**
-     * Returns the last employee in the ordered set where bankId = &#63;.
+     * Returns the last employee in the ordered set where bank_id = &#63;.
      *
-     * @param bankId the bank ID
+     * @param bank_id the bank_id
      * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
      * @return the last matching employee
      * @throws ru.kotikov.registry.NoSuchEmployeeException if a matching employee could not be found
      * @throws SystemException if a system exception occurred
      */
     @Override
-    public Employee findByBankId_Last(long bankId,
+    public Employee findByBankId_Last(long bank_id,
         OrderByComparator orderByComparator)
         throws NoSuchEmployeeException, SystemException {
-        Employee employee = fetchByBankId_Last(bankId, orderByComparator);
+        Employee employee = fetchByBankId_Last(bank_id, orderByComparator);
 
         if (employee != null) {
             return employee;
@@ -835,8 +836,8 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
 
         msg.append(_NO_SUCH_ENTITY_WITH_KEY);
 
-        msg.append("bankId=");
-        msg.append(bankId);
+        msg.append("bank_id=");
+        msg.append(bank_id);
 
         msg.append(StringPool.CLOSE_CURLY_BRACE);
 
@@ -844,23 +845,23 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
     }
 
     /**
-     * Returns the last employee in the ordered set where bankId = &#63;.
+     * Returns the last employee in the ordered set where bank_id = &#63;.
      *
-     * @param bankId the bank ID
+     * @param bank_id the bank_id
      * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
      * @return the last matching employee, or <code>null</code> if a matching employee could not be found
      * @throws SystemException if a system exception occurred
      */
     @Override
-    public Employee fetchByBankId_Last(long bankId,
+    public Employee fetchByBankId_Last(long bank_id,
         OrderByComparator orderByComparator) throws SystemException {
-        int count = countByBankId(bankId);
+        int count = countByBankId(bank_id);
 
         if (count == 0) {
             return null;
         }
 
-        List<Employee> list = findByBankId(bankId, count - 1, count,
+        List<Employee> list = findByBankId(bank_id, count - 1, count,
                 orderByComparator);
 
         if (!list.isEmpty()) {
@@ -871,20 +872,20 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
     }
 
     /**
-     * Returns the employees before and after the current employee in the ordered set where bankId = &#63;.
+     * Returns the employees before and after the current employee in the ordered set where bank_id = &#63;.
      *
-     * @param employeeId the primary key of the current employee
-     * @param bankId the bank ID
+     * @param employee_id the primary key of the current employee
+     * @param bank_id the bank_id
      * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
      * @return the previous, current, and next employee
      * @throws ru.kotikov.registry.NoSuchEmployeeException if a employee with the primary key could not be found
      * @throws SystemException if a system exception occurred
      */
     @Override
-    public Employee[] findByBankId_PrevAndNext(long employeeId, long bankId,
+    public Employee[] findByBankId_PrevAndNext(long employee_id, long bank_id,
         OrderByComparator orderByComparator)
         throws NoSuchEmployeeException, SystemException {
-        Employee employee = findByPrimaryKey(employeeId);
+        Employee employee = findByPrimaryKey(employee_id);
 
         Session session = null;
 
@@ -893,12 +894,12 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
 
             Employee[] array = new EmployeeImpl[3];
 
-            array[0] = getByBankId_PrevAndNext(session, employee, bankId,
+            array[0] = getByBankId_PrevAndNext(session, employee, bank_id,
                     orderByComparator, true);
 
             array[1] = employee;
 
-            array[2] = getByBankId_PrevAndNext(session, employee, bankId,
+            array[2] = getByBankId_PrevAndNext(session, employee, bank_id,
                     orderByComparator, false);
 
             return array;
@@ -910,7 +911,7 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
     }
 
     protected Employee getByBankId_PrevAndNext(Session session,
-        Employee employee, long bankId, OrderByComparator orderByComparator,
+        Employee employee, long bank_id, OrderByComparator orderByComparator,
         boolean previous) {
         StringBundler query = null;
 
@@ -923,7 +924,7 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
 
         query.append(_SQL_SELECT_EMPLOYEE_WHERE);
 
-        query.append(_FINDER_COLUMN_BANKID_BANKID_2);
+        query.append(_FINDER_COLUMN_BANKID_BANK_ID_2);
 
         if (orderByComparator != null) {
             String[] orderByConditionFields = orderByComparator.getOrderByConditionFields();
@@ -986,7 +987,7 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
 
         QueryPos qPos = QueryPos.getInstance(q);
 
-        qPos.add(bankId);
+        qPos.add(bank_id);
 
         if (orderByComparator != null) {
             Object[] values = orderByComparator.getOrderByConditionValues(employee);
@@ -1006,31 +1007,31 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
     }
 
     /**
-     * Removes all the employees where bankId = &#63; from the database.
+     * Removes all the employees where bank_id = &#63; from the database.
      *
-     * @param bankId the bank ID
+     * @param bank_id the bank_id
      * @throws SystemException if a system exception occurred
      */
     @Override
-    public void removeByBankId(long bankId) throws SystemException {
-        for (Employee employee : findByBankId(bankId, QueryUtil.ALL_POS,
+    public void removeByBankId(long bank_id) throws SystemException {
+        for (Employee employee : findByBankId(bank_id, QueryUtil.ALL_POS,
                 QueryUtil.ALL_POS, null)) {
             remove(employee);
         }
     }
 
     /**
-     * Returns the number of employees where bankId = &#63;.
+     * Returns the number of employees where bank_id = &#63;.
      *
-     * @param bankId the bank ID
+     * @param bank_id the bank_id
      * @return the number of matching employees
      * @throws SystemException if a system exception occurred
      */
     @Override
-    public int countByBankId(long bankId) throws SystemException {
+    public int countByBankId(long bank_id) throws SystemException {
         FinderPath finderPath = FINDER_PATH_COUNT_BY_BANKID;
 
-        Object[] finderArgs = new Object[] { bankId };
+        Object[] finderArgs = new Object[] { bank_id };
 
         Long count = (Long) FinderCacheUtil.getResult(finderPath, finderArgs,
                 this);
@@ -1040,7 +1041,7 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
 
             query.append(_SQL_COUNT_EMPLOYEE_WHERE);
 
-            query.append(_FINDER_COLUMN_BANKID_BANKID_2);
+            query.append(_FINDER_COLUMN_BANKID_BANK_ID_2);
 
             String sql = query.toString();
 
@@ -1053,7 +1054,7 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
 
                 QueryPos qPos = QueryPos.getInstance(q);
 
-                qPos.add(bankId);
+                qPos.add(bank_id);
 
                 count = (Long) q.uniqueResult();
 
@@ -1071,46 +1072,46 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
     }
 
     /**
-     * Returns all the employees where positionId = &#63;.
+     * Returns all the employees where position_id = &#63;.
      *
-     * @param positionId the position ID
+     * @param position_id the position_id
      * @return the matching employees
      * @throws SystemException if a system exception occurred
      */
     @Override
-    public List<Employee> findByPositionId(long positionId)
+    public List<Employee> findByPositionId(long position_id)
         throws SystemException {
-        return findByPositionId(positionId, QueryUtil.ALL_POS,
+        return findByPositionId(position_id, QueryUtil.ALL_POS,
             QueryUtil.ALL_POS, null);
     }
 
     /**
-     * Returns a range of all the employees where positionId = &#63;.
+     * Returns a range of all the employees where position_id = &#63;.
      *
      * <p>
      * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link ru.kotikov.registry.model.impl.EmployeeModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
      * </p>
      *
-     * @param positionId the position ID
+     * @param position_id the position_id
      * @param start the lower bound of the range of employees
      * @param end the upper bound of the range of employees (not inclusive)
      * @return the range of matching employees
      * @throws SystemException if a system exception occurred
      */
     @Override
-    public List<Employee> findByPositionId(long positionId, int start, int end)
+    public List<Employee> findByPositionId(long position_id, int start, int end)
         throws SystemException {
-        return findByPositionId(positionId, start, end, null);
+        return findByPositionId(position_id, start, end, null);
     }
 
     /**
-     * Returns an ordered range of all the employees where positionId = &#63;.
+     * Returns an ordered range of all the employees where position_id = &#63;.
      *
      * <p>
      * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link ru.kotikov.registry.model.impl.EmployeeModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
      * </p>
      *
-     * @param positionId the position ID
+     * @param position_id the position_id
      * @param start the lower bound of the range of employees
      * @param end the upper bound of the range of employees (not inclusive)
      * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
@@ -1118,8 +1119,8 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
      * @throws SystemException if a system exception occurred
      */
     @Override
-    public List<Employee> findByPositionId(long positionId, int start, int end,
-        OrderByComparator orderByComparator) throws SystemException {
+    public List<Employee> findByPositionId(long position_id, int start,
+        int end, OrderByComparator orderByComparator) throws SystemException {
         boolean pagination = true;
         FinderPath finderPath = null;
         Object[] finderArgs = null;
@@ -1128,10 +1129,10 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
                 (orderByComparator == null)) {
             pagination = false;
             finderPath = FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_POSITIONID;
-            finderArgs = new Object[] { positionId };
+            finderArgs = new Object[] { position_id };
         } else {
             finderPath = FINDER_PATH_WITH_PAGINATION_FIND_BY_POSITIONID;
-            finderArgs = new Object[] { positionId, start, end, orderByComparator };
+            finderArgs = new Object[] { position_id, start, end, orderByComparator };
         }
 
         List<Employee> list = (List<Employee>) FinderCacheUtil.getResult(finderPath,
@@ -1139,7 +1140,7 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
 
         if ((list != null) && !list.isEmpty()) {
             for (Employee employee : list) {
-                if ((positionId != employee.getPositionId())) {
+                if ((position_id != employee.getPosition_id())) {
                     list = null;
 
                     break;
@@ -1159,7 +1160,7 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
 
             query.append(_SQL_SELECT_EMPLOYEE_WHERE);
 
-            query.append(_FINDER_COLUMN_POSITIONID_POSITIONID_2);
+            query.append(_FINDER_COLUMN_POSITIONID_POSITION_ID_2);
 
             if (orderByComparator != null) {
                 appendOrderByComparator(query, _ORDER_BY_ENTITY_ALIAS,
@@ -1180,7 +1181,7 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
 
                 QueryPos qPos = QueryPos.getInstance(q);
 
-                qPos.add(positionId);
+                qPos.add(position_id);
 
                 if (!pagination) {
                     list = (List<Employee>) QueryUtil.list(q, getDialect(),
@@ -1210,19 +1211,19 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
     }
 
     /**
-     * Returns the first employee in the ordered set where positionId = &#63;.
+     * Returns the first employee in the ordered set where position_id = &#63;.
      *
-     * @param positionId the position ID
+     * @param position_id the position_id
      * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
      * @return the first matching employee
      * @throws ru.kotikov.registry.NoSuchEmployeeException if a matching employee could not be found
      * @throws SystemException if a system exception occurred
      */
     @Override
-    public Employee findByPositionId_First(long positionId,
+    public Employee findByPositionId_First(long position_id,
         OrderByComparator orderByComparator)
         throws NoSuchEmployeeException, SystemException {
-        Employee employee = fetchByPositionId_First(positionId,
+        Employee employee = fetchByPositionId_First(position_id,
                 orderByComparator);
 
         if (employee != null) {
@@ -1233,8 +1234,8 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
 
         msg.append(_NO_SUCH_ENTITY_WITH_KEY);
 
-        msg.append("positionId=");
-        msg.append(positionId);
+        msg.append("position_id=");
+        msg.append(position_id);
 
         msg.append(StringPool.CLOSE_CURLY_BRACE);
 
@@ -1242,17 +1243,17 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
     }
 
     /**
-     * Returns the first employee in the ordered set where positionId = &#63;.
+     * Returns the first employee in the ordered set where position_id = &#63;.
      *
-     * @param positionId the position ID
+     * @param position_id the position_id
      * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
      * @return the first matching employee, or <code>null</code> if a matching employee could not be found
      * @throws SystemException if a system exception occurred
      */
     @Override
-    public Employee fetchByPositionId_First(long positionId,
+    public Employee fetchByPositionId_First(long position_id,
         OrderByComparator orderByComparator) throws SystemException {
-        List<Employee> list = findByPositionId(positionId, 0, 1,
+        List<Employee> list = findByPositionId(position_id, 0, 1,
                 orderByComparator);
 
         if (!list.isEmpty()) {
@@ -1263,19 +1264,20 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
     }
 
     /**
-     * Returns the last employee in the ordered set where positionId = &#63;.
+     * Returns the last employee in the ordered set where position_id = &#63;.
      *
-     * @param positionId the position ID
+     * @param position_id the position_id
      * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
      * @return the last matching employee
      * @throws ru.kotikov.registry.NoSuchEmployeeException if a matching employee could not be found
      * @throws SystemException if a system exception occurred
      */
     @Override
-    public Employee findByPositionId_Last(long positionId,
+    public Employee findByPositionId_Last(long position_id,
         OrderByComparator orderByComparator)
         throws NoSuchEmployeeException, SystemException {
-        Employee employee = fetchByPositionId_Last(positionId, orderByComparator);
+        Employee employee = fetchByPositionId_Last(position_id,
+                orderByComparator);
 
         if (employee != null) {
             return employee;
@@ -1285,8 +1287,8 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
 
         msg.append(_NO_SUCH_ENTITY_WITH_KEY);
 
-        msg.append("positionId=");
-        msg.append(positionId);
+        msg.append("position_id=");
+        msg.append(position_id);
 
         msg.append(StringPool.CLOSE_CURLY_BRACE);
 
@@ -1294,23 +1296,23 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
     }
 
     /**
-     * Returns the last employee in the ordered set where positionId = &#63;.
+     * Returns the last employee in the ordered set where position_id = &#63;.
      *
-     * @param positionId the position ID
+     * @param position_id the position_id
      * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
      * @return the last matching employee, or <code>null</code> if a matching employee could not be found
      * @throws SystemException if a system exception occurred
      */
     @Override
-    public Employee fetchByPositionId_Last(long positionId,
+    public Employee fetchByPositionId_Last(long position_id,
         OrderByComparator orderByComparator) throws SystemException {
-        int count = countByPositionId(positionId);
+        int count = countByPositionId(position_id);
 
         if (count == 0) {
             return null;
         }
 
-        List<Employee> list = findByPositionId(positionId, count - 1, count,
+        List<Employee> list = findByPositionId(position_id, count - 1, count,
                 orderByComparator);
 
         if (!list.isEmpty()) {
@@ -1321,20 +1323,20 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
     }
 
     /**
-     * Returns the employees before and after the current employee in the ordered set where positionId = &#63;.
+     * Returns the employees before and after the current employee in the ordered set where position_id = &#63;.
      *
-     * @param employeeId the primary key of the current employee
-     * @param positionId the position ID
+     * @param employee_id the primary key of the current employee
+     * @param position_id the position_id
      * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
      * @return the previous, current, and next employee
      * @throws ru.kotikov.registry.NoSuchEmployeeException if a employee with the primary key could not be found
      * @throws SystemException if a system exception occurred
      */
     @Override
-    public Employee[] findByPositionId_PrevAndNext(long employeeId,
-        long positionId, OrderByComparator orderByComparator)
+    public Employee[] findByPositionId_PrevAndNext(long employee_id,
+        long position_id, OrderByComparator orderByComparator)
         throws NoSuchEmployeeException, SystemException {
-        Employee employee = findByPrimaryKey(employeeId);
+        Employee employee = findByPrimaryKey(employee_id);
 
         Session session = null;
 
@@ -1344,12 +1346,12 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
             Employee[] array = new EmployeeImpl[3];
 
             array[0] = getByPositionId_PrevAndNext(session, employee,
-                    positionId, orderByComparator, true);
+                    position_id, orderByComparator, true);
 
             array[1] = employee;
 
             array[2] = getByPositionId_PrevAndNext(session, employee,
-                    positionId, orderByComparator, false);
+                    position_id, orderByComparator, false);
 
             return array;
         } catch (Exception e) {
@@ -1360,7 +1362,7 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
     }
 
     protected Employee getByPositionId_PrevAndNext(Session session,
-        Employee employee, long positionId,
+        Employee employee, long position_id,
         OrderByComparator orderByComparator, boolean previous) {
         StringBundler query = null;
 
@@ -1373,7 +1375,7 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
 
         query.append(_SQL_SELECT_EMPLOYEE_WHERE);
 
-        query.append(_FINDER_COLUMN_POSITIONID_POSITIONID_2);
+        query.append(_FINDER_COLUMN_POSITIONID_POSITION_ID_2);
 
         if (orderByComparator != null) {
             String[] orderByConditionFields = orderByComparator.getOrderByConditionFields();
@@ -1436,7 +1438,7 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
 
         QueryPos qPos = QueryPos.getInstance(q);
 
-        qPos.add(positionId);
+        qPos.add(position_id);
 
         if (orderByComparator != null) {
             Object[] values = orderByComparator.getOrderByConditionValues(employee);
@@ -1456,31 +1458,31 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
     }
 
     /**
-     * Removes all the employees where positionId = &#63; from the database.
+     * Removes all the employees where position_id = &#63; from the database.
      *
-     * @param positionId the position ID
+     * @param position_id the position_id
      * @throws SystemException if a system exception occurred
      */
     @Override
-    public void removeByPositionId(long positionId) throws SystemException {
-        for (Employee employee : findByPositionId(positionId,
+    public void removeByPositionId(long position_id) throws SystemException {
+        for (Employee employee : findByPositionId(position_id,
                 QueryUtil.ALL_POS, QueryUtil.ALL_POS, null)) {
             remove(employee);
         }
     }
 
     /**
-     * Returns the number of employees where positionId = &#63;.
+     * Returns the number of employees where position_id = &#63;.
      *
-     * @param positionId the position ID
+     * @param position_id the position_id
      * @return the number of matching employees
      * @throws SystemException if a system exception occurred
      */
     @Override
-    public int countByPositionId(long positionId) throws SystemException {
+    public int countByPositionId(long position_id) throws SystemException {
         FinderPath finderPath = FINDER_PATH_COUNT_BY_POSITIONID;
 
-        Object[] finderArgs = new Object[] { positionId };
+        Object[] finderArgs = new Object[] { position_id };
 
         Long count = (Long) FinderCacheUtil.getResult(finderPath, finderArgs,
                 this);
@@ -1490,7 +1492,7 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
 
             query.append(_SQL_COUNT_EMPLOYEE_WHERE);
 
-            query.append(_FINDER_COLUMN_POSITIONID_POSITIONID_2);
+            query.append(_FINDER_COLUMN_POSITIONID_POSITION_ID_2);
 
             String sql = query.toString();
 
@@ -1503,7 +1505,7 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
 
                 QueryPos qPos = QueryPos.getInstance(q);
 
-                qPos.add(positionId);
+                qPos.add(position_id);
 
                 count = (Long) q.uniqueResult();
 
@@ -1601,15 +1603,15 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
     /**
      * Creates a new employee with the primary key. Does not add the employee to the database.
      *
-     * @param employeeId the primary key for the new employee
+     * @param employee_id the primary key for the new employee
      * @return the new employee
      */
     @Override
-    public Employee create(long employeeId) {
+    public Employee create(long employee_id) {
         Employee employee = new EmployeeImpl();
 
         employee.setNew(true);
-        employee.setPrimaryKey(employeeId);
+        employee.setPrimaryKey(employee_id);
 
         return employee;
     }
@@ -1617,15 +1619,15 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
     /**
      * Removes the employee with the primary key from the database. Also notifies the appropriate model listeners.
      *
-     * @param employeeId the primary key of the employee
+     * @param employee_id the primary key of the employee
      * @return the employee that was removed
      * @throws ru.kotikov.registry.NoSuchEmployeeException if a employee with the primary key could not be found
      * @throws SystemException if a system exception occurred
      */
     @Override
-    public Employee remove(long employeeId)
+    public Employee remove(long employee_id)
         throws NoSuchEmployeeException, SystemException {
-        return remove((Serializable) employeeId);
+        return remove((Serializable) employee_id);
     }
 
     /**
@@ -1732,7 +1734,7 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
             if ((employeeModelImpl.getColumnBitmask() &
                     FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_ARCHIVESTATUS.getColumnBitmask()) != 0) {
                 Object[] args = new Object[] {
-                        employeeModelImpl.getOriginalArchiveStatus()
+                        employeeModelImpl.getOriginalArchive_status()
                     };
 
                 FinderCacheUtil.removeResult(FINDER_PATH_COUNT_BY_ARCHIVESTATUS,
@@ -1740,7 +1742,7 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
                 FinderCacheUtil.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_ARCHIVESTATUS,
                     args);
 
-                args = new Object[] { employeeModelImpl.getArchiveStatus() };
+                args = new Object[] { employeeModelImpl.getArchive_status() };
 
                 FinderCacheUtil.removeResult(FINDER_PATH_COUNT_BY_ARCHIVESTATUS,
                     args);
@@ -1751,14 +1753,14 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
             if ((employeeModelImpl.getColumnBitmask() &
                     FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_BANKID.getColumnBitmask()) != 0) {
                 Object[] args = new Object[] {
-                        employeeModelImpl.getOriginalBankId()
+                        employeeModelImpl.getOriginalBank_id()
                     };
 
                 FinderCacheUtil.removeResult(FINDER_PATH_COUNT_BY_BANKID, args);
                 FinderCacheUtil.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_BANKID,
                     args);
 
-                args = new Object[] { employeeModelImpl.getBankId() };
+                args = new Object[] { employeeModelImpl.getBank_id() };
 
                 FinderCacheUtil.removeResult(FINDER_PATH_COUNT_BY_BANKID, args);
                 FinderCacheUtil.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_BANKID,
@@ -1768,7 +1770,7 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
             if ((employeeModelImpl.getColumnBitmask() &
                     FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_POSITIONID.getColumnBitmask()) != 0) {
                 Object[] args = new Object[] {
-                        employeeModelImpl.getOriginalPositionId()
+                        employeeModelImpl.getOriginalPosition_id()
                     };
 
                 FinderCacheUtil.removeResult(FINDER_PATH_COUNT_BY_POSITIONID,
@@ -1776,7 +1778,7 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
                 FinderCacheUtil.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_POSITIONID,
                     args);
 
-                args = new Object[] { employeeModelImpl.getPositionId() };
+                args = new Object[] { employeeModelImpl.getPosition_id() };
 
                 FinderCacheUtil.removeResult(FINDER_PATH_COUNT_BY_POSITIONID,
                     args);
@@ -1801,19 +1803,19 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
         employeeImpl.setNew(employee.isNew());
         employeeImpl.setPrimaryKey(employee.getPrimaryKey());
 
-        employeeImpl.setEmployeeId(employee.getEmployeeId());
-        employeeImpl.setLastName(employee.getLastName());
-        employeeImpl.setFirstName(employee.getFirstName());
+        employeeImpl.setEmployee_id(employee.getEmployee_id());
+        employeeImpl.setLast_name(employee.getLast_name());
+        employeeImpl.setFirst_name(employee.getFirst_name());
         employeeImpl.setPatronymic(employee.getPatronymic());
         employeeImpl.setSex(employee.getSex());
-        employeeImpl.setDateOfBirth(employee.getDateOfBirth());
-        employeeImpl.setPositionId(employee.getPositionId());
-        employeeImpl.setDateOfEmployment(employee.getDateOfEmployment());
+        employeeImpl.setDate_of_birth(employee.getDate_of_birth());
+        employeeImpl.setPosition_id(employee.getPosition_id());
+        employeeImpl.setDate_of_employment(employee.getDate_of_employment());
         employeeImpl.setSalary(employee.getSalary());
-        employeeImpl.setWorkPhoneNumber(employee.getWorkPhoneNumber());
-        employeeImpl.setMobilePhoneNumber(employee.getMobilePhoneNumber());
-        employeeImpl.setBankId(employee.getBankId());
-        employeeImpl.setArchiveStatus(employee.isArchiveStatus());
+        employeeImpl.setWork_phone_number(employee.getWork_phone_number());
+        employeeImpl.setMobile_phone_number(employee.getMobile_phone_number());
+        employeeImpl.setBank_id(employee.getBank_id());
+        employeeImpl.setArchive_status(employee.isArchive_status());
 
         return employeeImpl;
     }
@@ -1846,15 +1848,15 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
     /**
      * Returns the employee with the primary key or throws a {@link ru.kotikov.registry.NoSuchEmployeeException} if it could not be found.
      *
-     * @param employeeId the primary key of the employee
+     * @param employee_id the primary key of the employee
      * @return the employee
      * @throws ru.kotikov.registry.NoSuchEmployeeException if a employee with the primary key could not be found
      * @throws SystemException if a system exception occurred
      */
     @Override
-    public Employee findByPrimaryKey(long employeeId)
+    public Employee findByPrimaryKey(long employee_id)
         throws NoSuchEmployeeException, SystemException {
-        return findByPrimaryKey((Serializable) employeeId);
+        return findByPrimaryKey((Serializable) employee_id);
     }
 
     /**
@@ -1904,14 +1906,14 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
     /**
      * Returns the employee with the primary key or returns <code>null</code> if it could not be found.
      *
-     * @param employeeId the primary key of the employee
+     * @param employee_id the primary key of the employee
      * @return the employee, or <code>null</code> if a employee with the primary key could not be found
      * @throws SystemException if a system exception occurred
      */
     @Override
-    public Employee fetchByPrimaryKey(long employeeId)
+    public Employee fetchByPrimaryKey(long employee_id)
         throws SystemException {
-        return fetchByPrimaryKey((Serializable) employeeId);
+        return fetchByPrimaryKey((Serializable) employee_id);
     }
 
     /**

@@ -6,10 +6,10 @@
 <aui:form action="<%= updateBankURL %>" name="<portlet:namespace />fm">
 
     <aui:fieldset>
-        <aui:input name="Bank id" value="<%= currentBank.getBankId() %>" type="hidden"/>
-        <aui:input name="Bank name" value="<%= currentBank.getBankName() %>"/>
+        <aui:input name="Bank id" value="<%= currentBank.getBank_id() %>" type="hidden"/>
+        <aui:input name="Bank name" value="<%= currentBank.getBank_name() %>" type="hidden"/>
         <aui:input name="BIK" value="<%= currentBank.getBik() %>"/>
-        <aui:input name="Bank address" value="<%= currentBank.getBankAddress() %>"/>
+        <aui:input name="Bank address" value="<%= currentBank.getBank_address() %>"/>
     </aui:fieldset>
 
     <aui:button-row>

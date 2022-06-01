@@ -93,27 +93,27 @@ public abstract class EmployeeLocalServiceBaseImpl extends BaseLocalServiceImpl
     /**
      * Creates a new employee with the primary key. Does not add the employee to the database.
      *
-     * @param employeeId the primary key for the new employee
+     * @param employee_id the primary key for the new employee
      * @return the new employee
      */
     @Override
-    public Employee createEmployee(long employeeId) {
-        return employeePersistence.create(employeeId);
+    public Employee createEmployee(long employee_id) {
+        return employeePersistence.create(employee_id);
     }
 
     /**
      * Deletes the employee with the primary key from the database. Also notifies the appropriate model listeners.
      *
-     * @param employeeId the primary key of the employee
+     * @param employee_id the primary key of the employee
      * @return the employee that was removed
      * @throws PortalException if a employee with the primary key could not be found
      * @throws SystemException if a system exception occurred
      */
     @Indexable(type = IndexableType.DELETE)
     @Override
-    public Employee deleteEmployee(long employeeId)
+    public Employee deleteEmployee(long employee_id)
         throws PortalException, SystemException {
-        return employeePersistence.remove(employeeId);
+        return employeePersistence.remove(employee_id);
     }
 
     /**
@@ -222,22 +222,22 @@ public abstract class EmployeeLocalServiceBaseImpl extends BaseLocalServiceImpl
     }
 
     @Override
-    public Employee fetchEmployee(long employeeId) throws SystemException {
-        return employeePersistence.fetchByPrimaryKey(employeeId);
+    public Employee fetchEmployee(long employee_id) throws SystemException {
+        return employeePersistence.fetchByPrimaryKey(employee_id);
     }
 
     /**
      * Returns the employee with the primary key.
      *
-     * @param employeeId the primary key of the employee
+     * @param employee_id the primary key of the employee
      * @return the employee
      * @throws PortalException if a employee with the primary key could not be found
      * @throws SystemException if a system exception occurred
      */
     @Override
-    public Employee getEmployee(long employeeId)
+    public Employee getEmployee(long employee_id)
         throws PortalException, SystemException {
-        return employeePersistence.findByPrimaryKey(employeeId);
+        return employeePersistence.findByPrimaryKey(employee_id);
     }
 
     @Override

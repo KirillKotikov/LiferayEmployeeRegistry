@@ -18,6 +18,6 @@ public abstract class PositionActionableDynamicQuery
 
         setClassLoader(ru.kotikov.registry.service.ClpSerializer.class.getClassLoader());
 
-        setPrimaryKeyPropertyName("positionId");
+        setPrimaryKeyPropertyName("position_id");
     }
 }

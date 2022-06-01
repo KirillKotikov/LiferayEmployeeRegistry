@@ -43,27 +43,27 @@ public class PositionLocalServiceUtil {
     /**
     * Creates a new position with the primary key. Does not add the position to the database.
     *
-    * @param positionId the primary key for the new position
+    * @param position_id the primary key for the new position
     * @return the new position
     */
     public static ru.kotikov.registry.model.Position createPosition(
-        long positionId) {
-        return getService().createPosition(positionId);
+        long position_id) {
+        return getService().createPosition(position_id);
     }
 
     /**
     * Deletes the position with the primary key from the database. Also notifies the appropriate model listeners.
     *
-    * @param positionId the primary key of the position
+    * @param position_id the primary key of the position
     * @return the position that was removed
     * @throws PortalException if a position with the primary key could not be found
     * @throws SystemException if a system exception occurred
     */
     public static ru.kotikov.registry.model.Position deletePosition(
-        long positionId)
+        long position_id)
         throws com.liferay.portal.kernel.exception.PortalException,
             com.liferay.portal.kernel.exception.SystemException {
-        return getService().deletePosition(positionId);
+        return getService().deletePosition(position_id);
     }
 
     /**
@@ -170,24 +170,24 @@ public class PositionLocalServiceUtil {
     }
 
     public static ru.kotikov.registry.model.Position fetchPosition(
-        long positionId)
+        long position_id)
         throws com.liferay.portal.kernel.exception.SystemException {
-        return getService().fetchPosition(positionId);
+        return getService().fetchPosition(position_id);
     }
 
     /**
     * Returns the position with the primary key.
     *
-    * @param positionId the primary key of the position
+    * @param position_id the primary key of the position
     * @return the position
     * @throws PortalException if a position with the primary key could not be found
     * @throws SystemException if a system exception occurred
     */
     public static ru.kotikov.registry.model.Position getPosition(
-        long positionId)
+        long position_id)
         throws com.liferay.portal.kernel.exception.PortalException,
             com.liferay.portal.kernel.exception.SystemException {
-        return getService().getPosition(positionId);
+        return getService().getPosition(position_id);
     }
 
     public static com.liferay.portal.model.PersistedModel getPersistedModel(

@@ -44,14 +44,14 @@ public class PositionModelImpl extends BaseModelImpl<Position>
      */
     public static final String TABLE_NAME = "registry_Position";
     public static final Object[][] TABLE_COLUMNS = {
-            { "positionId", Types.BIGINT },
-            { "positionName", Types.VARCHAR },
-            { "archiveStatus", Types.BOOLEAN }
+            { "position_id", Types.BIGINT },
+            { "position_name", Types.VARCHAR },
+            { "archive_status", Types.BOOLEAN }
         };
-    public static final String TABLE_SQL_CREATE = "create table registry_Position (positionId LONG not null primary key,positionName VARCHAR(75) null,archiveStatus BOOLEAN)";
+    public static final String TABLE_SQL_CREATE = "create table registry_Position (position_id LONG not null primary key,position_name VARCHAR(75) null,archive_status BOOLEAN)";
     public static final String TABLE_SQL_DROP = "drop table registry_Position";
-    public static final String ORDER_BY_JPQL = " ORDER BY position.positionName ASC";
-    public static final String ORDER_BY_SQL = " ORDER BY registry_Position.positionName ASC";
+    public static final String ORDER_BY_JPQL = " ORDER BY position.position_name ASC";
+    public static final String ORDER_BY_SQL = " ORDER BY registry_Position.position_name ASC";
     public static final String DATA_SOURCE = "liferayDataSource";
     public static final String SESSION_FACTORY = "liferaySessionFactory";
     public static final String TX_MANAGER = "liferayTransactionManager";
@@ -64,19 +64,19 @@ public class PositionModelImpl extends BaseModelImpl<Position>
     public static final boolean COLUMN_BITMASK_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
                 "value.object.column.bitmask.enabled.ru.kotikov.registry.model.Position"),
             true);
-    public static long ARCHIVESTATUS_COLUMN_BITMASK = 1L;
-    public static long POSITIONNAME_COLUMN_BITMASK = 2L;
+    public static long ARCHIVE_STATUS_COLUMN_BITMASK = 1L;
+    public static long POSITION_NAME_COLUMN_BITMASK = 2L;
     public static final long LOCK_EXPIRATION_TIME = GetterUtil.getLong(com.liferay.util.service.ServiceProps.get(
                 "lock.expiration.time.ru.kotikov.registry.model.Position"));
     private static ClassLoader _classLoader = Position.class.getClassLoader();
     private static Class<?>[] _escapedModelInterfaces = new Class[] {
             Position.class
         };
-    private long _positionId;
-    private String _positionName;
-    private boolean _archiveStatus;
-    private boolean _originalArchiveStatus;
-    private boolean _setOriginalArchiveStatus;
+    private long _position_id;
+    private String _position_name;
+    private boolean _archive_status;
+    private boolean _originalArchive_status;
+    private boolean _setOriginalArchive_status;
     private long _columnBitmask;
     private Position _escapedModel;
 
@@ -85,17 +85,17 @@ public class PositionModelImpl extends BaseModelImpl<Position>
 
     @Override
     public long getPrimaryKey() {
-        return _positionId;
+        return _position_id;
     }
 
     @Override
     public void setPrimaryKey(long primaryKey) {
-        setPositionId(primaryKey);
+        setPosition_id(primaryKey);
     }
 
     @Override
     public Serializable getPrimaryKeyObj() {
-        return _positionId;
+        return _position_id;
     }
 
     @Override
@@ -117,85 +117,85 @@ public class PositionModelImpl extends BaseModelImpl<Position>
     public Map<String, Object> getModelAttributes() {
         Map<String, Object> attributes = new HashMap<String, Object>();
 
-        attributes.put("positionId", getPositionId());
-        attributes.put("positionName", getPositionName());
-        attributes.put("archiveStatus", getArchiveStatus());
+        attributes.put("position_id", getPosition_id());
+        attributes.put("position_name", getPosition_name());
+        attributes.put("archive_status", getArchive_status());
 
         return attributes;
     }
 
     @Override
     public void setModelAttributes(Map<String, Object> attributes) {
-        Long positionId = (Long) attributes.get("positionId");
+        Long position_id = (Long) attributes.get("position_id");
 
-        if (positionId != null) {
-            setPositionId(positionId);
+        if (position_id != null) {
+            setPosition_id(position_id);
         }
 
-        String positionName = (String) attributes.get("positionName");
+        String position_name = (String) attributes.get("position_name");
 
-        if (positionName != null) {
-            setPositionName(positionName);
+        if (position_name != null) {
+            setPosition_name(position_name);
         }
 
-        Boolean archiveStatus = (Boolean) attributes.get("archiveStatus");
+        Boolean archive_status = (Boolean) attributes.get("archive_status");
 
-        if (archiveStatus != null) {
-            setArchiveStatus(archiveStatus);
+        if (archive_status != null) {
+            setArchive_status(archive_status);
         }
     }
 
     @Override
-    public long getPositionId() {
-        return _positionId;
+    public long getPosition_id() {
+        return _position_id;
     }
 
     @Override
-    public void setPositionId(long positionId) {
-        _positionId = positionId;
+    public void setPosition_id(long position_id) {
+        _position_id = position_id;
     }
 
     @Override
-    public String getPositionName() {
-        if (_positionName == null) {
+    public String getPosition_name() {
+        if (_position_name == null) {
             return StringPool.BLANK;
         } else {
-            return _positionName;
+            return _position_name;
         }
     }
 
     @Override
-    public void setPositionName(String positionName) {
+    public void setPosition_name(String position_name) {
         _columnBitmask = -1L;
 
-        _positionName = positionName;
+        _position_name = position_name;
     }
 
     @Override
-    public boolean getArchiveStatus() {
-        return _archiveStatus;
+    public boolean getArchive_status() {
+        return _archive_status;
     }
 
     @Override
-    public boolean isArchiveStatus() {
-        return _archiveStatus;
+    public boolean isArchive_status() {
+        return _archive_status;
     }
 
     @Override
-    public void setArchiveStatus(boolean archiveStatus) {
-        _columnBitmask |= ARCHIVESTATUS_COLUMN_BITMASK;
+    public void setArchive_status(boolean archive_status) {
+        _columnBitmask |= ARCHIVE_STATUS_COLUMN_BITMASK;
 
-        if (!_setOriginalArchiveStatus) {
-            _setOriginalArchiveStatus = true;
+        if (!_setOriginalArchive_status) {
+            _setOriginalArchive_status = true;
 
-            _originalArchiveStatus = _archiveStatus;
+            _originalArchive_status = _archive_status;
         }
 
-        _archiveStatus = archiveStatus;
+        _archive_status = archive_status;
     }
 
-    public boolean getOriginalArchiveStatus() {
-        return _originalArchiveStatus;
+    public boolean getOriginalArchive_status() {
+        return _originalArchive_status;
     }
 
     public long getColumnBitmask() {
@@ -229,9 +229,9 @@ public class PositionModelImpl extends BaseModelImpl<Position>
     public Object clone() {
         PositionImpl positionImpl = new PositionImpl();
 
-        positionImpl.setPositionId(getPositionId());
-        positionImpl.setPositionName(getPositionName());
-        positionImpl.setArchiveStatus(getArchiveStatus());
+        positionImpl.setPosition_id(getPosition_id());
+        positionImpl.setPosition_name(getPosition_name());
+        positionImpl.setArchive_status(getArchive_status());
 
         positionImpl.resetOriginalValues();
 
@@ -242,7 +242,7 @@ public class PositionModelImpl extends BaseModelImpl<Position>
     public int compareTo(Position position) {
         int value = 0;
 
-        value = getPositionName().compareTo(position.getPositionName());
+        value = getPosition_name().compareTo(position.getPosition_name());
 
         if (value != 0) {
             return value;
@@ -281,9 +281,9 @@ public class PositionModelImpl extends BaseModelImpl<Position>
     public void resetOriginalValues() {
         PositionModelImpl positionModelImpl = this;
 
-        positionModelImpl._originalArchiveStatus = positionModelImpl._archiveStatus;
+        positionModelImpl._originalArchive_status = positionModelImpl._archive_status;
 
-        positionModelImpl._setOriginalArchiveStatus = false;
+        positionModelImpl._setOriginalArchive_status = false;
 
         positionModelImpl._columnBitmask = 0;
     }
@@ -292,17 +292,17 @@ public class PositionModelImpl extends BaseModelImpl<Position>
     public CacheModel<Position> toCacheModel() {
         PositionCacheModel positionCacheModel = new PositionCacheModel();
 
-        positionCacheModel.positionId = getPositionId();
+        positionCacheModel.position_id = getPosition_id();
 
-        positionCacheModel.positionName = getPositionName();
+        positionCacheModel.position_name = getPosition_name();
 
-        String positionName = positionCacheModel.positionName;
+        String position_name = positionCacheModel.position_name;
 
-        if ((positionName != null) && (positionName.length() == 0)) {
-            positionCacheModel.positionName = null;
+        if ((position_name != null) && (position_name.length() == 0)) {
+            positionCacheModel.position_name = null;
         }
 
-        positionCacheModel.archiveStatus = getArchiveStatus();
+        positionCacheModel.archive_status = getArchive_status();
 
         return positionCacheModel;
     }
@@ -311,12 +311,12 @@ public class PositionModelImpl extends BaseModelImpl<Position>
     public String toString() {
         StringBundler sb = new StringBundler(7);
 
-        sb.append("{positionId=");
-        sb.append(getPositionId());
-        sb.append(", positionName=");
-        sb.append(getPositionName());
-        sb.append(", archiveStatus=");
-        sb.append(getArchiveStatus());
+        sb.append("{position_id=");
+        sb.append(getPosition_id());
+        sb.append(", position_name=");
+        sb.append(getPosition_name());
+        sb.append(", archive_status=");
+        sb.append(getArchive_status());
         sb.append("}");
 
         return sb.toString();
@@ -331,16 +331,16 @@ public class PositionModelImpl extends BaseModelImpl<Position>
         sb.append("</model-name>");
 
         sb.append(
-            "<column><column-name>positionId</column-name><column-value><![CDATA[");
-        sb.append(getPositionId());
+            "<column><column-name>position_id</column-name><column-value><![CDATA[");
+        sb.append(getPosition_id());
         sb.append("]]></column-value></column>");
         sb.append(
-            "<column><column-name>positionName</column-name><column-value><![CDATA[");
-        sb.append(getPositionName());
+            "<column><column-name>position_name</column-name><column-value><![CDATA[");
+        sb.append(getPosition_name());
         sb.append("]]></column-value></column>");
         sb.append(
-            "<column><column-name>archiveStatus</column-name><column-value><![CDATA[");
-        sb.append(getArchiveStatus());
+            "<column><column-name>archive_status</column-name><column-value><![CDATA[");
+        sb.append(getArchive_status());
         sb.append("]]></column-value></column>");
 
         sb.append("</model>");

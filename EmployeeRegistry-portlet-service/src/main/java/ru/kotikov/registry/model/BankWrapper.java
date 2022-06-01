@@ -36,26 +36,26 @@ public class BankWrapper implements Bank, ModelWrapper<Bank> {
     public Map<String, Object> getModelAttributes() {
         Map<String, Object> attributes = new HashMap<String, Object>();
 
-        attributes.put("bankId", getBankId());
-        attributes.put("bankName", getBankName());
+        attributes.put("bank_id", getBank_id());
+        attributes.put("bank_name", getBank_name());
         attributes.put("bik", getBik());
-        attributes.put("bankAddress", getBankAddress());
+        attributes.put("bank_address", getBank_address());
 
         return attributes;
     }
 
     @Override
     public void setModelAttributes(Map<String, Object> attributes) {
-        Long bankId = (Long) attributes.get("bankId");
+        Long bank_id = (Long) attributes.get("bank_id");
 
-        if (bankId != null) {
-            setBankId(bankId);
+        if (bank_id != null) {
+            setBank_id(bank_id);
         }
 
-        String bankName = (String) attributes.get("bankName");
+        String bank_name = (String) attributes.get("bank_name");
 
-        if (bankName != null) {
-            setBankName(bankName);
+        if (bank_name != null) {
+            setBank_name(bank_name);
         }
 
         String bik = (String) attributes.get("bik");
@@ -64,10 +64,10 @@ public class BankWrapper implements Bank, ModelWrapper<Bank> {
             setBik(bik);
         }
 
-        String bankAddress = (String) attributes.get("bankAddress");
+        String bank_address = (String) attributes.get("bank_address");
 
-        if (bankAddress != null) {
-            setBankAddress(bankAddress);
+        if (bank_address != null) {
+            setBank_address(bank_address);
         }
     }
 
@@ -92,43 +92,43 @@ public class BankWrapper implements Bank, ModelWrapper<Bank> {
     }
 
     /**
-    * Returns the bank ID of this bank.
+    * Returns the bank_id of this bank.
     *
-    * @return the bank ID of this bank
+    * @return the bank_id of this bank
     */
     @Override
-    public long getBankId() {
-        return _bank.getBankId();
+    public long getBank_id() {
+        return _bank.getBank_id();
     }
 
     /**
-    * Sets the bank ID of this bank.
+    * Sets the bank_id of this bank.
     *
-    * @param bankId the bank ID of this bank
+    * @param bank_id the bank_id of this bank
     */
     @Override
-    public void setBankId(long bankId) {
-        _bank.setBankId(bankId);
+    public void setBank_id(long bank_id) {
+        _bank.setBank_id(bank_id);
     }
 
     /**
-    * Returns the bank name of this bank.
+    * Returns the bank_name of this bank.
     *
-    * @return the bank name of this bank
+    * @return the bank_name of this bank
     */
     @Override
-    public java.lang.String getBankName() {
-        return _bank.getBankName();
+    public java.lang.String getBank_name() {
+        return _bank.getBank_name();
     }
 
     /**
-    * Sets the bank name of this bank.
+    * Sets the bank_name of this bank.
     *
-    * @param bankName the bank name of this bank
+    * @param bank_name the bank_name of this bank
     */
     @Override
-    public void setBankName(java.lang.String bankName) {
-        _bank.setBankName(bankName);
+    public void setBank_name(java.lang.String bank_name) {
+        _bank.setBank_name(bank_name);
     }
 
     /**
@@ -152,23 +152,23 @@ public class BankWrapper implements Bank, ModelWrapper<Bank> {
     }
 
     /**
-    * Returns the bank address of this bank.
+    * Returns the bank_address of this bank.
     *
-    * @return the bank address of this bank
+    * @return the bank_address of this bank
     */
     @Override
-    public java.lang.String getBankAddress() {
-        return _bank.getBankAddress();
+    public java.lang.String getBank_address() {
+        return _bank.getBank_address();
     }
 
     /**
-    * Sets the bank address of this bank.
+    * Sets the bank_address of this bank.
     *
-    * @param bankAddress the bank address of this bank
+    * @param bank_address the bank_address of this bank
     */
     @Override
-    public void setBankAddress(java.lang.String bankAddress) {
-        _bank.setBankAddress(bankAddress);
+    public void setBank_address(java.lang.String bank_address) {
+        _bank.setBank_address(bank_address);
     }
 
     @Override

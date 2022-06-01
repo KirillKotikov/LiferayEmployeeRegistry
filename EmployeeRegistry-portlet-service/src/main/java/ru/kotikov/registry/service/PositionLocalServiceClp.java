@@ -174,12 +174,12 @@ public class PositionLocalServiceClp implements PositionLocalService {
     }
 
     @Override
-    public ru.kotikov.registry.model.Position createPosition(long positionId) {
+    public ru.kotikov.registry.model.Position createPosition(long position_id) {
         Object returnObj = null;
 
         try {
             returnObj = _invokableLocalService.invokeMethod(_methodName1,
-                    _methodParameterTypes1, new Object[] { positionId });
+                    _methodParameterTypes1, new Object[] { position_id });
         } catch (Throwable t) {
             t = ClpSerializer.translateThrowable(t);
 
@@ -195,14 +195,14 @@ public class PositionLocalServiceClp implements PositionLocalService {
     }
 
     @Override
-    public ru.kotikov.registry.model.Position deletePosition(long positionId)
+    public ru.kotikov.registry.model.Position deletePosition(long position_id)
         throws com.liferay.portal.kernel.exception.PortalException,
             com.liferay.portal.kernel.exception.SystemException {
         Object returnObj = null;
 
         try {
             returnObj = _invokableLocalService.invokeMethod(_methodName2,
-                    _methodParameterTypes2, new Object[] { positionId });
+                    _methodParameterTypes2, new Object[] { position_id });
         } catch (Throwable t) {
             t = ClpSerializer.translateThrowable(t);
 
@@ -439,13 +439,13 @@ public class PositionLocalServiceClp implements PositionLocalService {
     }
 
     @Override
-    public ru.kotikov.registry.model.Position fetchPosition(long positionId)
+    public ru.kotikov.registry.model.Position fetchPosition(long position_id)
         throws com.liferay.portal.kernel.exception.SystemException {
         Object returnObj = null;
 
         try {
             returnObj = _invokableLocalService.invokeMethod(_methodName10,
-                    _methodParameterTypes10, new Object[] { positionId });
+                    _methodParameterTypes10, new Object[] { position_id });
         } catch (Throwable t) {
             t = ClpSerializer.translateThrowable(t);
 
@@ -465,14 +465,14 @@ public class PositionLocalServiceClp implements PositionLocalService {
     }
 
     @Override
-    public ru.kotikov.registry.model.Position getPosition(long positionId)
+    public ru.kotikov.registry.model.Position getPosition(long position_id)
         throws com.liferay.portal.kernel.exception.PortalException,
             com.liferay.portal.kernel.exception.SystemException {
         Object returnObj = null;
 
         try {
             returnObj = _invokableLocalService.invokeMethod(_methodName11,
-                    _methodParameterTypes11, new Object[] { positionId });
+                    _methodParameterTypes11, new Object[] { position_id });
         } catch (Throwable t) {
             t = ClpSerializer.translateThrowable(t);
 

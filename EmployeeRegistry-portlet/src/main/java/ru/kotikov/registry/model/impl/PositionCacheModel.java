@@ -19,20 +19,20 @@ import java.io.ObjectOutput;
  * @generated
  */
 public class PositionCacheModel implements CacheModel<Position>, Externalizable {
-    public long positionId;
-    public String positionName;
-    public boolean archiveStatus;
+    public long position_id;
+    public String position_name;
+    public boolean archive_status;
 
     @Override
     public String toString() {
         StringBundler sb = new StringBundler(7);
 
-        sb.append("{positionId=");
-        sb.append(positionId);
-        sb.append(", positionName=");
-        sb.append(positionName);
-        sb.append(", archiveStatus=");
-        sb.append(archiveStatus);
+        sb.append("{position_id=");
+        sb.append(position_id);
+        sb.append(", position_name=");
+        sb.append(position_name);
+        sb.append(", archive_status=");
+        sb.append(archive_status);
         sb.append("}");
 
         return sb.toString();
@@ -42,15 +42,15 @@ public class PositionCacheModel implements CacheModel<Position>, Externalizable 
     public Position toEntityModel() {
         PositionImpl positionImpl = new PositionImpl();
 
-        positionImpl.setPositionId(positionId);
+        positionImpl.setPosition_id(position_id);
 
-        if (positionName == null) {
-            positionImpl.setPositionName(StringPool.BLANK);
+        if (position_name == null) {
+            positionImpl.setPosition_name(StringPool.BLANK);
         } else {
-            positionImpl.setPositionName(positionName);
+            positionImpl.setPosition_name(position_name);
         }
 
-        positionImpl.setArchiveStatus(archiveStatus);
+        positionImpl.setArchive_status(archive_status);
 
         positionImpl.resetOriginalValues();
 
@@ -59,22 +59,22 @@ public class PositionCacheModel implements CacheModel<Position>, Externalizable 
 
     @Override
     public void readExternal(ObjectInput objectInput) throws IOException {
-        positionId = objectInput.readLong();
-        positionName = objectInput.readUTF();
-        archiveStatus = objectInput.readBoolean();
+        position_id = objectInput.readLong();
+        position_name = objectInput.readUTF();
+        archive_status = objectInput.readBoolean();
     }
 
     @Override
     public void writeExternal(ObjectOutput objectOutput)
         throws IOException {
-        objectOutput.writeLong(positionId);
+        objectOutput.writeLong(position_id);
 
-        if (positionName == null) {
+        if (position_name == null) {
             objectOutput.writeUTF(StringPool.BLANK);
         } else {
-            objectOutput.writeUTF(positionName);
+            objectOutput.writeUTF(position_name);
         }
 
-        objectOutput.writeBoolean(archiveStatus);
+        objectOutput.writeBoolean(archive_status);
     }
 }

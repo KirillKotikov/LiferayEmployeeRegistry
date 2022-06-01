@@ -34,27 +34,27 @@ public class BankLocalServiceWrapper implements BankLocalService,
     /**
     * Creates a new bank with the primary key. Does not add the bank to the database.
     *
-    * @param bankId the primary key for the new bank
+    * @param bank_id the primary key for the new bank
     * @return the new bank
     */
     @Override
-    public ru.kotikov.registry.model.Bank createBank(long bankId) {
-        return _bankLocalService.createBank(bankId);
+    public ru.kotikov.registry.model.Bank createBank(long bank_id) {
+        return _bankLocalService.createBank(bank_id);
     }
 
     /**
     * Deletes the bank with the primary key from the database. Also notifies the appropriate model listeners.
     *
-    * @param bankId the primary key of the bank
+    * @param bank_id the primary key of the bank
     * @return the bank that was removed
     * @throws PortalException if a bank with the primary key could not be found
     * @throws SystemException if a system exception occurred
     */
     @Override
-    public ru.kotikov.registry.model.Bank deleteBank(long bankId)
+    public ru.kotikov.registry.model.Bank deleteBank(long bank_id)
         throws com.liferay.portal.kernel.exception.PortalException,
             com.liferay.portal.kernel.exception.SystemException {
-        return _bankLocalService.deleteBank(bankId);
+        return _bankLocalService.deleteBank(bank_id);
     }
 
     /**
@@ -168,24 +168,24 @@ public class BankLocalServiceWrapper implements BankLocalService,
     }
 
     @Override
-    public ru.kotikov.registry.model.Bank fetchBank(long bankId)
+    public ru.kotikov.registry.model.Bank fetchBank(long bank_id)
         throws com.liferay.portal.kernel.exception.SystemException {
-        return _bankLocalService.fetchBank(bankId);
+        return _bankLocalService.fetchBank(bank_id);
     }
 
     /**
     * Returns the bank with the primary key.
     *
-    * @param bankId the primary key of the bank
+    * @param bank_id the primary key of the bank
     * @return the bank
     * @throws PortalException if a bank with the primary key could not be found
     * @throws SystemException if a system exception occurred
     */
     @Override
-    public ru.kotikov.registry.model.Bank getBank(long bankId)
+    public ru.kotikov.registry.model.Bank getBank(long bank_id)
         throws com.liferay.portal.kernel.exception.PortalException,
             com.liferay.portal.kernel.exception.SystemException {
-        return _bankLocalService.getBank(bankId);
+        return _bankLocalService.getBank(bank_id);
     }
 
     @Override

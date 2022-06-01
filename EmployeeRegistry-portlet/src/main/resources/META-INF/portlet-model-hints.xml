@@ -2,29 +2,29 @@
 
 <model-hints>
 	<model name="ru.kotikov.registry.model.Bank">
-		<field name="bankId" type="long" />
-		<field name="bankName" type="String" />
+		<field name="bank_id" type="long" />
+		<field name="bank_name" type="String" />
 		<field name="bik" type="String" />
-		<field name="bankAddress" type="String" />
+		<field name="bank_address" type="String" />
 	</model>
 	<model name="ru.kotikov.registry.model.Employee">
-		<field name="employeeId" type="long" />
-		<field name="lastName" type="String" />
-		<field name="firstName" type="String" />
+		<field name="employee_id" type="long" />
+		<field name="last_name" type="String" />
+		<field name="first_name" type="String" />
 		<field name="patronymic" type="String" />
 		<field name="sex" type="String" />
-		<field name="dateOfBirth" type="String" />
-		<field name="positionId" type="long" />
-		<field name="dateOfEmployment" type="String" />
+		<field name="date_of_birth" type="String" />
+		<field name="position_id" type="long" />
+		<field name="date_of_employment" type="String" />
 		<field name="salary" type="int" />
-		<field name="workPhoneNumber" type="String" />
-		<field name="mobilePhoneNumber" type="String" />
-		<field name="bankId" type="long" />
-		<field name="archiveStatus" type="boolean" />
+		<field name="work_phone_number" type="String" />
+		<field name="mobile_phone_number" type="String" />
+		<field name="bank_id" type="long" />
+		<field name="archive_status" type="boolean" />
 	</model>
 	<model name="ru.kotikov.registry.model.Position">
-		<field name="positionId" type="long" />
-		<field name="positionName" type="String" />
-		<field name="archiveStatus" type="boolean" />
+		<field name="position_id" type="long" />
+		<field name="position_name" type="String" />
+		<field name="archive_status" type="boolean" />
 	</model>
 </model-hints>

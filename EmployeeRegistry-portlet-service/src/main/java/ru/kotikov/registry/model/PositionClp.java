@@ -19,9 +19,9 @@ import java.util.Map;
 
 
 public class PositionClp extends BaseModelImpl<Position> implements Position {
-    private long _positionId;
-    private String _positionName;
-    private boolean _archiveStatus;
+    private long _position_id;
+    private String _position_name;
+    private boolean _archive_status;
     private BaseModel<?> _positionRemoteModel;
     private Class<?> _clpSerializerClass = ru.kotikov.registry.service.ClpSerializer.class;
 
@@ -40,17 +40,17 @@ public class PositionClp extends BaseModelImpl<Position> implements Position {
 
     @Override
     public long getPrimaryKey() {
-        return _positionId;
+        return _position_id;
     }
 
     @Override
     public void setPrimaryKey(long primaryKey) {
-        setPositionId(primaryKey);
+        setPosition_id(primaryKey);
     }
 
     @Override
     public Serializable getPrimaryKeyObj() {
-        return _positionId;
+        return _position_id;
     }
 
     @Override
@@ -62,50 +62,50 @@ public class PositionClp extends BaseModelImpl<Position> implements Position {
     public Map<String, Object> getModelAttributes() {
         Map<String, Object> attributes = new HashMap<String, Object>();
 
-        attributes.put("positionId", getPositionId());
-        attributes.put("positionName", getPositionName());
-        attributes.put("archiveStatus", getArchiveStatus());
+        attributes.put("position_id", getPosition_id());
+        attributes.put("position_name", getPosition_name());
+        attributes.put("archive_status", getArchive_status());
 
         return attributes;
     }
 
     @Override
     public void setModelAttributes(Map<String, Object> attributes) {
-        Long positionId = (Long) attributes.get("positionId");
+        Long position_id = (Long) attributes.get("position_id");
 
-        if (positionId != null) {
-            setPositionId(positionId);
+        if (position_id != null) {
+            setPosition_id(position_id);
         }
 
-        String positionName = (String) attributes.get("positionName");
+        String position_name = (String) attributes.get("position_name");
 
-        if (positionName != null) {
-            setPositionName(positionName);
+        if (position_name != null) {
+            setPosition_name(position_name);
         }
 
-        Boolean archiveStatus = (Boolean) attributes.get("archiveStatus");
+        Boolean archive_status = (Boolean) attributes.get("archive_status");
 
-        if (archiveStatus != null) {
-            setArchiveStatus(archiveStatus);
+        if (archive_status != null) {
+            setArchive_status(archive_status);
         }
     }
 
     @Override
-    public long getPositionId() {
-        return _positionId;
+    public long getPosition_id() {
+        return _position_id;
     }
 
     @Override
-    public void setPositionId(long positionId) {
-        _positionId = positionId;
+    public void setPosition_id(long position_id) {
+        _position_id = position_id;
 
         if (_positionRemoteModel != null) {
             try {
                 Class<?> clazz = _positionRemoteModel.getClass();
 
-                Method method = clazz.getMethod("setPositionId", long.class);
+                Method method = clazz.getMethod("setPosition_id", long.class);
 
-                method.invoke(_positionRemoteModel, positionId);
+                method.invoke(_positionRemoteModel, position_id);
             } catch (Exception e) {
                 throw new UnsupportedOperationException(e);
             }
@@ -113,21 +113,21 @@ public class PositionClp extends BaseModelImpl<Position> implements Position {
     }
 
     @Override
-    public String getPositionName() {
-        return _positionName;
+    public String getPosition_name() {
+        return _position_name;
     }
 
     @Override
-    public void setPositionName(String positionName) {
-        _positionName = positionName;
+    public void setPosition_name(String position_name) {
+        _position_name = position_name;
 
         if (_positionRemoteModel != null) {
             try {
                 Class<?> clazz = _positionRemoteModel.getClass();
 
-                Method method = clazz.getMethod("setPositionName", String.class);
+                Method method = clazz.getMethod("setPosition_name", String.class);
 
-                method.invoke(_positionRemoteModel, positionName);
+                method.invoke(_positionRemoteModel, position_name);
             } catch (Exception e) {
                 throw new UnsupportedOperationException(e);
             }
@@ -135,27 +135,27 @@ public class PositionClp extends BaseModelImpl<Position> implements Position {
     }
 
     @Override
-    public boolean getArchiveStatus() {
-        return _archiveStatus;
+    public boolean getArchive_status() {
+        return _archive_status;
     }
 
     @Override
-    public boolean isArchiveStatus() {
-        return _archiveStatus;
+    public boolean isArchive_status() {
+        return _archive_status;
     }
 
     @Override
-    public void setArchiveStatus(boolean archiveStatus) {
-        _archiveStatus = archiveStatus;
+    public void setArchive_status(boolean archive_status) {
+        _archive_status = archive_status;
 
         if (_positionRemoteModel != null) {
             try {
                 Class<?> clazz = _positionRemoteModel.getClass();
 
-                Method method = clazz.getMethod("setArchiveStatus",
+                Method method = clazz.getMethod("setArchive_status",
                         boolean.class);
 
-                method.invoke(_positionRemoteModel, archiveStatus);
+                method.invoke(_positionRemoteModel, archive_status);
             } catch (Exception e) {
                 throw new UnsupportedOperationException(e);
             }
@@ -229,9 +229,9 @@ public class PositionClp extends BaseModelImpl<Position> implements Position {
     public Object clone() {
         PositionClp clone = new PositionClp();
 
-        clone.setPositionId(getPositionId());
-        clone.setPositionName(getPositionName());
-        clone.setArchiveStatus(getArchiveStatus());
+        clone.setPosition_id(getPosition_id());
+        clone.setPosition_name(getPosition_name());
+        clone.setArchive_status(getArchive_status());
 
         return clone;
     }
@@ -240,7 +240,7 @@ public class PositionClp extends BaseModelImpl<Position> implements Position {
     public int compareTo(Position position) {
         int value = 0;
 
-        value = getPositionName().compareTo(position.getPositionName());
+        value = getPosition_name().compareTo(position.getPosition_name());
 
         if (value != 0) {
             return value;
@@ -283,12 +283,12 @@ public class PositionClp extends BaseModelImpl<Position> implements Position {
     public String toString() {
         StringBundler sb = new StringBundler(7);
 
-        sb.append("{positionId=");
-        sb.append(getPositionId());
-        sb.append(", positionName=");
-        sb.append(getPositionName());
-        sb.append(", archiveStatus=");
-        sb.append(getArchiveStatus());
+        sb.append("{position_id=");
+        sb.append(getPosition_id());
+        sb.append(", position_name=");
+        sb.append(getPosition_name());
+        sb.append(", archive_status=");
+        sb.append(getArchive_status());
         sb.append("}");
 
         return sb.toString();
@@ -303,16 +303,16 @@ public class PositionClp extends BaseModelImpl<Position> implements Position {
         sb.append("</model-name>");
 
         sb.append(
-            "<column><column-name>positionId</column-name><column-value><![CDATA[");
-        sb.append(getPositionId());
+            "<column><column-name>position_id</column-name><column-value><![CDATA[");
+        sb.append(getPosition_id());
         sb.append("]]></column-value></column>");
         sb.append(
-            "<column><column-name>positionName</column-name><column-value><![CDATA[");
-        sb.append(getPositionName());
+            "<column><column-name>position_name</column-name><column-value><![CDATA[");
+        sb.append(getPosition_name());
         sb.append("]]></column-value></column>");
         sb.append(
-            "<column><column-name>archiveStatus</column-name><column-value><![CDATA[");
-        sb.append(getArchiveStatus());
+            "<column><column-name>archive_status</column-name><column-value><![CDATA[");
+        sb.append(getArchive_status());
         sb.append("]]></column-value></column>");
 
         sb.append("</model>");

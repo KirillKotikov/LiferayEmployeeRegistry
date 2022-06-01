@@ -12,9 +12,9 @@ import java.util.List;
  * @generated
  */
 public class PositionSoap implements Serializable {
-    private long _positionId;
-    private String _positionName;
-    private boolean _archiveStatus;
+    private long _position_id;
+    private String _position_name;
+    private boolean _archive_status;
 
     public PositionSoap() {
     }
@@ -22,9 +22,9 @@ public class PositionSoap implements Serializable {
     public static PositionSoap toSoapModel(Position model) {
         PositionSoap soapModel = new PositionSoap();
 
-        soapModel.setPositionId(model.getPositionId());
-        soapModel.setPositionName(model.getPositionName());
-        soapModel.setArchiveStatus(model.getArchiveStatus());
+        soapModel.setPosition_id(model.getPosition_id());
+        soapModel.setPosition_name(model.getPosition_name());
+        soapModel.setArchive_status(model.getArchive_status());
 
         return soapModel;
     }
@@ -66,38 +66,38 @@ public class PositionSoap implements Serializable {
     }
 
     public long getPrimaryKey() {
-        return _positionId;
+        return _position_id;
     }
 
     public void setPrimaryKey(long pk) {
-        setPositionId(pk);
+        setPosition_id(pk);
     }
 
-    public long getPositionId() {
-        return _positionId;
+    public long getPosition_id() {
+        return _position_id;
     }
 
-    public void setPositionId(long positionId) {
-        _positionId = positionId;
+    public void setPosition_id(long position_id) {
+        _position_id = position_id;
     }
 
-    public String getPositionName() {
-        return _positionName;
+    public String getPosition_name() {
+        return _position_name;
     }
 
-    public void setPositionName(String positionName) {
-        _positionName = positionName;
+    public void setPosition_name(String position_name) {
+        _position_name = position_name;
     }
 
-    public boolean getArchiveStatus() {
-        return _archiveStatus;
+    public boolean getArchive_status() {
+        return _archive_status;
     }
 
-    public boolean isArchiveStatus() {
-        return _archiveStatus;
+    public boolean isArchive_status() {
+        return _archive_status;
     }
 
-    public void setArchiveStatus(boolean archiveStatus) {
-        _archiveStatus = archiveStatus;
+    public void setArchive_status(boolean archive_status) {
+        _archive_status = archive_status;
     }
 }

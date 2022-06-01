@@ -9,10 +9,10 @@
 	</persistence-unit-metadata>
 	<mapped-superclass class="ru.kotikov.registry.model.impl.BankModelImpl">
 		<attributes>
-			<id name="bankId" />
-			<basic name="bankName" />
+			<id name="bank_id" />
+			<basic name="bank_name" />
 			<basic name="bik" />
-			<basic name="bankAddress" />
+			<basic name="bank_address" />
 			<transient name="modelAttributes" />
 			<transient name="primaryKey" />
 			<transient name="primaryKeyObj" />
@@ -20,19 +20,19 @@
 	</mapped-superclass>
 	<mapped-superclass class="ru.kotikov.registry.model.impl.EmployeeModelImpl">
 		<attributes>
-			<id name="employeeId" />
-			<basic name="lastName" />
-			<basic name="firstName" />
+			<id name="employee_id" />
+			<basic name="last_name" />
+			<basic name="first_name" />
 			<basic name="patronymic" />
 			<basic name="sex" />
-			<basic name="dateOfBirth" />
-			<basic name="positionId" />
-			<basic name="dateOfEmployment" />
+			<basic name="date_of_birth" />
+			<basic name="position_id" />
+			<basic name="date_of_employment" />
 			<basic name="salary" />
-			<basic name="workPhoneNumber" />
-			<basic name="mobilePhoneNumber" />
-			<basic name="bankId" />
-			<basic name="archiveStatus" />
+			<basic name="work_phone_number" />
+			<basic name="mobile_phone_number" />
+			<basic name="bank_id" />
+			<basic name="archive_status" />
 			<transient name="modelAttributes" />
 			<transient name="primaryKey" />
 			<transient name="primaryKeyObj" />
@@ -40,9 +40,9 @@
 	</mapped-superclass>
 	<mapped-superclass class="ru.kotikov.registry.model.impl.PositionModelImpl">
 		<attributes>
-			<id name="positionId" />
-			<basic name="positionName" />
-			<basic name="archiveStatus" />
+			<id name="position_id" />
+			<basic name="position_name" />
+			<basic name="archive_status" />
 			<transient name="modelAttributes" />
 			<transient name="primaryKey" />
 			<transient name="primaryKeyObj" />

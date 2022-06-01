@@ -44,48 +44,48 @@ public interface EmployeeModel extends BaseModel<Employee> {
     public void setPrimaryKey(long primaryKey);
 
     /**
-     * Returns the employee ID of this employee.
+     * Returns the employee_id of this employee.
      *
-     * @return the employee ID of this employee
+     * @return the employee_id of this employee
      */
-    public long getEmployeeId();
+    public long getEmployee_id();
 
     /**
-     * Sets the employee ID of this employee.
+     * Sets the employee_id of this employee.
      *
-     * @param employeeId the employee ID of this employee
+     * @param employee_id the employee_id of this employee
      */
-    public void setEmployeeId(long employeeId);
+    public void setEmployee_id(long employee_id);
 
     /**
-     * Returns the last name of this employee.
+     * Returns the last_name of this employee.
      *
-     * @return the last name of this employee
+     * @return the last_name of this employee
      */
     @AutoEscape
-    public String getLastName();
+    public String getLast_name();
 
     /**
-     * Sets the last name of this employee.
+     * Sets the last_name of this employee.
      *
-     * @param lastName the last name of this employee
+     * @param last_name the last_name of this employee
      */
-    public void setLastName(String lastName);
+    public void setLast_name(String last_name);
 
     /**
-     * Returns the first name of this employee.
+     * Returns the first_name of this employee.
      *
-     * @return the first name of this employee
+     * @return the first_name of this employee
      */
     @AutoEscape
-    public String getFirstName();
+    public String getFirst_name();
 
     /**
-     * Sets the first name of this employee.
+     * Sets the first_name of this employee.
      *
-     * @param firstName the first name of this employee
+     * @param first_name the first_name of this employee
      */
-    public void setFirstName(String firstName);
+    public void setFirst_name(String first_name);
 
     /**
      * Returns the patronymic of this employee.
@@ -118,48 +118,48 @@ public interface EmployeeModel extends BaseModel<Employee> {
     public void setSex(String sex);
 
     /**
-     * Returns the date of birth of this employee.
+     * Returns the date_of_birth of this employee.
      *
-     * @return the date of birth of this employee
+     * @return the date_of_birth of this employee
      */
     @AutoEscape
-    public String getDateOfBirth();
+    public String getDate_of_birth();
 
     /**
-     * Sets the date of birth of this employee.
+     * Sets the date_of_birth of this employee.
      *
-     * @param dateOfBirth the date of birth of this employee
+     * @param date_of_birth the date_of_birth of this employee
      */
-    public void setDateOfBirth(String dateOfBirth);
+    public void setDate_of_birth(String date_of_birth);
 
     /**
-     * Returns the position ID of this employee.
+     * Returns the position_id of this employee.
      *
-     * @return the position ID of this employee
+     * @return the position_id of this employee
      */
-    public long getPositionId();
+    public long getPosition_id();
 
     /**
-     * Sets the position ID of this employee.
+     * Sets the position_id of this employee.
      *
-     * @param positionId the position ID of this employee
+     * @param position_id the position_id of this employee
      */
-    public void setPositionId(long positionId);
+    public void setPosition_id(long position_id);
 
     /**
-     * Returns the date of employment of this employee.
+     * Returns the date_of_employment of this employee.
      *
-     * @return the date of employment of this employee
+     * @return the date_of_employment of this employee
      */
     @AutoEscape
-    public String getDateOfEmployment();
+    public String getDate_of_employment();
 
     /**
-     * Sets the date of employment of this employee.
+     * Sets the date_of_employment of this employee.
      *
-     * @param dateOfEmployment the date of employment of this employee
+     * @param date_of_employment the date_of_employment of this employee
      */
-    public void setDateOfEmployment(String dateOfEmployment);
+    public void setDate_of_employment(String date_of_employment);
 
     /**
      * Returns the salary of this employee.
@@ -176,69 +176,69 @@ public interface EmployeeModel extends BaseModel<Employee> {
     public void setSalary(int salary);
 
     /**
-     * Returns the work phone number of this employee.
+     * Returns the work_phone_number of this employee.
      *
-     * @return the work phone number of this employee
+     * @return the work_phone_number of this employee
      */
     @AutoEscape
-    public String getWorkPhoneNumber();
+    public String getWork_phone_number();
 
     /**
-     * Sets the work phone number of this employee.
+     * Sets the work_phone_number of this employee.
      *
-     * @param workPhoneNumber the work phone number of this employee
+     * @param work_phone_number the work_phone_number of this employee
      */
-    public void setWorkPhoneNumber(String workPhoneNumber);
+    public void setWork_phone_number(String work_phone_number);
 
     /**
-     * Returns the mobile phone number of this employee.
+     * Returns the mobile_phone_number of this employee.
      *
-     * @return the mobile phone number of this employee
+     * @return the mobile_phone_number of this employee
      */
     @AutoEscape
-    public String getMobilePhoneNumber();
+    public String getMobile_phone_number();
 
     /**
-     * Sets the mobile phone number of this employee.
+     * Sets the mobile_phone_number of this employee.
      *
-     * @param mobilePhoneNumber the mobile phone number of this employee
+     * @param mobile_phone_number the mobile_phone_number of this employee
      */
-    public void setMobilePhoneNumber(String mobilePhoneNumber);
+    public void setMobile_phone_number(String mobile_phone_number);
 
     /**
-     * Returns the bank ID of this employee.
+     * Returns the bank_id of this employee.
      *
-     * @return the bank ID of this employee
+     * @return the bank_id of this employee
      */
-    public long getBankId();
+    public long getBank_id();
 
     /**
-     * Sets the bank ID of this employee.
+     * Sets the bank_id of this employee.
      *
-     * @param bankId the bank ID of this employee
+     * @param bank_id the bank_id of this employee
      */
-    public void setBankId(long bankId);
+    public void setBank_id(long bank_id);
 
     /**
-     * Returns the archive status of this employee.
+     * Returns the archive_status of this employee.
      *
-     * @return the archive status of this employee
+     * @return the archive_status of this employee
      */
-    public boolean getArchiveStatus();
+    public boolean getArchive_status();
 
     /**
-     * Returns <code>true</code> if this employee is archive status.
+     * Returns <code>true</code> if this employee is archive_status.
      *
-     * @return <code>true</code> if this employee is archive status; <code>false</code> otherwise
+     * @return <code>true</code> if this employee is archive_status; <code>false</code> otherwise
      */
-    public boolean isArchiveStatus();
+    public boolean isArchive_status();
 
     /**
-     * Sets whether this employee is archive status.
+     * Sets whether this employee is archive_status.
      *
-     * @param archiveStatus the archive status of this employee
+     * @param archive_status the archive_status of this employee
      */
-    public void setArchiveStatus(boolean archiveStatus);
+    public void setArchive_status(boolean archive_status);
 
     @Override
     public boolean isNew();

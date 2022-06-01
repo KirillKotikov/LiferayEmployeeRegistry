@@ -48,21 +48,21 @@ public interface EmployeeLocalService extends BaseLocalService,
     /**
     * Creates a new employee with the primary key. Does not add the employee to the database.
     *
-    * @param employeeId the primary key for the new employee
+    * @param employee_id the primary key for the new employee
     * @return the new employee
     */
-    public ru.kotikov.registry.model.Employee createEmployee(long employeeId);
+    public ru.kotikov.registry.model.Employee createEmployee(long employee_id);
 
     /**
     * Deletes the employee with the primary key from the database. Also notifies the appropriate model listeners.
     *
-    * @param employeeId the primary key of the employee
+    * @param employee_id the primary key of the employee
     * @return the employee that was removed
     * @throws PortalException if a employee with the primary key could not be found
     * @throws SystemException if a system exception occurred
     */
     @com.liferay.portal.kernel.search.Indexable(type = IndexableType.DELETE)
-    public ru.kotikov.registry.model.Employee deleteEmployee(long employeeId)
+    public ru.kotikov.registry.model.Employee deleteEmployee(long employee_id)
         throws com.liferay.portal.kernel.exception.PortalException,
             com.liferay.portal.kernel.exception.SystemException;
 
@@ -156,19 +156,19 @@ public interface EmployeeLocalService extends BaseLocalService,
         throws com.liferay.portal.kernel.exception.SystemException;
 
     @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
-    public ru.kotikov.registry.model.Employee fetchEmployee(long employeeId)
+    public ru.kotikov.registry.model.Employee fetchEmployee(long employee_id)
         throws com.liferay.portal.kernel.exception.SystemException;
 
     /**
     * Returns the employee with the primary key.
     *
-    * @param employeeId the primary key of the employee
+    * @param employee_id the primary key of the employee
     * @return the employee
     * @throws PortalException if a employee with the primary key could not be found
     * @throws SystemException if a system exception occurred
     */
     @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
-    public ru.kotikov.registry.model.Employee getEmployee(long employeeId)
+    public ru.kotikov.registry.model.Employee getEmployee(long employee_id)
         throws com.liferay.portal.kernel.exception.PortalException,
             com.liferay.portal.kernel.exception.SystemException;
 

@@ -12,10 +12,10 @@ import java.util.List;
  * @generated
  */
 public class BankSoap implements Serializable {
-    private long _bankId;
-    private String _bankName;
+    private long _bank_id;
+    private String _bank_name;
     private String _bik;
-    private String _bankAddress;
+    private String _bank_address;
 
     public BankSoap() {
     }
@@ -23,10 +23,10 @@ public class BankSoap implements Serializable {
     public static BankSoap toSoapModel(Bank model) {
         BankSoap soapModel = new BankSoap();
 
-        soapModel.setBankId(model.getBankId());
-        soapModel.setBankName(model.getBankName());
+        soapModel.setBank_id(model.getBank_id());
+        soapModel.setBank_name(model.getBank_name());
         soapModel.setBik(model.getBik());
-        soapModel.setBankAddress(model.getBankAddress());
+        soapModel.setBank_address(model.getBank_address());
 
         return soapModel;
     }
@@ -68,27 +68,27 @@ public class BankSoap implements Serializable {
     }
 
     public long getPrimaryKey() {
-        return _bankId;
+        return _bank_id;
     }
 
     public void setPrimaryKey(long pk) {
-        setBankId(pk);
+        setBank_id(pk);
     }
 
-    public long getBankId() {
-        return _bankId;
+    public long getBank_id() {
+        return _bank_id;
     }
 
-    public void setBankId(long bankId) {
-        _bankId = bankId;
+    public void setBank_id(long bank_id) {
+        _bank_id = bank_id;
     }
 
-    public String getBankName() {
-        return _bankName;
+    public String getBank_name() {
+        return _bank_name;
     }
 
-    public void setBankName(String bankName) {
-        _bankName = bankName;
+    public void setBank_name(String bank_name) {
+        _bank_name = bank_name;
     }
 
     public String getBik() {
@@ -99,11 +99,11 @@ public class BankSoap implements Serializable {
         _bik = bik;
     }
 
-    public String getBankAddress() {
-        return _bankAddress;
+    public String getBank_address() {
+        return _bank_address;
     }
 
-    public void setBankAddress(String bankAddress) {
-        _bankAddress = bankAddress;
+    public void setBank_address(String bank_address) {
+        _bank_address = bank_address;
     }
 }

@@ -19,19 +19,19 @@ import java.util.Map;
 
 
 public class EmployeeClp extends BaseModelImpl<Employee> implements Employee {
-    private long _employeeId;
-    private String _lastName;
-    private String _firstName;
+    private long _employee_id;
+    private String _last_name;
+    private String _first_name;
     private String _patronymic;
     private String _sex;
-    private String _dateOfBirth;
-    private long _positionId;
-    private String _dateOfEmployment;
+    private String _date_of_birth;
+    private long _position_id;
+    private String _date_of_employment;
     private int _salary;
-    private String _workPhoneNumber;
-    private String _mobilePhoneNumber;
-    private long _bankId;
-    private boolean _archiveStatus;
+    private String _work_phone_number;
+    private String _mobile_phone_number;
+    private long _bank_id;
+    private boolean _archive_status;
     private BaseModel<?> _employeeRemoteModel;
     private Class<?> _clpSerializerClass = ru.kotikov.registry.service.ClpSerializer.class;
 
@@ -50,17 +50,17 @@ public class EmployeeClp extends BaseModelImpl<Employee> implements Employee {
 
     @Override
     public long getPrimaryKey() {
-        return _employeeId;
+        return _employee_id;
     }
 
     @Override
     public void setPrimaryKey(long primaryKey) {
-        setEmployeeId(primaryKey);
+        setEmployee_id(primaryKey);
     }
 
     @Override
     public Serializable getPrimaryKeyObj() {
-        return _employeeId;
+        return _employee_id;
     }
 
     @Override
@@ -72,41 +72,41 @@ public class EmployeeClp extends BaseModelImpl<Employee> implements Employee {
     public Map<String, Object> getModelAttributes() {
         Map<String, Object> attributes = new HashMap<String, Object>();
 
-        attributes.put("employeeId", getEmployeeId());
-        attributes.put("lastName", getLastName());
-        attributes.put("firstName", getFirstName());
+        attributes.put("employee_id", getEmployee_id());
+        attributes.put("last_name", getLast_name());
+        attributes.put("first_name", getFirst_name());
         attributes.put("patronymic", getPatronymic());
         attributes.put("sex", getSex());
-        attributes.put("dateOfBirth", getDateOfBirth());
-        attributes.put("positionId", getPositionId());
-        attributes.put("dateOfEmployment", getDateOfEmployment());
+        attributes.put("date_of_birth", getDate_of_birth());
+        attributes.put("position_id", getPosition_id());
+        attributes.put("date_of_employment", getDate_of_employment());
         attributes.put("salary", getSalary());
-        attributes.put("workPhoneNumber", getWorkPhoneNumber());
-        attributes.put("mobilePhoneNumber", getMobilePhoneNumber());
-        attributes.put("bankId", getBankId());
-        attributes.put("archiveStatus", getArchiveStatus());
+        attributes.put("work_phone_number", getWork_phone_number());
+        attributes.put("mobile_phone_number", getMobile_phone_number());
+        attributes.put("bank_id", getBank_id());
+        attributes.put("archive_status", getArchive_status());
 
         return attributes;
     }
 
     @Override
     public void setModelAttributes(Map<String, Object> attributes) {
-        Long employeeId = (Long) attributes.get("employeeId");
+        Long employee_id = (Long) attributes.get("employee_id");
 
-        if (employeeId != null) {
-            setEmployeeId(employeeId);
+        if (employee_id != null) {
+            setEmployee_id(employee_id);
         }
 
-        String lastName = (String) attributes.get("lastName");
+        String last_name = (String) attributes.get("last_name");
 
-        if (lastName != null) {
-            setLastName(lastName);
+        if (last_name != null) {
+            setLast_name(last_name);
         }
 
-        String firstName = (String) attributes.get("firstName");
+        String first_name = (String) attributes.get("first_name");
 
-        if (firstName != null) {
-            setFirstName(firstName);
+        if (first_name != null) {
+            setFirst_name(first_name);
         }
 
         String patronymic = (String) attributes.get("patronymic");
@@ -121,22 +121,23 @@ public class EmployeeClp extends BaseModelImpl<Employee> implements Employee {
             setSex(sex);
         }
 
-        String dateOfBirth = (String) attributes.get("dateOfBirth");
+        String date_of_birth = (String) attributes.get("date_of_birth");
 
-        if (dateOfBirth != null) {
-            setDateOfBirth(dateOfBirth);
+        if (date_of_birth != null) {
+            setDate_of_birth(date_of_birth);
         }
 
-        Long positionId = (Long) attributes.get("positionId");
+        Long position_id = (Long) attributes.get("position_id");
 
-        if (positionId != null) {
-            setPositionId(positionId);
+        if (position_id != null) {
+            setPosition_id(position_id);
         }
 
-        String dateOfEmployment = (String) attributes.get("dateOfEmployment");
+        String date_of_employment = (String) attributes.get(
+                "date_of_employment");
 
-        if (dateOfEmployment != null) {
-            setDateOfEmployment(dateOfEmployment);
+        if (date_of_employment != null) {
+            setDate_of_employment(date_of_employment);
         }
 
         Integer salary = (Integer) attributes.get("salary");
@@ -145,47 +146,48 @@ public class EmployeeClp extends BaseModelImpl<Employee> implements Employee {
             setSalary(salary);
         }
 
-        String workPhoneNumber = (String) attributes.get("workPhoneNumber");
+        String work_phone_number = (String) attributes.get("work_phone_number");
 
-        if (workPhoneNumber != null) {
-            setWorkPhoneNumber(workPhoneNumber);
+        if (work_phone_number != null) {
+            setWork_phone_number(work_phone_number);
         }
 
-        String mobilePhoneNumber = (String) attributes.get("mobilePhoneNumber");
+        String mobile_phone_number = (String) attributes.get(
+                "mobile_phone_number");
 
-        if (mobilePhoneNumber != null) {
-            setMobilePhoneNumber(mobilePhoneNumber);
+        if (mobile_phone_number != null) {
+            setMobile_phone_number(mobile_phone_number);
         }
 
-        Long bankId = (Long) attributes.get("bankId");
+        Long bank_id = (Long) attributes.get("bank_id");
 
-        if (bankId != null) {
-            setBankId(bankId);
+        if (bank_id != null) {
+            setBank_id(bank_id);
         }
 
-        Boolean archiveStatus = (Boolean) attributes.get("archiveStatus");
+        Boolean archive_status = (Boolean) attributes.get("archive_status");
 
-        if (archiveStatus != null) {
-            setArchiveStatus(archiveStatus);
+        if (archive_status != null) {
+            setArchive_status(archive_status);
         }
     }
 
     @Override
-    public long getEmployeeId() {
-        return _employeeId;
+    public long getEmployee_id() {
+        return _employee_id;
     }
 
     @Override
-    public void setEmployeeId(long employeeId) {
-        _employeeId = employeeId;
+    public void setEmployee_id(long employee_id) {
+        _employee_id = employee_id;
 
         if (_employeeRemoteModel != null) {
             try {
                 Class<?> clazz = _employeeRemoteModel.getClass();
 
-                Method method = clazz.getMethod("setEmployeeId", long.class);
+                Method method = clazz.getMethod("setEmployee_id", long.class);
 
-                method.invoke(_employeeRemoteModel, employeeId);
+                method.invoke(_employeeRemoteModel, employee_id);
             } catch (Exception e) {
                 throw new UnsupportedOperationException(e);
             }
@@ -193,21 +195,21 @@ public class EmployeeClp extends BaseModelImpl<Employee> implements Employee {
     }
 
     @Override
-    public String getLastName() {
-        return _lastName;
+    public String getLast_name() {
+        return _last_name;
     }
 
     @Override
-    public void setLastName(String lastName) {
-        _lastName = lastName;
+    public void setLast_name(String last_name) {
+        _last_name = last_name;
 
         if (_employeeRemoteModel != null) {
             try {
                 Class<?> clazz = _employeeRemoteModel.getClass();
 
-                Method method = clazz.getMethod("setLastName", String.class);
+                Method method = clazz.getMethod("setLast_name", String.class);
 
-                method.invoke(_employeeRemoteModel, lastName);
+                method.invoke(_employeeRemoteModel, last_name);
             } catch (Exception e) {
                 throw new UnsupportedOperationException(e);
             }
@@ -215,21 +217,21 @@ public class EmployeeClp extends BaseModelImpl<Employee> implements Employee {
     }
 
     @Override
-    public String getFirstName() {
-        return _firstName;
+    public String getFirst_name() {
+        return _first_name;
     }
 
     @Override
-    public void setFirstName(String firstName) {
-        _firstName = firstName;
+    public void setFirst_name(String first_name) {
+        _first_name = first_name;
 
         if (_employeeRemoteModel != null) {
             try {
                 Class<?> clazz = _employeeRemoteModel.getClass();
 
-                Method method = clazz.getMethod("setFirstName", String.class);
+                Method method = clazz.getMethod("setFirst_name", String.class);
 
-                method.invoke(_employeeRemoteModel, firstName);
+                method.invoke(_employeeRemoteModel, first_name);
             } catch (Exception e) {
                 throw new UnsupportedOperationException(e);
             }
@@ -281,21 +283,21 @@ public class EmployeeClp extends BaseModelImpl<Employee> implements Employee {
     }
 
     @Override
-    public String getDateOfBirth() {
-        return _dateOfBirth;
+    public String getDate_of_birth() {
+        return _date_of_birth;
     }
 
     @Override
-    public void setDateOfBirth(String dateOfBirth) {
-        _dateOfBirth = dateOfBirth;
+    public void setDate_of_birth(String date_of_birth) {
+        _date_of_birth = date_of_birth;
 
         if (_employeeRemoteModel != null) {
             try {
                 Class<?> clazz = _employeeRemoteModel.getClass();
 
-                Method method = clazz.getMethod("setDateOfBirth", String.class);
+                Method method = clazz.getMethod("setDate_of_birth", String.class);
 
-                method.invoke(_employeeRemoteModel, dateOfBirth);
+                method.invoke(_employeeRemoteModel, date_of_birth);
             } catch (Exception e) {
                 throw new UnsupportedOperationException(e);
             }
@@ -303,21 +305,21 @@ public class EmployeeClp extends BaseModelImpl<Employee> implements Employee {
     }
 
     @Override
-    public long getPositionId() {
-        return _positionId;
+    public long getPosition_id() {
+        return _position_id;
     }
 
     @Override
-    public void setPositionId(long positionId) {
-        _positionId = positionId;
+    public void setPosition_id(long position_id) {
+        _position_id = position_id;
 
         if (_employeeRemoteModel != null) {
             try {
                 Class<?> clazz = _employeeRemoteModel.getClass();
 
-                Method method = clazz.getMethod("setPositionId", long.class);
+                Method method = clazz.getMethod("setPosition_id", long.class);
 
-                method.invoke(_employeeRemoteModel, positionId);
+                method.invoke(_employeeRemoteModel, position_id);
             } catch (Exception e) {
                 throw new UnsupportedOperationException(e);
             }
@@ -325,22 +327,22 @@ public class EmployeeClp extends BaseModelImpl<Employee> implements Employee {
     }
 
     @Override
-    public String getDateOfEmployment() {
-        return _dateOfEmployment;
+    public String getDate_of_employment() {
+        return _date_of_employment;
     }
 
     @Override
-    public void setDateOfEmployment(String dateOfEmployment) {
-        _dateOfEmployment = dateOfEmployment;
+    public void setDate_of_employment(String date_of_employment) {
+        _date_of_employment = date_of_employment;
 
         if (_employeeRemoteModel != null) {
             try {
                 Class<?> clazz = _employeeRemoteModel.getClass();
 
-                Method method = clazz.getMethod("setDateOfEmployment",
+                Method method = clazz.getMethod("setDate_of_employment",
                         String.class);
 
-                method.invoke(_employeeRemoteModel, dateOfEmployment);
+                method.invoke(_employeeRemoteModel, date_of_employment);
             } catch (Exception e) {
                 throw new UnsupportedOperationException(e);
             }
@@ -370,22 +372,22 @@ public class EmployeeClp extends BaseModelImpl<Employee> implements Employee {
     }
 
     @Override
-    public String getWorkPhoneNumber() {
-        return _workPhoneNumber;
+    public String getWork_phone_number() {
+        return _work_phone_number;
     }
 
     @Override
-    public void setWorkPhoneNumber(String workPhoneNumber) {
-        _workPhoneNumber = workPhoneNumber;
+    public void setWork_phone_number(String work_phone_number) {
+        _work_phone_number = work_phone_number;
 
         if (_employeeRemoteModel != null) {
             try {
                 Class<?> clazz = _employeeRemoteModel.getClass();
 
-                Method method = clazz.getMethod("setWorkPhoneNumber",
+                Method method = clazz.getMethod("setWork_phone_number",
                         String.class);
 
-                method.invoke(_employeeRemoteModel, workPhoneNumber);
+                method.invoke(_employeeRemoteModel, work_phone_number);
             } catch (Exception e) {
                 throw new UnsupportedOperationException(e);
             }
@@ -393,22 +395,22 @@ public class EmployeeClp extends BaseModelImpl<Employee> implements Employee {
     }
 
     @Override
-    public String getMobilePhoneNumber() {
-        return _mobilePhoneNumber;
+    public String getMobile_phone_number() {
+        return _mobile_phone_number;
     }
 
     @Override
-    public void setMobilePhoneNumber(String mobilePhoneNumber) {
-        _mobilePhoneNumber = mobilePhoneNumber;
+    public void setMobile_phone_number(String mobile_phone_number) {
+        _mobile_phone_number = mobile_phone_number;
 
         if (_employeeRemoteModel != null) {
             try {
                 Class<?> clazz = _employeeRemoteModel.getClass();
 
-                Method method = clazz.getMethod("setMobilePhoneNumber",
+                Method method = clazz.getMethod("setMobile_phone_number",
                         String.class);
 
-                method.invoke(_employeeRemoteModel, mobilePhoneNumber);
+                method.invoke(_employeeRemoteModel, mobile_phone_number);
             } catch (Exception e) {
                 throw new UnsupportedOperationException(e);
             }
@@ -416,21 +418,21 @@ public class EmployeeClp extends BaseModelImpl<Employee> implements Employee {
     }
 
     @Override
-    public long getBankId() {
-        return _bankId;
+    public long getBank_id() {
+        return _bank_id;
     }
 
     @Override
-    public void setBankId(long bankId) {
-        _bankId = bankId;
+    public void setBank_id(long bank_id) {
+        _bank_id = bank_id;
 
         if (_employeeRemoteModel != null) {
             try {
                 Class<?> clazz = _employeeRemoteModel.getClass();
 
-                Method method = clazz.getMethod("setBankId", long.class);
+                Method method = clazz.getMethod("setBank_id", long.class);
 
-                method.invoke(_employeeRemoteModel, bankId);
+                method.invoke(_employeeRemoteModel, bank_id);
             } catch (Exception e) {
                 throw new UnsupportedOperationException(e);
             }
@@ -438,27 +440,27 @@ public class EmployeeClp extends BaseModelImpl<Employee> implements Employee {
     }
 
     @Override
-    public boolean getArchiveStatus() {
-        return _archiveStatus;
+    public boolean getArchive_status() {
+        return _archive_status;
     }
 
     @Override
-    public boolean isArchiveStatus() {
-        return _archiveStatus;
+    public boolean isArchive_status() {
+        return _archive_status;
     }
 
     @Override
-    public void setArchiveStatus(boolean archiveStatus) {
-        _archiveStatus = archiveStatus;
+    public void setArchive_status(boolean archive_status) {
+        _archive_status = archive_status;
 
         if (_employeeRemoteModel != null) {
             try {
                 Class<?> clazz = _employeeRemoteModel.getClass();
 
-                Method method = clazz.getMethod("setArchiveStatus",
+                Method method = clazz.getMethod("setArchive_status",
                         boolean.class);
 
-                method.invoke(_employeeRemoteModel, archiveStatus);
+                method.invoke(_employeeRemoteModel, archive_status);
             } catch (Exception e) {
                 throw new UnsupportedOperationException(e);
             }
@@ -532,19 +534,19 @@ public class EmployeeClp extends BaseModelImpl<Employee> implements Employee {
     public Object clone() {
         EmployeeClp clone = new EmployeeClp();
 
-        clone.setEmployeeId(getEmployeeId());
-        clone.setLastName(getLastName());
-        clone.setFirstName(getFirstName());
+        clone.setEmployee_id(getEmployee_id());
+        clone.setLast_name(getLast_name());
+        clone.setFirst_name(getFirst_name());
         clone.setPatronymic(getPatronymic());
         clone.setSex(getSex());
-        clone.setDateOfBirth(getDateOfBirth());
-        clone.setPositionId(getPositionId());
-        clone.setDateOfEmployment(getDateOfEmployment());
+        clone.setDate_of_birth(getDate_of_birth());
+        clone.setPosition_id(getPosition_id());
+        clone.setDate_of_employment(getDate_of_employment());
         clone.setSalary(getSalary());
-        clone.setWorkPhoneNumber(getWorkPhoneNumber());
-        clone.setMobilePhoneNumber(getMobilePhoneNumber());
-        clone.setBankId(getBankId());
-        clone.setArchiveStatus(getArchiveStatus());
+        clone.setWork_phone_number(getWork_phone_number());
+        clone.setMobile_phone_number(getMobile_phone_number());
+        clone.setBank_id(getBank_id());
+        clone.setArchive_status(getArchive_status());
 
         return clone;
     }
@@ -553,7 +555,7 @@ public class EmployeeClp extends BaseModelImpl<Employee> implements Employee {
     public int compareTo(Employee employee) {
         int value = 0;
 
-        value = getLastName().compareTo(employee.getLastName());
+        value = getLast_name().compareTo(employee.getLast_name());
 
         if (value != 0) {
             return value;
@@ -596,32 +598,32 @@ public class EmployeeClp extends BaseModelImpl<Employee> implements Employee {
     public String toString() {
         StringBundler sb = new StringBundler(27);
 
-        sb.append("{employeeId=");
-        sb.append(getEmployeeId());
-        sb.append(", lastName=");
-        sb.append(getLastName());
-        sb.append(", firstName=");
-        sb.append(getFirstName());
+        sb.append("{employee_id=");
+        sb.append(getEmployee_id());
+        sb.append(", last_name=");
+        sb.append(getLast_name());
+        sb.append(", first_name=");
+        sb.append(getFirst_name());
         sb.append(", patronymic=");
         sb.append(getPatronymic());
         sb.append(", sex=");
         sb.append(getSex());
-        sb.append(", dateOfBirth=");
-        sb.append(getDateOfBirth());
-        sb.append(", positionId=");
-        sb.append(getPositionId());
-        sb.append(", dateOfEmployment=");
-        sb.append(getDateOfEmployment());
+        sb.append(", date_of_birth=");
+        sb.append(getDate_of_birth());
+        sb.append(", position_id=");
+        sb.append(getPosition_id());
+        sb.append(", date_of_employment=");
+        sb.append(getDate_of_employment());
         sb.append(", salary=");
         sb.append(getSalary());
-        sb.append(", workPhoneNumber=");
-        sb.append(getWorkPhoneNumber());
-        sb.append(", mobilePhoneNumber=");
-        sb.append(getMobilePhoneNumber());
-        sb.append(", bankId=");
-        sb.append(getBankId());
-        sb.append(", archiveStatus=");
-        sb.append(getArchiveStatus());
+        sb.append(", work_phone_number=");
+        sb.append(getWork_phone_number());
+        sb.append(", mobile_phone_number=");
+        sb.append(getMobile_phone_number());
+        sb.append(", bank_id=");
+        sb.append(getBank_id());
+        sb.append(", archive_status=");
+        sb.append(getArchive_status());
         sb.append("}");
 
         return sb.toString();
@@ -636,16 +638,16 @@ public class EmployeeClp extends BaseModelImpl<Employee> implements Employee {
         sb.append("</model-name>");
 
         sb.append(
-            "<column><column-name>employeeId</column-name><column-value><![CDATA[");
-        sb.append(getEmployeeId());
+            "<column><column-name>employee_id</column-name><column-value><![CDATA[");
+        sb.append(getEmployee_id());
         sb.append("]]></column-value></column>");
         sb.append(
-            "<column><column-name>lastName</column-name><column-value><![CDATA[");
-        sb.append(getLastName());
+            "<column><column-name>last_name</column-name><column-value><![CDATA[");
+        sb.append(getLast_name());
         sb.append("]]></column-value></column>");
         sb.append(
-            "<column><column-name>firstName</column-name><column-value><![CDATA[");
-        sb.append(getFirstName());
+            "<column><column-name>first_name</column-name><column-value><![CDATA[");
+        sb.append(getFirst_name());
         sb.append("]]></column-value></column>");
         sb.append(
             "<column><column-name>patronymic</column-name><column-value><![CDATA[");
@@ -656,36 +658,36 @@ public class EmployeeClp extends BaseModelImpl<Employee> implements Employee {
         sb.append(getSex());
         sb.append("]]></column-value></column>");
         sb.append(
-            "<column><column-name>dateOfBirth</column-name><column-value><![CDATA[");
-        sb.append(getDateOfBirth());
+            "<column><column-name>date_of_birth</column-name><column-value><![CDATA[");
+        sb.append(getDate_of_birth());
         sb.append("]]></column-value></column>");
         sb.append(
-            "<column><column-name>positionId</column-name><column-value><![CDATA[");
-        sb.append(getPositionId());
+            "<column><column-name>position_id</column-name><column-value><![CDATA[");
+        sb.append(getPosition_id());
         sb.append("]]></column-value></column>");
         sb.append(
-            "<column><column-name>dateOfEmployment</column-name><column-value><![CDATA[");
-        sb.append(getDateOfEmployment());
+            "<column><column-name>date_of_employment</column-name><column-value><![CDATA[");
+        sb.append(getDate_of_employment());
         sb.append("]]></column-value></column>");
         sb.append(
             "<column><column-name>salary</column-name><column-value><![CDATA[");
         sb.append(getSalary());
         sb.append("]]></column-value></column>");
         sb.append(
-            "<column><column-name>workPhoneNumber</column-name><column-value><![CDATA[");
-        sb.append(getWorkPhoneNumber());
+            "<column><column-name>work_phone_number</column-name><column-value><![CDATA[");
+        sb.append(getWork_phone_number());
         sb.append("]]></column-value></column>");
         sb.append(
-            "<column><column-name>mobilePhoneNumber</column-name><column-value><![CDATA[");
-        sb.append(getMobilePhoneNumber());
+            "<column><column-name>mobile_phone_number</column-name><column-value><![CDATA[");
+        sb.append(getMobile_phone_number());
         sb.append("]]></column-value></column>");
         sb.append(
-            "<column><column-name>bankId</column-name><column-value><![CDATA[");
-        sb.append(getBankId());
+            "<column><column-name>bank_id</column-name><column-value><![CDATA[");
+        sb.append(getBank_id());
         sb.append("]]></column-value></column>");
         sb.append(
-            "<column><column-name>archiveStatus</column-name><column-value><![CDATA[");
-        sb.append(getArchiveStatus());
+            "<column><column-name>archive_status</column-name><column-value><![CDATA[");
+        sb.append(getArchive_status());
         sb.append("]]></column-value></column>");
 
         sb.append("</model>");

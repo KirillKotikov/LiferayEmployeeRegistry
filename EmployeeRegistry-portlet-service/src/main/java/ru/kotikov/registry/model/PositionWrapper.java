@@ -36,31 +36,31 @@ public class PositionWrapper implements Position, ModelWrapper<Position> {
     public Map<String, Object> getModelAttributes() {
         Map<String, Object> attributes = new HashMap<String, Object>();
 
-        attributes.put("positionId", getPositionId());
-        attributes.put("positionName", getPositionName());
-        attributes.put("archiveStatus", getArchiveStatus());
+        attributes.put("position_id", getPosition_id());
+        attributes.put("position_name", getPosition_name());
+        attributes.put("archive_status", getArchive_status());
 
         return attributes;
     }
 
     @Override
     public void setModelAttributes(Map<String, Object> attributes) {
-        Long positionId = (Long) attributes.get("positionId");
+        Long position_id = (Long) attributes.get("position_id");
 
-        if (positionId != null) {
-            setPositionId(positionId);
+        if (position_id != null) {
+            setPosition_id(position_id);
         }
 
-        String positionName = (String) attributes.get("positionName");
+        String position_name = (String) attributes.get("position_name");
 
-        if (positionName != null) {
-            setPositionName(positionName);
+        if (position_name != null) {
+            setPosition_name(position_name);
         }
 
-        Boolean archiveStatus = (Boolean) attributes.get("archiveStatus");
+        Boolean archive_status = (Boolean) attributes.get("archive_status");
 
-        if (archiveStatus != null) {
-            setArchiveStatus(archiveStatus);
+        if (archive_status != null) {
+            setArchive_status(archive_status);
         }
     }
 
@@ -85,73 +85,73 @@ public class PositionWrapper implements Position, ModelWrapper<Position> {
     }
 
     /**
-    * Returns the position ID of this position.
+    * Returns the position_id of this position.
     *
-    * @return the position ID of this position
+    * @return the position_id of this position
     */
     @Override
-    public long getPositionId() {
-        return _position.getPositionId();
+    public long getPosition_id() {
+        return _position.getPosition_id();
     }
 
     /**
-    * Sets the position ID of this position.
+    * Sets the position_id of this position.
     *
-    * @param positionId the position ID of this position
+    * @param position_id the position_id of this position
     */
     @Override
-    public void setPositionId(long positionId) {
-        _position.setPositionId(positionId);
+    public void setPosition_id(long position_id) {
+        _position.setPosition_id(position_id);
     }
 
     /**
-    * Returns the position name of this position.
+    * Returns the position_name of this position.
     *
-    * @return the position name of this position
+    * @return the position_name of this position
     */
     @Override
-    public java.lang.String getPositionName() {
-        return _position.getPositionName();
+    public java.lang.String getPosition_name() {
+        return _position.getPosition_name();
     }
 
     /**
-    * Sets the position name of this position.
+    * Sets the position_name of this position.
     *
-    * @param positionName the position name of this position
+    * @param position_name the position_name of this position
     */
     @Override
-    public void setPositionName(java.lang.String positionName) {
-        _position.setPositionName(positionName);
+    public void setPosition_name(java.lang.String position_name) {
+        _position.setPosition_name(position_name);
     }
 
     /**
-    * Returns the archive status of this position.
+    * Returns the archive_status of this position.
     *
-    * @return the archive status of this position
+    * @return the archive_status of this position
     */
     @Override
-    public boolean getArchiveStatus() {
-        return _position.getArchiveStatus();
+    public boolean getArchive_status() {
+        return _position.getArchive_status();
     }
 
     /**
-    * Returns <code>true</code> if this position is archive status.
+    * Returns <code>true</code> if this position is archive_status.
     *
-    * @return <code>true</code> if this position is archive status; <code>false</code> otherwise
+    * @return <code>true</code> if this position is archive_status; <code>false</code> otherwise
     */
     @Override
-    public boolean isArchiveStatus() {
-        return _position.isArchiveStatus();
+    public boolean isArchive_status() {
+        return _position.isArchive_status();
     }
 
     /**
-    * Sets whether this position is archive status.
+    * Sets whether this position is archive_status.
     *
-    * @param archiveStatus the archive status of this position
+    * @param archive_status the archive_status of this position
     */
     @Override
-    public void setArchiveStatus(boolean archiveStatus) {
-        _position.setArchiveStatus(archiveStatus);
+    public void setArchive_status(boolean archive_status) {
+        _position.setArchive_status(archive_status);
     }
 
     @Override

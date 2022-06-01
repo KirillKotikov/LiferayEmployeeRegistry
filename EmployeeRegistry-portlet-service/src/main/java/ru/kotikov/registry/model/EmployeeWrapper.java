@@ -36,41 +36,41 @@ public class EmployeeWrapper implements Employee, ModelWrapper<Employee> {
     public Map<String, Object> getModelAttributes() {
         Map<String, Object> attributes = new HashMap<String, Object>();
 
-        attributes.put("employeeId", getEmployeeId());
-        attributes.put("lastName", getLastName());
-        attributes.put("firstName", getFirstName());
+        attributes.put("employee_id", getEmployee_id());
+        attributes.put("last_name", getLast_name());
+        attributes.put("first_name", getFirst_name());
         attributes.put("patronymic", getPatronymic());
         attributes.put("sex", getSex());
-        attributes.put("dateOfBirth", getDateOfBirth());
-        attributes.put("positionId", getPositionId());
-        attributes.put("dateOfEmployment", getDateOfEmployment());
+        attributes.put("date_of_birth", getDate_of_birth());
+        attributes.put("position_id", getPosition_id());
+        attributes.put("date_of_employment", getDate_of_employment());
         attributes.put("salary", getSalary());
-        attributes.put("workPhoneNumber", getWorkPhoneNumber());
-        attributes.put("mobilePhoneNumber", getMobilePhoneNumber());
-        attributes.put("bankId", getBankId());
-        attributes.put("archiveStatus", getArchiveStatus());
+        attributes.put("work_phone_number", getWork_phone_number());
+        attributes.put("mobile_phone_number", getMobile_phone_number());
+        attributes.put("bank_id", getBank_id());
+        attributes.put("archive_status", getArchive_status());
 
         return attributes;
     }
 
     @Override
     public void setModelAttributes(Map<String, Object> attributes) {
-        Long employeeId = (Long) attributes.get("employeeId");
+        Long employee_id = (Long) attributes.get("employee_id");
 
-        if (employeeId != null) {
-            setEmployeeId(employeeId);
+        if (employee_id != null) {
+            setEmployee_id(employee_id);
         }
 
-        String lastName = (String) attributes.get("lastName");
+        String last_name = (String) attributes.get("last_name");
 
-        if (lastName != null) {
-            setLastName(lastName);
+        if (last_name != null) {
+            setLast_name(last_name);
         }
 
-        String firstName = (String) attributes.get("firstName");
+        String first_name = (String) attributes.get("first_name");
 
-        if (firstName != null) {
-            setFirstName(firstName);
+        if (first_name != null) {
+            setFirst_name(first_name);
         }
 
         String patronymic = (String) attributes.get("patronymic");
@@ -85,22 +85,23 @@ public class EmployeeWrapper implements Employee, ModelWrapper<Employee> {
             setSex(sex);
         }
 
-        String dateOfBirth = (String) attributes.get("dateOfBirth");
+        String date_of_birth = (String) attributes.get("date_of_birth");
 
-        if (dateOfBirth != null) {
-            setDateOfBirth(dateOfBirth);
+        if (date_of_birth != null) {
+            setDate_of_birth(date_of_birth);
         }
 
-        Long positionId = (Long) attributes.get("positionId");
+        Long position_id = (Long) attributes.get("position_id");
 
-        if (positionId != null) {
-            setPositionId(positionId);
+        if (position_id != null) {
+            setPosition_id(position_id);
         }
 
-        String dateOfEmployment = (String) attributes.get("dateOfEmployment");
+        String date_of_employment = (String) attributes.get(
+                "date_of_employment");
 
-        if (dateOfEmployment != null) {
-            setDateOfEmployment(dateOfEmployment);
+        if (date_of_employment != null) {
+            setDate_of_employment(date_of_employment);
         }
 
         Integer salary = (Integer) attributes.get("salary");
@@ -109,28 +110,29 @@ public class EmployeeWrapper implements Employee, ModelWrapper<Employee> {
             setSalary(salary);
         }
 
-        String workPhoneNumber = (String) attributes.get("workPhoneNumber");
+        String work_phone_number = (String) attributes.get("work_phone_number");
 
-        if (workPhoneNumber != null) {
-            setWorkPhoneNumber(workPhoneNumber);
+        if (work_phone_number != null) {
+            setWork_phone_number(work_phone_number);
         }
 
-        String mobilePhoneNumber = (String) attributes.get("mobilePhoneNumber");
+        String mobile_phone_number = (String) attributes.get(
+                "mobile_phone_number");
 
-        if (mobilePhoneNumber != null) {
-            setMobilePhoneNumber(mobilePhoneNumber);
+        if (mobile_phone_number != null) {
+            setMobile_phone_number(mobile_phone_number);
         }
 
-        Long bankId = (Long) attributes.get("bankId");
+        Long bank_id = (Long) attributes.get("bank_id");
 
-        if (bankId != null) {
-            setBankId(bankId);
+        if (bank_id != null) {
+            setBank_id(bank_id);
         }
 
-        Boolean archiveStatus = (Boolean) attributes.get("archiveStatus");
+        Boolean archive_status = (Boolean) attributes.get("archive_status");
 
-        if (archiveStatus != null) {
-            setArchiveStatus(archiveStatus);
+        if (archive_status != null) {
+            setArchive_status(archive_status);
         }
     }
 
@@ -155,63 +157,63 @@ public class EmployeeWrapper implements Employee, ModelWrapper<Employee> {
     }
 
     /**
-    * Returns the employee ID of this employee.
+    * Returns the employee_id of this employee.
     *
-    * @return the employee ID of this employee
+    * @return the employee_id of this employee
     */
     @Override
-    public long getEmployeeId() {
-        return _employee.getEmployeeId();
+    public long getEmployee_id() {
+        return _employee.getEmployee_id();
     }
 
     /**
-    * Sets the employee ID of this employee.
+    * Sets the employee_id of this employee.
     *
-    * @param employeeId the employee ID of this employee
+    * @param employee_id the employee_id of this employee
     */
     @Override
-    public void setEmployeeId(long employeeId) {
-        _employee.setEmployeeId(employeeId);
+    public void setEmployee_id(long employee_id) {
+        _employee.setEmployee_id(employee_id);
     }
 
     /**
-    * Returns the last name of this employee.
+    * Returns the last_name of this employee.
     *
-    * @return the last name of this employee
+    * @return the last_name of this employee
     */
     @Override
-    public java.lang.String getLastName() {
-        return _employee.getLastName();
+    public java.lang.String getLast_name() {
+        return _employee.getLast_name();
     }
 
     /**
-    * Sets the last name of this employee.
+    * Sets the last_name of this employee.
     *
-    * @param lastName the last name of this employee
+    * @param last_name the last_name of this employee
     */
     @Override
-    public void setLastName(java.lang.String lastName) {
-        _employee.setLastName(lastName);
+    public void setLast_name(java.lang.String last_name) {
+        _employee.setLast_name(last_name);
     }
 
     /**
-    * Returns the first name of this employee.
+    * Returns the first_name of this employee.
     *
-    * @return the first name of this employee
+    * @return the first_name of this employee
     */
     @Override
-    public java.lang.String getFirstName() {
-        return _employee.getFirstName();
+    public java.lang.String getFirst_name() {
+        return _employee.getFirst_name();
     }
 
     /**
-    * Sets the first name of this employee.
+    * Sets the first_name of this employee.
     *
-    * @param firstName the first name of this employee
+    * @param first_name the first_name of this employee
     */
     @Override
-    public void setFirstName(java.lang.String firstName) {
-        _employee.setFirstName(firstName);
+    public void setFirst_name(java.lang.String first_name) {
+        _employee.setFirst_name(first_name);
     }
 
     /**
@@ -255,63 +257,63 @@ public class EmployeeWrapper implements Employee, ModelWrapper<Employee> {
     }
 
     /**
-    * Returns the date of birth of this employee.
+    * Returns the date_of_birth of this employee.
     *
-    * @return the date of birth of this employee
+    * @return the date_of_birth of this employee
     */
     @Override
-    public java.lang.String getDateOfBirth() {
-        return _employee.getDateOfBirth();
+    public java.lang.String getDate_of_birth() {
+        return _employee.getDate_of_birth();
     }
 
     /**
-    * Sets the date of birth of this employee.
+    * Sets the date_of_birth of this employee.
     *
-    * @param dateOfBirth the date of birth of this employee
+    * @param date_of_birth the date_of_birth of this employee
     */
     @Override
-    public void setDateOfBirth(java.lang.String dateOfBirth) {
-        _employee.setDateOfBirth(dateOfBirth);
+    public void setDate_of_birth(java.lang.String date_of_birth) {
+        _employee.setDate_of_birth(date_of_birth);
     }
 
     /**
-    * Returns the position ID of this employee.
+    * Returns the position_id of this employee.
     *
-    * @return the position ID of this employee
+    * @return the position_id of this employee
     */
     @Override
-    public long getPositionId() {
-        return _employee.getPositionId();
+    public long getPosition_id() {
+        return _employee.getPosition_id();
     }
 
     /**
-    * Sets the position ID of this employee.
+    * Sets the position_id of this employee.
     *
-    * @param positionId the position ID of this employee
+    * @param position_id the position_id of this employee
     */
     @Override
-    public void setPositionId(long positionId) {
-        _employee.setPositionId(positionId);
+    public void setPosition_id(long position_id) {
+        _employee.setPosition_id(position_id);
     }
 
     /**
-    * Returns the date of employment of this employee.
+    * Returns the date_of_employment of this employee.
     *
-    * @return the date of employment of this employee
+    * @return the date_of_employment of this employee
     */
     @Override
-    public java.lang.String getDateOfEmployment() {
-        return _employee.getDateOfEmployment();
+    public java.lang.String getDate_of_employment() {
+        return _employee.getDate_of_employment();
     }
 
     /**
-    * Sets the date of employment of this employee.
+    * Sets the date_of_employment of this employee.
     *
-    * @param dateOfEmployment the date of employment of this employee
+    * @param date_of_employment the date_of_employment of this employee
     */
     @Override
-    public void setDateOfEmployment(java.lang.String dateOfEmployment) {
-        _employee.setDateOfEmployment(dateOfEmployment);
+    public void setDate_of_employment(java.lang.String date_of_employment) {
+        _employee.setDate_of_employment(date_of_employment);
     }
 
     /**
@@ -335,93 +337,93 @@ public class EmployeeWrapper implements Employee, ModelWrapper<Employee> {
     }
 
     /**
-    * Returns the work phone number of this employee.
+    * Returns the work_phone_number of this employee.
     *
-    * @return the work phone number of this employee
+    * @return the work_phone_number of this employee
     */
     @Override
-    public java.lang.String getWorkPhoneNumber() {
-        return _employee.getWorkPhoneNumber();
+    public java.lang.String getWork_phone_number() {
+        return _employee.getWork_phone_number();
     }
 
     /**
-    * Sets the work phone number of this employee.
+    * Sets the work_phone_number of this employee.
     *
-    * @param workPhoneNumber the work phone number of this employee
+    * @param work_phone_number the work_phone_number of this employee
     */
     @Override
-    public void setWorkPhoneNumber(java.lang.String workPhoneNumber) {
-        _employee.setWorkPhoneNumber(workPhoneNumber);
+    public void setWork_phone_number(java.lang.String work_phone_number) {
+        _employee.setWork_phone_number(work_phone_number);
     }
 
     /**
-    * Returns the mobile phone number of this employee.
+    * Returns the mobile_phone_number of this employee.
     *
-    * @return the mobile phone number of this employee
+    * @return the mobile_phone_number of this employee
     */
     @Override
-    public java.lang.String getMobilePhoneNumber() {
-        return _employee.getMobilePhoneNumber();
+    public java.lang.String getMobile_phone_number() {
+        return _employee.getMobile_phone_number();
     }
 
     /**
-    * Sets the mobile phone number of this employee.
+    * Sets the mobile_phone_number of this employee.
     *
-    * @param mobilePhoneNumber the mobile phone number of this employee
+    * @param mobile_phone_number the mobile_phone_number of this employee
     */
     @Override
-    public void setMobilePhoneNumber(java.lang.String mobilePhoneNumber) {
-        _employee.setMobilePhoneNumber(mobilePhoneNumber);
+    public void setMobile_phone_number(java.lang.String mobile_phone_number) {
+        _employee.setMobile_phone_number(mobile_phone_number);
     }
 
     /**
-    * Returns the bank ID of this employee.
+    * Returns the bank_id of this employee.
     *
-    * @return the bank ID of this employee
+    * @return the bank_id of this employee
     */
     @Override
-    public long getBankId() {
-        return _employee.getBankId();
+    public long getBank_id() {
+        return _employee.getBank_id();
     }
 
     /**
-    * Sets the bank ID of this employee.
+    * Sets the bank_id of this employee.
     *
-    * @param bankId the bank ID of this employee
+    * @param bank_id the bank_id of this employee
     */
     @Override
-    public void setBankId(long bankId) {
-        _employee.setBankId(bankId);
+    public void setBank_id(long bank_id) {
+        _employee.setBank_id(bank_id);
     }
 
     /**
-    * Returns the archive status of this employee.
+    * Returns the archive_status of this employee.
     *
-    * @return the archive status of this employee
+    * @return the archive_status of this employee
     */
     @Override
-    public boolean getArchiveStatus() {
-        return _employee.getArchiveStatus();
+    public boolean getArchive_status() {
+        return _employee.getArchive_status();
     }
 
     /**
-    * Returns <code>true</code> if this employee is archive status.
+    * Returns <code>true</code> if this employee is archive_status.
     *
-    * @return <code>true</code> if this employee is archive status; <code>false</code> otherwise
+    * @return <code>true</code> if this employee is archive_status; <code>false</code> otherwise
     */
     @Override
-    public boolean isArchiveStatus() {
-        return _employee.isArchiveStatus();
+    public boolean isArchive_status() {
+        return _employee.isArchive_status();
     }
 
     /**
-    * Sets whether this employee is archive status.
+    * Sets whether this employee is archive_status.
     *
-    * @param archiveStatus the archive status of this employee
+    * @param archive_status the archive_status of this employee
     */
     @Override
-    public void setArchiveStatus(boolean archiveStatus) {
-        _employee.setArchiveStatus(archiveStatus);
+    public void setArchive_status(boolean archive_status) {
+        _employee.setArchive_status(archive_status);
     }
 
     @Override

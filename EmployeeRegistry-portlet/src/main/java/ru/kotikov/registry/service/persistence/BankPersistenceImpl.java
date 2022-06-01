@@ -177,15 +177,15 @@ public class BankPersistenceImpl extends BasePersistenceImpl<Bank>
     /**
      * Creates a new bank with the primary key. Does not add the bank to the database.
      *
-     * @param bankId the primary key for the new bank
+     * @param bank_id the primary key for the new bank
      * @return the new bank
      */
     @Override
-    public Bank create(long bankId) {
+    public Bank create(long bank_id) {
         Bank bank = new BankImpl();
 
         bank.setNew(true);
-        bank.setPrimaryKey(bankId);
+        bank.setPrimaryKey(bank_id);
 
         return bank;
     }
@@ -193,14 +193,15 @@ public class BankPersistenceImpl extends BasePersistenceImpl<Bank>
     /**
      * Removes the bank with the primary key from the database. Also notifies the appropriate model listeners.
      *
-     * @param bankId the primary key of the bank
+     * @param bank_id the primary key of the bank
      * @return the bank that was removed
      * @throws ru.kotikov.registry.NoSuchBankException if a bank with the primary key could not be found
      * @throws SystemException if a system exception occurred
      */
     @Override
-    public Bank remove(long bankId) throws NoSuchBankException, SystemException {
-        return remove((Serializable) bankId);
+    public Bank remove(long bank_id)
+        throws NoSuchBankException, SystemException {
+        return remove((Serializable) bank_id);
     }
 
     /**
@@ -317,10 +318,10 @@ public class BankPersistenceImpl extends BasePersistenceImpl<Bank>
         bankImpl.setNew(bank.isNew());
         bankImpl.setPrimaryKey(bank.getPrimaryKey());
 
-        bankImpl.setBankId(bank.getBankId());
-        bankImpl.setBankName(bank.getBankName());
+        bankImpl.setBank_id(bank.getBank_id());
+        bankImpl.setBank_name(bank.getBank_name());
         bankImpl.setBik(bank.getBik());
-        bankImpl.setBankAddress(bank.getBankAddress());
+        bankImpl.setBank_address(bank.getBank_address());
 
         return bankImpl;
     }
@@ -353,15 +354,15 @@ public class BankPersistenceImpl extends BasePersistenceImpl<Bank>
     /**
      * Returns the bank with the primary key or throws a {@link ru.kotikov.registry.NoSuchBankException} if it could not be found.
      *
-     * @param bankId the primary key of the bank
+     * @param bank_id the primary key of the bank
      * @return the bank
      * @throws ru.kotikov.registry.NoSuchBankException if a bank with the primary key could not be found
      * @throws SystemException if a system exception occurred
      */
     @Override
-    public Bank findByPrimaryKey(long bankId)
+    public Bank findByPrimaryKey(long bank_id)
         throws NoSuchBankException, SystemException {
-        return findByPrimaryKey((Serializable) bankId);
+        return findByPrimaryKey((Serializable) bank_id);
     }
 
     /**
@@ -411,13 +412,13 @@ public class BankPersistenceImpl extends BasePersistenceImpl<Bank>
     /**
      * Returns the bank with the primary key or returns <code>null</code> if it could not be found.
      *
-     * @param bankId the primary key of the bank
+     * @param bank_id the primary key of the bank
      * @return the bank, or <code>null</code> if a bank with the primary key could not be found
      * @throws SystemException if a system exception occurred
      */
     @Override
-    public Bank fetchByPrimaryKey(long bankId) throws SystemException {
-        return fetchByPrimaryKey((Serializable) bankId);
+    public Bank fetchByPrimaryKey(long bank_id) throws SystemException {
+        return fetchByPrimaryKey((Serializable) bank_id);
     }
 
     /**

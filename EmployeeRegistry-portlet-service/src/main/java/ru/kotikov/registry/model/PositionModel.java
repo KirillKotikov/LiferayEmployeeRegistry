@@ -44,54 +44,54 @@ public interface PositionModel extends BaseModel<Position> {
     public void setPrimaryKey(long primaryKey);
 
     /**
-     * Returns the position ID of this position.
+     * Returns the position_id of this position.
      *
-     * @return the position ID of this position
+     * @return the position_id of this position
      */
-    public long getPositionId();
+    public long getPosition_id();
 
     /**
-     * Sets the position ID of this position.
+     * Sets the position_id of this position.
      *
-     * @param positionId the position ID of this position
+     * @param position_id the position_id of this position
      */
-    public void setPositionId(long positionId);
+    public void setPosition_id(long position_id);
 
     /**
-     * Returns the position name of this position.
+     * Returns the position_name of this position.
      *
-     * @return the position name of this position
+     * @return the position_name of this position
      */
     @AutoEscape
-    public String getPositionName();
+    public String getPosition_name();
 
     /**
-     * Sets the position name of this position.
+     * Sets the position_name of this position.
      *
-     * @param positionName the position name of this position
+     * @param position_name the position_name of this position
      */
-    public void setPositionName(String positionName);
+    public void setPosition_name(String position_name);
 
     /**
-     * Returns the archive status of this position.
+     * Returns the archive_status of this position.
      *
-     * @return the archive status of this position
+     * @return the archive_status of this position
      */
-    public boolean getArchiveStatus();
+    public boolean getArchive_status();
 
     /**
-     * Returns <code>true</code> if this position is archive status.
+     * Returns <code>true</code> if this position is archive_status.
      *
-     * @return <code>true</code> if this position is archive status; <code>false</code> otherwise
+     * @return <code>true</code> if this position is archive_status; <code>false</code> otherwise
      */
-    public boolean isArchiveStatus();
+    public boolean isArchive_status();
 
     /**
-     * Sets whether this position is archive status.
+     * Sets whether this position is archive_status.
      *
-     * @param archiveStatus the archive status of this position
+     * @param archive_status the archive_status of this position
      */
-    public void setArchiveStatus(boolean archiveStatus);
+    public void setArchive_status(boolean archive_status);
 
     @Override
     public boolean isNew();

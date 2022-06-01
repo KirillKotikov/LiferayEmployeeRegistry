@@ -12,19 +12,19 @@ import java.util.List;
  * @generated
  */
 public class EmployeeSoap implements Serializable {
-    private long _employeeId;
-    private String _lastName;
-    private String _firstName;
+    private long _employee_id;
+    private String _last_name;
+    private String _first_name;
     private String _patronymic;
     private String _sex;
-    private String _dateOfBirth;
-    private long _positionId;
-    private String _dateOfEmployment;
+    private String _date_of_birth;
+    private long _position_id;
+    private String _date_of_employment;
     private int _salary;
-    private String _workPhoneNumber;
-    private String _mobilePhoneNumber;
-    private long _bankId;
-    private boolean _archiveStatus;
+    private String _work_phone_number;
+    private String _mobile_phone_number;
+    private long _bank_id;
+    private boolean _archive_status;
 
     public EmployeeSoap() {
     }
@@ -32,19 +32,19 @@ public class EmployeeSoap implements Serializable {
     public static EmployeeSoap toSoapModel(Employee model) {
         EmployeeSoap soapModel = new EmployeeSoap();
 
-        soapModel.setEmployeeId(model.getEmployeeId());
-        soapModel.setLastName(model.getLastName());
-        soapModel.setFirstName(model.getFirstName());
+        soapModel.setEmployee_id(model.getEmployee_id());
+        soapModel.setLast_name(model.getLast_name());
+        soapModel.setFirst_name(model.getFirst_name());
         soapModel.setPatronymic(model.getPatronymic());
         soapModel.setSex(model.getSex());
-        soapModel.setDateOfBirth(model.getDateOfBirth());
-        soapModel.setPositionId(model.getPositionId());
-        soapModel.setDateOfEmployment(model.getDateOfEmployment());
+        soapModel.setDate_of_birth(model.getDate_of_birth());
+        soapModel.setPosition_id(model.getPosition_id());
+        soapModel.setDate_of_employment(model.getDate_of_employment());
         soapModel.setSalary(model.getSalary());
-        soapModel.setWorkPhoneNumber(model.getWorkPhoneNumber());
-        soapModel.setMobilePhoneNumber(model.getMobilePhoneNumber());
-        soapModel.setBankId(model.getBankId());
-        soapModel.setArchiveStatus(model.getArchiveStatus());
+        soapModel.setWork_phone_number(model.getWork_phone_number());
+        soapModel.setMobile_phone_number(model.getMobile_phone_number());
+        soapModel.setBank_id(model.getBank_id());
+        soapModel.setArchive_status(model.getArchive_status());
 
         return soapModel;
     }
@@ -86,35 +86,35 @@ public class EmployeeSoap implements Serializable {
     }
 
     public long getPrimaryKey() {
-        return _employeeId;
+        return _employee_id;
     }
 
     public void setPrimaryKey(long pk) {
-        setEmployeeId(pk);
+        setEmployee_id(pk);
     }
 
-    public long getEmployeeId() {
-        return _employeeId;
+    public long getEmployee_id() {
+        return _employee_id;
     }
 
-    public void setEmployeeId(long employeeId) {
-        _employeeId = employeeId;
+    public void setEmployee_id(long employee_id) {
+        _employee_id = employee_id;
     }
 
-    public String getLastName() {
-        return _lastName;
+    public String getLast_name() {
+        return _last_name;
     }
 
-    public void setLastName(String lastName) {
-        _lastName = lastName;
+    public void setLast_name(String last_name) {
+        _last_name = last_name;
     }
 
-    public String getFirstName() {
-        return _firstName;
+    public String getFirst_name() {
+        return _first_name;
     }
 
-    public void setFirstName(String firstName) {
-        _firstName = firstName;
+    public void setFirst_name(String first_name) {
+        _first_name = first_name;
     }
 
     public String getPatronymic() {
@@ -133,28 +133,28 @@ public class EmployeeSoap implements Serializable {
         _sex = sex;
     }
 
-    public String getDateOfBirth() {
-        return _dateOfBirth;
+    public String getDate_of_birth() {
+        return _date_of_birth;
     }
 
-    public void setDateOfBirth(String dateOfBirth) {
-        _dateOfBirth = dateOfBirth;
+    public void setDate_of_birth(String date_of_birth) {
+        _date_of_birth = date_of_birth;
     }
 
-    public long getPositionId() {
-        return _positionId;
+    public long getPosition_id() {
+        return _position_id;
     }
 
-    public void setPositionId(long positionId) {
-        _positionId = positionId;
+    public void setPosition_id(long position_id) {
+        _position_id = position_id;
     }
 
-    public String getDateOfEmployment() {
-        return _dateOfEmployment;
+    public String getDate_of_employment() {
+        return _date_of_employment;
     }
 
-    public void setDateOfEmployment(String dateOfEmployment) {
-        _dateOfEmployment = dateOfEmployment;
+    public void setDate_of_employment(String date_of_employment) {
+        _date_of_employment = date_of_employment;
     }
 
     public int getSalary() {
@@ -165,39 +165,39 @@ public class EmployeeSoap implements Serializable {
         _salary = salary;
     }
 
-    public String getWorkPhoneNumber() {
-        return _workPhoneNumber;
+    public String getWork_phone_number() {
+        return _work_phone_number;
     }
 
-    public void setWorkPhoneNumber(String workPhoneNumber) {
-        _workPhoneNumber = workPhoneNumber;
+    public void setWork_phone_number(String work_phone_number) {
+        _work_phone_number = work_phone_number;
     }
 
-    public String getMobilePhoneNumber() {
-        return _mobilePhoneNumber;
+    public String getMobile_phone_number() {
+        return _mobile_phone_number;
     }
 
-    public void setMobilePhoneNumber(String mobilePhoneNumber) {
-        _mobilePhoneNumber = mobilePhoneNumber;
+    public void setMobile_phone_number(String mobile_phone_number) {
+        _mobile_phone_number = mobile_phone_number;
     }
 
-    public long getBankId() {
-        return _bankId;
+    public long getBank_id() {
+        return _bank_id;
     }
 
-    public void setBankId(long bankId) {
-        _bankId = bankId;
+    public void setBank_id(long bank_id) {
+        _bank_id = bank_id;
     }
 
-    public boolean getArchiveStatus() {
-        return _archiveStatus;
+    public boolean getArchive_status() {
+        return _archive_status;
     }
 
-    public boolean isArchiveStatus() {
-        return _archiveStatus;
+    public boolean isArchive_status() {
+        return _archive_status;
     }
 
-    public void setArchiveStatus(boolean archiveStatus) {
-        _archiveStatus = archiveStatus;
+    public void setArchive_status(boolean archive_status) {
+        _archive_status = archive_status;
     }
 }

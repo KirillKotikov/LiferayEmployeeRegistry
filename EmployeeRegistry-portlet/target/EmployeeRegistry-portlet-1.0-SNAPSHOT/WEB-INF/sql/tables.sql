@@ -1,28 +1,28 @@
 create table registry_Bank (
-	bankId LONG not null primary key,
-	bankName VARCHAR(75) null,
+	bank_id LONG not null primary key,
+	bank_name VARCHAR(75) null,
 	bik VARCHAR(75) null,
-	bankAddress VARCHAR(75) null
+	bank_address VARCHAR(75) null
 );
 
 create table registry_Employee (
-	employeeId LONG not null primary key,
-	lastName VARCHAR(75) null,
-	firstName VARCHAR(75) null,
+	employee_id LONG not null primary key,
+	last_name VARCHAR(75) null,
+	first_name VARCHAR(75) null,
 	patronymic VARCHAR(75) null,
 	sex VARCHAR(75) null,
-	dateOfBirth VARCHAR(75) null,
-	positionId LONG,
-	dateOfEmployment VARCHAR(75) null,
+	date_of_birth VARCHAR(75) null,
+	position_id LONG,
+	date_of_employment VARCHAR(75) null,
 	salary INTEGER,
-	workPhoneNumber VARCHAR(75) null,
-	mobilePhoneNumber VARCHAR(75) null,
-	bankId LONG,
-	archiveStatus BOOLEAN
+	work_phone_number VARCHAR(75) null,
+	mobile_phone_number VARCHAR(75) null,
+	bank_id LONG,
+	archive_status BOOLEAN
 );
 
 create table registry_Position (
-	positionId LONG not null primary key,
-	positionName VARCHAR(75) null,
-	archiveStatus BOOLEAN
+	position_id LONG not null primary key,
+	position_name VARCHAR(75) null,
+	archive_status BOOLEAN
 );

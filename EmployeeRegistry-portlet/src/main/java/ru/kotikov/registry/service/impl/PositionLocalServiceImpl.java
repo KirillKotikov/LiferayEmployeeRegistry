@@ -1,6 +1,7 @@
 package ru.kotikov.registry.service.impl;
 
 import com.liferay.portal.kernel.exception.SystemException;
+import ru.kotikov.registry.model.Employee;
 import ru.kotikov.registry.model.Position;
 import ru.kotikov.registry.service.base.PositionLocalServiceBaseImpl;
 
@@ -28,6 +29,8 @@ public class PositionLocalServiceImpl extends PositionLocalServiceBaseImpl {
      */
     public List<Position> getByArchiveStatus(boolean archive) throws SystemException {
         return positionPersistence.findByArchiveStatus(archive);
-
+    }
+    public List<Employee> getPositionEmployees (Long positionId) throws SystemException {
+        return employeePersistence.findByPositionId(positionId);
     }
 }

@@ -5,58 +5,58 @@
     <namespace>registry</namespace>
 
     <entity name="Employee" local-service="true" remote-service="false">
-        <column name="employeeId" type="long" primary="true"/>
-        <column name="lastName" type="String"/>
-        <column name="firstName" type="String"/>
+        <column name="employee_id" type="long" primary="true"/>
+        <column name="last_name" type="String"/>
+        <column name="first_name" type="String"/>
         <column name="patronymic" type="String"/>
         <column name="sex" type="String"/>
-        <column name="dateOfBirth" type="String"/>
-        <column name="positionId" type="long"/>
-        <column name="dateOfEmployment" type="String"/>
+        <column name="date_of_birth" type="String"/>
+        <column name="position_id" type="long"/>
+        <column name="date_of_employment" type="String"/>
         <column name="salary" type="int"/>
-        <column name="workPhoneNumber" type="String"/>
-        <column name="mobilePhoneNumber" type="String"/>
-        <column name="bankId" type="long"/>
-        <column name="archiveStatus" type="boolean"/>
+        <column name="work_phone_number" type="String"/>
+        <column name="mobile_phone_number" type="String"/>
+        <column name="bank_id" type="long"/>
+        <column name="archive_status" type="boolean"/>
 
         <order by="asc">
-            <order-column name="lastName"/>
+            <order-column name="last_name"/>
         </order>
 
         <finder name="ArchiveStatus" return-type="Collection">
-            <finder-column name="archiveStatus"/>
+            <finder-column name="archive_status"/>
         </finder>
 
         <finder name="BankId" return-type="Collection">
-            <finder-column name="bankId"/>
+            <finder-column name="bank_id"/>
         </finder>
         <finder name="PositionId" return-type="Collection">
-            <finder-column name="positionId"/>
+            <finder-column name="position_id"/>
         </finder>
     </entity>
 
     <entity name="Bank" local-service="true" remote-service="false">
-        <column name="bankId" type="long" primary="true"/>
-        <column name="bankName" type="String"/>
+        <column name="bank_id" type="long" primary="true"/>
+        <column name="bank_name" type="String"/>
         <column name="bik" type="String"/>
-        <column name="bankAddress" type="String"/>
+        <column name="bank_address" type="String"/>
 
         <order by="asc">
-            <order-column name="bankName"/>
+            <order-column name="bank_name"/>
         </order>
     </entity>
 
     <entity name="Position" local-service="true" remote-service="false">
-        <column name="positionId" type="long" primary="true"/>
-        <column name="positionName" type="String"/>
-        <column name="archiveStatus" type="boolean"/>
+        <column name="position_id" type="long" primary="true"/>
+        <column name="position_name" type="String"/>
+        <column name="archive_status" type="boolean"/>
 
         <order by="asc">
-            <order-column name="positionName"/>
+            <order-column name="position_name"/>
         </order>
 
         <finder name="ArchiveStatus" return-type="Collection">
-            <finder-column name="archiveStatus"/>
+            <finder-column name="archive_status"/>
         </finder>
     </entity>
 </service-builder>

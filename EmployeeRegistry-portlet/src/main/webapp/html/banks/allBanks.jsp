@@ -14,10 +14,10 @@
             className="ru.kotikov.registry.model.Bank" modelVar="Bank">
 
         <liferay-ui:search-container-column-jsp path="/html/banks/buttons/bankEdit.jsp" align="left"/>
-        <liferay-ui:search-container-column-text property="bankId" name="Bank id"/>
-        <liferay-ui:search-container-column-text property="bankName" name="Bank name"/>
+        <liferay-ui:search-container-column-text property="bank_id" name="Bank id"/>
+        <liferay-ui:search-container-column-text property="bank_name" name="Bank name"/>
         <liferay-ui:search-container-column-text property="bik" name="BIK"/>
-        <liferay-ui:search-container-column-text property="bankAddress" name="Bank address"/>
+        <liferay-ui:search-container-column-text property="bank_address" name="Bank address"/>
         <liferay-ui:search-container-column-jsp path="/html/banks/buttons/bankClients.jsp" align="right"/>
 
     </liferay-ui:search-container-row>

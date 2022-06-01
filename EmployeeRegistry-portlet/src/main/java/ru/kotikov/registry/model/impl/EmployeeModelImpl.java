@@ -44,24 +44,24 @@ public class EmployeeModelImpl extends BaseModelImpl<Employee>
      */
     public static final String TABLE_NAME = "registry_Employee";
     public static final Object[][] TABLE_COLUMNS = {
-            { "employeeId", Types.BIGINT },
-            { "lastName", Types.VARCHAR },
-            { "firstName", Types.VARCHAR },
+            { "employee_id", Types.BIGINT },
+            { "last_name", Types.VARCHAR },
+            { "first_name", Types.VARCHAR },
             { "patronymic", Types.VARCHAR },
             { "sex", Types.VARCHAR },
-            { "dateOfBirth", Types.VARCHAR },
-            { "positionId", Types.BIGINT },
-            { "dateOfEmployment", Types.VARCHAR },
+            { "date_of_birth", Types.VARCHAR },
+            { "position_id", Types.BIGINT },
+            { "date_of_employment", Types.VARCHAR },
             { "salary", Types.INTEGER },
-            { "workPhoneNumber", Types.VARCHAR },
-            { "mobilePhoneNumber", Types.VARCHAR },
-            { "bankId", Types.BIGINT },
-            { "archiveStatus", Types.BOOLEAN }
+            { "work_phone_number", Types.VARCHAR },
+            { "mobile_phone_number", Types.VARCHAR },
+            { "bank_id", Types.BIGINT },
+            { "archive_status", Types.BOOLEAN }
         };
-    public static final String TABLE_SQL_CREATE = "create table registry_Employee (employeeId LONG not null primary key,lastName VARCHAR(75) null,firstName VARCHAR(75) null,patronymic VARCHAR(75) null,sex VARCHAR(75) null,dateOfBirth VARCHAR(75) null,positionId LONG,dateOfEmployment VARCHAR(75) null,salary INTEGER,workPhoneNumber VARCHAR(75) null,mobilePhoneNumber VARCHAR(75) null,bankId LONG,archiveStatus BOOLEAN)";
+    public static final String TABLE_SQL_CREATE = "create table registry_Employee (employee_id LONG not null primary key,last_name VARCHAR(75) null,first_name VARCHAR(75) null,patronymic VARCHAR(75) null,sex VARCHAR(75) null,date_of_birth VARCHAR(75) null,position_id LONG,date_of_employment VARCHAR(75) null,salary INTEGER,work_phone_number VARCHAR(75) null,mobile_phone_number VARCHAR(75) null,bank_id LONG,archive_status BOOLEAN)";
     public static final String TABLE_SQL_DROP = "drop table registry_Employee";
-    public static final String ORDER_BY_JPQL = " ORDER BY employee.lastName ASC";
-    public static final String ORDER_BY_SQL = " ORDER BY registry_Employee.lastName ASC";
+    public static final String ORDER_BY_JPQL = " ORDER BY employee.last_name ASC";
+    public static final String ORDER_BY_SQL = " ORDER BY registry_Employee.last_name ASC";
     public static final String DATA_SOURCE = "liferayDataSource";
     public static final String SESSION_FACTORY = "liferaySessionFactory";
     public static final String TX_MANAGER = "liferayTransactionManager";
@@ -74,35 +74,35 @@ public class EmployeeModelImpl extends BaseModelImpl<Employee>
     public static final boolean COLUMN_BITMASK_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
                 "value.object.column.bitmask.enabled.ru.kotikov.registry.model.Employee"),
             true);
-    public static long ARCHIVESTATUS_COLUMN_BITMASK = 1L;
-    public static long BANKID_COLUMN_BITMASK = 2L;
-    public static long POSITIONID_COLUMN_BITMASK = 4L;
-    public static long LASTNAME_COLUMN_BITMASK = 8L;
+    public static long ARCHIVE_STATUS_COLUMN_BITMASK = 1L;
+    public static long BANK_ID_COLUMN_BITMASK = 2L;
+    public static long POSITION_ID_COLUMN_BITMASK = 4L;
+    public static long LAST_NAME_COLUMN_BITMASK = 8L;
     public static final long LOCK_EXPIRATION_TIME = GetterUtil.getLong(com.liferay.util.service.ServiceProps.get(
                 "lock.expiration.time.ru.kotikov.registry.model.Employee"));
     private static ClassLoader _classLoader = Employee.class.getClassLoader();
     private static Class<?>[] _escapedModelInterfaces = new Class[] {
             Employee.class
         };
-    private long _employeeId;
-    private String _lastName;
-    private String _firstName;
+    private long _employee_id;
+    private String _last_name;
+    private String _first_name;
     private String _patronymic;
     private String _sex;
-    private String _dateOfBirth;
-    private long _positionId;
-    private long _originalPositionId;
-    private boolean _setOriginalPositionId;
-    private String _dateOfEmployment;
+    private String _date_of_birth;
+    private long _position_id;
+    private long _originalPosition_id;
+    private boolean _setOriginalPosition_id;
+    private String _date_of_employment;
     private int _salary;
-    private String _workPhoneNumber;
-    private String _mobilePhoneNumber;
-    private long _bankId;
-    private long _originalBankId;
-    private boolean _setOriginalBankId;
-    private boolean _archiveStatus;
-    private boolean _originalArchiveStatus;
-    private boolean _setOriginalArchiveStatus;
+    private String _work_phone_number;
+    private String _mobile_phone_number;
+    private long _bank_id;
+    private long _originalBank_id;
+    private boolean _setOriginalBank_id;
+    private boolean _archive_status;
+    private boolean _originalArchive_status;
+    private boolean _setOriginalArchive_status;
     private long _columnBitmask;
     private Employee _escapedModel;
 
@@ -111,17 +111,17 @@ public class EmployeeModelImpl extends BaseModelImpl<Employee>
 
     @Override
     public long getPrimaryKey() {
-        return _employeeId;
+        return _employee_id;
     }
 
     @Override
     public void setPrimaryKey(long primaryKey) {
-        setEmployeeId(primaryKey);
+        setEmployee_id(primaryKey);
     }
 
     @Override
     public Serializable getPrimaryKeyObj() {
-        return _employeeId;
+        return _employee_id;
     }
 
     @Override
@@ -143,41 +143,41 @@ public class EmployeeModelImpl extends BaseModelImpl<Employee>
     public Map<String, Object> getModelAttributes() {
         Map<String, Object> attributes = new HashMap<String, Object>();
 
-        attributes.put("employeeId", getEmployeeId());
-        attributes.put("lastName", getLastName());
-        attributes.put("firstName", getFirstName());
+        attributes.put("employee_id", getEmployee_id());
+        attributes.put("last_name", getLast_name());
+        attributes.put("first_name", getFirst_name());
         attributes.put("patronymic", getPatronymic());
         attributes.put("sex", getSex());
-        attributes.put("dateOfBirth", getDateOfBirth());
-        attributes.put("positionId", getPositionId());
-        attributes.put("dateOfEmployment", getDateOfEmployment());
+        attributes.put("date_of_birth", getDate_of_birth());
+        attributes.put("position_id", getPosition_id());
+        attributes.put("date_of_employment", getDate_of_employment());
         attributes.put("salary", getSalary());
-        attributes.put("workPhoneNumber", getWorkPhoneNumber());
-        attributes.put("mobilePhoneNumber", getMobilePhoneNumber());
-        attributes.put("bankId", getBankId());
-        attributes.put("archiveStatus", getArchiveStatus());
+        attributes.put("work_phone_number", getWork_phone_number());
+        attributes.put("mobile_phone_number", getMobile_phone_number());
+        attributes.put("bank_id", getBank_id());
+        attributes.put("archive_status", getArchive_status());
 
         return attributes;
     }
 
     @Override
     public void setModelAttributes(Map<String, Object> attributes) {
-        Long employeeId = (Long) attributes.get("employeeId");
+        Long employee_id = (Long) attributes.get("employee_id");
 
-        if (employeeId != null) {
-            setEmployeeId(employeeId);
+        if (employee_id != null) {
+            setEmployee_id(employee_id);
         }
 
-        String lastName = (String) attributes.get("lastName");
+        String last_name = (String) attributes.get("last_name");
 
-        if (lastName != null) {
-            setLastName(lastName);
+        if (last_name != null) {
+            setLast_name(last_name);
         }
 
-        String firstName = (String) attributes.get("firstName");
+        String first_name = (String) attributes.get("first_name");
 
-        if (firstName != null) {
-            setFirstName(firstName);
+        if (first_name != null) {
+            setFirst_name(first_name);
         }
 
         String patronymic = (String) attributes.get("patronymic");
@@ -192,22 +192,23 @@ public class EmployeeModelImpl extends BaseModelImpl<Employee>
             setSex(sex);
         }
 
-        String dateOfBirth = (String) attributes.get("dateOfBirth");
+        String date_of_birth = (String) attributes.get("date_of_birth");
 
-        if (dateOfBirth != null) {
-            setDateOfBirth(dateOfBirth);
+        if (date_of_birth != null) {
+            setDate_of_birth(date_of_birth);
         }
 
-        Long positionId = (Long) attributes.get("positionId");
+        Long position_id = (Long) attributes.get("position_id");
 
-        if (positionId != null) {
-            setPositionId(positionId);
+        if (position_id != null) {
+            setPosition_id(position_id);
         }
 
-        String dateOfEmployment = (String) attributes.get("dateOfEmployment");
+        String date_of_employment = (String) attributes.get(
+                "date_of_employment");
 
-        if (dateOfEmployment != null) {
-            setDateOfEmployment(dateOfEmployment);
+        if (date_of_employment != null) {
+            setDate_of_employment(date_of_employment);
         }
 
         Integer salary = (Integer) attributes.get("salary");
@@ -216,69 +217,70 @@ public class EmployeeModelImpl extends BaseModelImpl<Employee>
             setSalary(salary);
         }
 
-        String workPhoneNumber = (String) attributes.get("workPhoneNumber");
+        String work_phone_number = (String) attributes.get("work_phone_number");
 
-        if (workPhoneNumber != null) {
-            setWorkPhoneNumber(workPhoneNumber);
+        if (work_phone_number != null) {
+            setWork_phone_number(work_phone_number);
         }
 
-        String mobilePhoneNumber = (String) attributes.get("mobilePhoneNumber");
+        String mobile_phone_number = (String) attributes.get(
+                "mobile_phone_number");
 
-        if (mobilePhoneNumber != null) {
-            setMobilePhoneNumber(mobilePhoneNumber);
+        if (mobile_phone_number != null) {
+            setMobile_phone_number(mobile_phone_number);
         }
 
-        Long bankId = (Long) attributes.get("bankId");
+        Long bank_id = (Long) attributes.get("bank_id");
 
-        if (bankId != null) {
-            setBankId(bankId);
+        if (bank_id != null) {
+            setBank_id(bank_id);
         }
 
-        Boolean archiveStatus = (Boolean) attributes.get("archiveStatus");
+        Boolean archive_status = (Boolean) attributes.get("archive_status");
 
-        if (archiveStatus != null) {
-            setArchiveStatus(archiveStatus);
+        if (archive_status != null) {
+            setArchive_status(archive_status);
         }
     }
 
     @Override
-    public long getEmployeeId() {
-        return _employeeId;
+    public long getEmployee_id() {
+        return _employee_id;
     }
 
     @Override
-    public void setEmployeeId(long employeeId) {
-        _employeeId = employeeId;
+    public void setEmployee_id(long employee_id) {
+        _employee_id = employee_id;
     }
 
     @Override
-    public String getLastName() {
-        if (_lastName == null) {
+    public String getLast_name() {
+        if (_last_name == null) {
             return StringPool.BLANK;
         } else {
-            return _lastName;
+            return _last_name;
         }
     }
 
     @Override
-    public void setLastName(String lastName) {
+    public void setLast_name(String last_name) {
         _columnBitmask = -1L;
 
-        _lastName = lastName;
+        _last_name = last_name;
     }
 
     @Override
-    public String getFirstName() {
-        if (_firstName == null) {
+    public String getFirst_name() {
+        if (_first_name == null) {
             return StringPool.BLANK;
         } else {
-            return _firstName;
+            return _first_name;
         }
     }
 
     @Override
-    public void setFirstName(String firstName) {
-        _firstName = firstName;
+    public void setFirst_name(String first_name) {
+        _first_name = first_name;
     }
 
     @Override
@@ -310,53 +312,53 @@ public class EmployeeModelImpl extends BaseModelImpl<Employee>
     }
 
     @Override
-    public String getDateOfBirth() {
-        if (_dateOfBirth == null) {
+    public String getDate_of_birth() {
+        if (_date_of_birth == null) {
             return StringPool.BLANK;
         } else {
-            return _dateOfBirth;
+            return _date_of_birth;
         }
     }
 
     @Override
-    public void setDateOfBirth(String dateOfBirth) {
-        _dateOfBirth = dateOfBirth;
+    public void setDate_of_birth(String date_of_birth) {
+        _date_of_birth = date_of_birth;
     }
 
     @Override
-    public long getPositionId() {
-        return _positionId;
+    public long getPosition_id() {
+        return _position_id;
     }
 
     @Override
-    public void setPositionId(long positionId) {
-        _columnBitmask |= POSITIONID_COLUMN_BITMASK;
+    public void setPosition_id(long position_id) {
+        _columnBitmask |= POSITION_ID_COLUMN_BITMASK;
 
-        if (!_setOriginalPositionId) {
-            _setOriginalPositionId = true;
+        if (!_setOriginalPosition_id) {
+            _setOriginalPosition_id = true;
 
-            _originalPositionId = _positionId;
+            _originalPosition_id = _position_id;
         }
 
-        _positionId = positionId;
+        _position_id = position_id;
     }
 
-    public long getOriginalPositionId() {
-        return _originalPositionId;
+    public long getOriginalPosition_id() {
+        return _originalPosition_id;
     }
 
     @Override
-    public String getDateOfEmployment() {
-        if (_dateOfEmployment == null) {
+    public String getDate_of_employment() {
+        if (_date_of_employment == null) {
             return StringPool.BLANK;
         } else {
-            return _dateOfEmployment;
+            return _date_of_employment;
         }
     }
 
     @Override
-    public void setDateOfEmployment(String dateOfEmployment) {
-        _dateOfEmployment = dateOfEmployment;
+    public void setDate_of_employment(String date_of_employment) {
+        _date_of_employment = date_of_employment;
     }
 
     @Override
@@ -370,80 +372,80 @@ public class EmployeeModelImpl extends BaseModelImpl<Employee>
     }
 
     @Override
-    public String getWorkPhoneNumber() {
-        if (_workPhoneNumber == null) {
+    public String getWork_phone_number() {
+        if (_work_phone_number == null) {
             return StringPool.BLANK;
         } else {
-            return _workPhoneNumber;
+            return _work_phone_number;
         }
     }
 
     @Override
-    public void setWorkPhoneNumber(String workPhoneNumber) {
-        _workPhoneNumber = workPhoneNumber;
+    public void setWork_phone_number(String work_phone_number) {
+        _work_phone_number = work_phone_number;
     }
 
     @Override
-    public String getMobilePhoneNumber() {
-        if (_mobilePhoneNumber == null) {
+    public String getMobile_phone_number() {
+        if (_mobile_phone_number == null) {
             return StringPool.BLANK;
         } else {
-            return _mobilePhoneNumber;
+            return _mobile_phone_number;
         }
     }
 
     @Override
-    public void setMobilePhoneNumber(String mobilePhoneNumber) {
-        _mobilePhoneNumber = mobilePhoneNumber;
+    public void setMobile_phone_number(String mobile_phone_number) {
+        _mobile_phone_number = mobile_phone_number;
     }
 
     @Override
-    public long getBankId() {
-        return _bankId;
+    public long getBank_id() {
+        return _bank_id;
     }
 
     @Override
-    public void setBankId(long bankId) {
-        _columnBitmask |= BANKID_COLUMN_BITMASK;
+    public void setBank_id(long bank_id) {
+        _columnBitmask |= BANK_ID_COLUMN_BITMASK;
 
-        if (!_setOriginalBankId) {
-            _setOriginalBankId = true;
+        if (!_setOriginalBank_id) {
+            _setOriginalBank_id = true;
 
-            _originalBankId = _bankId;
+            _originalBank_id = _bank_id;
         }
 
-        _bankId = bankId;
+        _bank_id = bank_id;
     }
 
-    public long getOriginalBankId() {
-        return _originalBankId;
-    }
-
-    @Override
-    public boolean getArchiveStatus() {
-        return _archiveStatus;
+    public long getOriginalBank_id() {
+        return _originalBank_id;
     }
 
     @Override
-    public boolean isArchiveStatus() {
-        return _archiveStatus;
+    public boolean getArchive_status() {
+        return _archive_status;
     }
 
     @Override
-    public void setArchiveStatus(boolean archiveStatus) {
-        _columnBitmask |= ARCHIVESTATUS_COLUMN_BITMASK;
+    public boolean isArchive_status() {
+        return _archive_status;
+    }
 
-        if (!_setOriginalArchiveStatus) {
-            _setOriginalArchiveStatus = true;
+    @Override
+    public void setArchive_status(boolean archive_status) {
+        _columnBitmask |= ARCHIVE_STATUS_COLUMN_BITMASK;
 
-            _originalArchiveStatus = _archiveStatus;
+        if (!_setOriginalArchive_status) {
+            _setOriginalArchive_status = true;
+
+            _originalArchive_status = _archive_status;
         }
 
-        _archiveStatus = archiveStatus;
+        _archive_status = archive_status;
     }
 
-    public boolean getOriginalArchiveStatus() {
-        return _originalArchiveStatus;
+    public boolean getOriginalArchive_status() {
+        return _originalArchive_status;
     }
 
     public long getColumnBitmask() {
@@ -477,19 +479,19 @@ public class EmployeeModelImpl extends BaseModelImpl<Employee>
     public Object clone() {
         EmployeeImpl employeeImpl = new EmployeeImpl();
 
-        employeeImpl.setEmployeeId(getEmployeeId());
-        employeeImpl.setLastName(getLastName());
-        employeeImpl.setFirstName(getFirstName());
+        employeeImpl.setEmployee_id(getEmployee_id());
+        employeeImpl.setLast_name(getLast_name());
+        employeeImpl.setFirst_name(getFirst_name());
         employeeImpl.setPatronymic(getPatronymic());
         employeeImpl.setSex(getSex());
-        employeeImpl.setDateOfBirth(getDateOfBirth());
-        employeeImpl.setPositionId(getPositionId());
-        employeeImpl.setDateOfEmployment(getDateOfEmployment());
+        employeeImpl.setDate_of_birth(getDate_of_birth());
+        employeeImpl.setPosition_id(getPosition_id());
+        employeeImpl.setDate_of_employment(getDate_of_employment());
         employeeImpl.setSalary(getSalary());
-        employeeImpl.setWorkPhoneNumber(getWorkPhoneNumber());
-        employeeImpl.setMobilePhoneNumber(getMobilePhoneNumber());
-        employeeImpl.setBankId(getBankId());
-        employeeImpl.setArchiveStatus(getArchiveStatus());
+        employeeImpl.setWork_phone_number(getWork_phone_number());
+        employeeImpl.setMobile_phone_number(getMobile_phone_number());
+        employeeImpl.setBank_id(getBank_id());
+        employeeImpl.setArchive_status(getArchive_status());
 
         employeeImpl.resetOriginalValues();
 
@@ -500,7 +502,7 @@ public class EmployeeModelImpl extends BaseModelImpl<Employee>
     public int compareTo(Employee employee) {
         int value = 0;
 
-        value = getLastName().compareTo(employee.getLastName());
+        value = getLast_name().compareTo(employee.getLast_name());
 
         if (value != 0) {
             return value;
@@ -539,17 +541,17 @@ public class EmployeeModelImpl extends BaseModelImpl<Employee>
     public void resetOriginalValues() {
         EmployeeModelImpl employeeModelImpl = this;
 
-        employeeModelImpl._originalPositionId = employeeModelImpl._positionId;
+        employeeModelImpl._originalPosition_id = employeeModelImpl._position_id;
 
-        employeeModelImpl._setOriginalPositionId = false;
+        employeeModelImpl._setOriginalPosition_id = false;
 
-        employeeModelImpl._originalBankId = employeeModelImpl._bankId;
+        employeeModelImpl._originalBank_id = employeeModelImpl._bank_id;
 
-        employeeModelImpl._setOriginalBankId = false;
+        employeeModelImpl._setOriginalBank_id = false;
 
-        employeeModelImpl._originalArchiveStatus = employeeModelImpl._archiveStatus;
+        employeeModelImpl._originalArchive_status = employeeModelImpl._archive_status;
 
-        employeeModelImpl._setOriginalArchiveStatus = false;
+        employeeModelImpl._setOriginalArchive_status = false;
 
         employeeModelImpl._columnBitmask = 0;
     }
@@ -558,22 +560,22 @@ public class EmployeeModelImpl extends BaseModelImpl<Employee>
     public CacheModel<Employee> toCacheModel() {
         EmployeeCacheModel employeeCacheModel = new EmployeeCacheModel();
 
-        employeeCacheModel.employeeId = getEmployeeId();
+        employeeCacheModel.employee_id = getEmployee_id();
 
-        employeeCacheModel.lastName = getLastName();
+        employeeCacheModel.last_name = getLast_name();
 
-        String lastName = employeeCacheModel.lastName;
+        String last_name = employeeCacheModel.last_name;
 
-        if ((lastName != null) && (lastName.length() == 0)) {
-            employeeCacheModel.lastName = null;
+        if ((last_name != null) && (last_name.length() == 0)) {
+            employeeCacheModel.last_name = null;
         }
 
-        employeeCacheModel.firstName = getFirstName();
+        employeeCacheModel.first_name = getFirst_name();
 
-        String firstName = employeeCacheModel.firstName;
+        String first_name = employeeCacheModel.first_name;
 
-        if ((firstName != null) && (firstName.length() == 0)) {
-            employeeCacheModel.firstName = null;
+        if ((first_name != null) && (first_name.length() == 0)) {
+            employeeCacheModel.first_name = null;
         }
 
         employeeCacheModel.patronymic = getPatronymic();
@@ -592,45 +594,46 @@ public class EmployeeModelImpl extends BaseModelImpl<Employee>
             employeeCacheModel.sex = null;
         }
 
-        employeeCacheModel.dateOfBirth = getDateOfBirth();
+        employeeCacheModel.date_of_birth = getDate_of_birth();
 
-        String dateOfBirth = employeeCacheModel.dateOfBirth;
+        String date_of_birth = employeeCacheModel.date_of_birth;
 
-        if ((dateOfBirth != null) && (dateOfBirth.length() == 0)) {
-            employeeCacheModel.dateOfBirth = null;
+        if ((date_of_birth != null) && (date_of_birth.length() == 0)) {
+            employeeCacheModel.date_of_birth = null;
         }
 
-        employeeCacheModel.positionId = getPositionId();
+        employeeCacheModel.position_id = getPosition_id();
 
-        employeeCacheModel.dateOfEmployment = getDateOfEmployment();
+        employeeCacheModel.date_of_employment = getDate_of_employment();
 
-        String dateOfEmployment = employeeCacheModel.dateOfEmployment;
+        String date_of_employment = employeeCacheModel.date_of_employment;
 
-        if ((dateOfEmployment != null) && (dateOfEmployment.length() == 0)) {
-            employeeCacheModel.dateOfEmployment = null;
+        if ((date_of_employment != null) && (date_of_employment.length() == 0)) {
+            employeeCacheModel.date_of_employment = null;
         }
 
         employeeCacheModel.salary = getSalary();
 
-        employeeCacheModel.workPhoneNumber = getWorkPhoneNumber();
+        employeeCacheModel.work_phone_number = getWork_phone_number();
 
-        String workPhoneNumber = employeeCacheModel.workPhoneNumber;
+        String work_phone_number = employeeCacheModel.work_phone_number;
 
-        if ((workPhoneNumber != null) && (workPhoneNumber.length() == 0)) {
-            employeeCacheModel.workPhoneNumber = null;
+        if ((work_phone_number != null) && (work_phone_number.length() == 0)) {
+            employeeCacheModel.work_phone_number = null;
         }
 
-        employeeCacheModel.mobilePhoneNumber = getMobilePhoneNumber();
+        employeeCacheModel.mobile_phone_number = getMobile_phone_number();
 
-        String mobilePhoneNumber = employeeCacheModel.mobilePhoneNumber;
+        String mobile_phone_number = employeeCacheModel.mobile_phone_number;
 
-        if ((mobilePhoneNumber != null) && (mobilePhoneNumber.length() == 0)) {
-            employeeCacheModel.mobilePhoneNumber = null;
+        if ((mobile_phone_number != null) &&
+                (mobile_phone_number.length() == 0)) {
+            employeeCacheModel.mobile_phone_number = null;
         }
 
-        employeeCacheModel.bankId = getBankId();
+        employeeCacheModel.bank_id = getBank_id();
 
-        employeeCacheModel.archiveStatus = getArchiveStatus();
+        employeeCacheModel.archive_status = getArchive_status();
 
         return employeeCacheModel;
     }
@@ -639,32 +642,32 @@ public class EmployeeModelImpl extends BaseModelImpl<Employee>
     public String toString() {
         StringBundler sb = new StringBundler(27);
 
-        sb.append("{employeeId=");
-        sb.append(getEmployeeId());
-        sb.append(", lastName=");
-        sb.append(getLastName());
-        sb.append(", firstName=");
-        sb.append(getFirstName());
+        sb.append("{employee_id=");
+        sb.append(getEmployee_id());
+        sb.append(", last_name=");
+        sb.append(getLast_name());
+        sb.append(", first_name=");
+        sb.append(getFirst_name());
         sb.append(", patronymic=");
         sb.append(getPatronymic());
         sb.append(", sex=");
         sb.append(getSex());
-        sb.append(", dateOfBirth=");
-        sb.append(getDateOfBirth());
-        sb.append(", positionId=");
-        sb.append(getPositionId());
-        sb.append(", dateOfEmployment=");
-        sb.append(getDateOfEmployment());
+        sb.append(", date_of_birth=");
+        sb.append(getDate_of_birth());
+        sb.append(", position_id=");
+        sb.append(getPosition_id());
+        sb.append(", date_of_employment=");
+        sb.append(getDate_of_employment());
         sb.append(", salary=");
         sb.append(getSalary());
-        sb.append(", workPhoneNumber=");
-        sb.append(getWorkPhoneNumber());
-        sb.append(", mobilePhoneNumber=");
-        sb.append(getMobilePhoneNumber());
-        sb.append(", bankId=");
-        sb.append(getBankId());
-        sb.append(", archiveStatus=");
-        sb.append(getArchiveStatus());
+        sb.append(", work_phone_number=");
+        sb.append(getWork_phone_number());
+        sb.append(", mobile_phone_number=");
+        sb.append(getMobile_phone_number());
+        sb.append(", bank_id=");
+        sb.append(getBank_id());
+        sb.append(", archive_status=");
+        sb.append(getArchive_status());
         sb.append("}");
 
         return sb.toString();
@@ -679,16 +682,16 @@ public class EmployeeModelImpl extends BaseModelImpl<Employee>
         sb.append("</model-name>");
 
         sb.append(
-            "<column><column-name>employeeId</column-name><column-value><![CDATA[");
-        sb.append(getEmployeeId());
+            "<column><column-name>employee_id</column-name><column-value><![CDATA[");
+        sb.append(getEmployee_id());
         sb.append("]]></column-value></column>");
         sb.append(
-            "<column><column-name>lastName</column-name><column-value><![CDATA[");
-        sb.append(getLastName());
+            "<column><column-name>last_name</column-name><column-value><![CDATA[");
+        sb.append(getLast_name());
         sb.append("]]></column-value></column>");
         sb.append(
-            "<column><column-name>firstName</column-name><column-value><![CDATA[");
-        sb.append(getFirstName());
+            "<column><column-name>first_name</column-name><column-value><![CDATA[");
+        sb.append(getFirst_name());
         sb.append("]]></column-value></column>");
         sb.append(
             "<column><column-name>patronymic</column-name><column-value><![CDATA[");
@@ -699,36 +702,36 @@ public class EmployeeModelImpl extends BaseModelImpl<Employee>
         sb.append(getSex());
         sb.append("]]></column-value></column>");
         sb.append(
-            "<column><column-name>dateOfBirth</column-name><column-value><![CDATA[");
-        sb.append(getDateOfBirth());
+            "<column><column-name>date_of_birth</column-name><column-value><![CDATA[");
+        sb.append(getDate_of_birth());
         sb.append("]]></column-value></column>");
         sb.append(
-            "<column><column-name>positionId</column-name><column-value><![CDATA[");
-        sb.append(getPositionId());
+            "<column><column-name>position_id</column-name><column-value><![CDATA[");
+        sb.append(getPosition_id());
         sb.append("]]></column-value></column>");
         sb.append(
-            "<column><column-name>dateOfEmployment</column-name><column-value><![CDATA[");
-        sb.append(getDateOfEmployment());
+            "<column><column-name>date_of_employment</column-name><column-value><![CDATA[");
+        sb.append(getDate_of_employment());
         sb.append("]]></column-value></column>");
         sb.append(
             "<column><column-name>salary</column-name><column-value><![CDATA[");
         sb.append(getSalary());
         sb.append("]]></column-value></column>");
         sb.append(
-            "<column><column-name>workPhoneNumber</column-name><column-value><![CDATA[");
-        sb.append(getWorkPhoneNumber());
+            "<column><column-name>work_phone_number</column-name><column-value><![CDATA[");
+        sb.append(getWork_phone_number());
         sb.append("]]></column-value></column>");
         sb.append(
-            "<column><column-name>mobilePhoneNumber</column-name><column-value><![CDATA[");
-        sb.append(getMobilePhoneNumber());
+            "<column><column-name>mobile_phone_number</column-name><column-value><![CDATA[");
+        sb.append(getMobile_phone_number());
         sb.append("]]></column-value></column>");
         sb.append(
-            "<column><column-name>bankId</column-name><column-value><![CDATA[");
-        sb.append(getBankId());
+            "<column><column-name>bank_id</column-name><column-value><![CDATA[");
+        sb.append(getBank_id());
         sb.append("]]></column-value></column>");
         sb.append(
-            "<column><column-name>archiveStatus</column-name><column-value><![CDATA[");
-        sb.append(getArchiveStatus());
+            "<column><column-name>archive_status</column-name><column-value><![CDATA[");
+        sb.append(getArchive_status());
         sb.append("]]></column-value></column>");
 
         sb.append("</model>");

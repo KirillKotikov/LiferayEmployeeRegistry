@@ -93,26 +93,27 @@ public abstract class BankLocalServiceBaseImpl extends BaseLocalServiceImpl
     /**
      * Creates a new bank with the primary key. Does not add the bank to the database.
      *
-     * @param bankId the primary key for the new bank
+     * @param bank_id the primary key for the new bank
      * @return the new bank
      */
     @Override
-    public Bank createBank(long bankId) {
-        return bankPersistence.create(bankId);
+    public Bank createBank(long bank_id) {
+        return bankPersistence.create(bank_id);
     }
 
     /**
      * Deletes the bank with the primary key from the database. Also notifies the appropriate model listeners.
      *
-     * @param bankId the primary key of the bank
+     * @param bank_id the primary key of the bank
      * @return the bank that was removed
      * @throws PortalException if a bank with the primary key could not be found
      * @throws SystemException if a system exception occurred
      */
     @Indexable(type = IndexableType.DELETE)
     @Override
-    public Bank deleteBank(long bankId) throws PortalException, SystemException {
-        return bankPersistence.remove(bankId);
+    public Bank deleteBank(long bank_id)
+        throws PortalException, SystemException {
+        return bankPersistence.remove(bank_id);
     }
 
     /**
@@ -220,21 +221,21 @@ public abstract class BankLocalServiceBaseImpl extends BaseLocalServiceImpl
     }
 
     @Override
-    public Bank fetchBank(long bankId) throws SystemException {
-        return bankPersistence.fetchByPrimaryKey(bankId);
+    public Bank fetchBank(long bank_id) throws SystemException {
+        return bankPersistence.fetchByPrimaryKey(bank_id);
     }
 
     /**
      * Returns the bank with the primary key.
      *
-     * @param bankId the primary key of the bank
+     * @param bank_id the primary key of the bank
      * @return the bank
      * @throws PortalException if a bank with the primary key could not be found
      * @throws SystemException if a system exception occurred
      */
     @Override
-    public Bank getBank(long bankId) throws PortalException, SystemException {
-        return bankPersistence.findByPrimaryKey(bankId);
+    public Bank getBank(long bank_id) throws PortalException, SystemException {
+        return bankPersistence.findByPrimaryKey(bank_id);
     }
 
     @Override
