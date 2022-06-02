@@ -145,9 +145,9 @@ public class EmployeesPortlet extends MVCPortlet {
         currentPosition.setArchive_status(!request.getParameter("currentArchiveStatus").equals("true"));
         PositionLocalServiceUtil.updatePosition(currentPosition);
         if (PositionLocalServiceUtil.getPositionEmployees(currentPosition.getPosition_id()).size() < 1) {
-            request.setAttribute("employeesAvailable", 1);
-        } else  request.setAttribute("employeesAvailable", 0);
-        response.setRenderParameter("jspPage", "/html/positions/allPositions.jsp");
+            request.setAttribute("employeesAvailable", 0);
+        } else  request.setAttribute("employeesAvailable", 1);
+        response.setRenderParameter("jspPage", "/html/positions/archivePositionsAfterChangeArchiveStatus.jsp");
     }
 
     public void getCurrentBankClients(ActionRequest request, ActionResponse response) throws SystemException, PortalException {

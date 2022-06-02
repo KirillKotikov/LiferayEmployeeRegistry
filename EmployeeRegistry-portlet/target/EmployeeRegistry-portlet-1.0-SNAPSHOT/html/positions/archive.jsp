@@ -4,6 +4,7 @@
     <liferay-ui:search-container-results
             results="<%= PositionLocalServiceUtil.getByArchiveStatus(false) %>"/>
 
+    <aui:fieldset label="Archive positions"/>
     <liferay-ui:search-container-row
             className="ru.kotikov.registry.model.Position" modelVar="Position">
 
@@ -20,7 +21,7 @@
 <aui:button-row cssClass="back">
 
     <portlet:renderURL var="backViewURL">
-        <portlet:param name="mvcPath" value="/html/positions/allPositions.jsp"/>
+        <portlet:param name="mvcPath" value="/html/positions/archive.jsp"/>
     </portlet:renderURL>
 
     <aui:button onClick="<%= backViewURL %>" value="Back"/>

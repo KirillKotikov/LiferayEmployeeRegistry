@@ -20,17 +20,12 @@
     <liferay-ui:search-iterator/>
 </liferay-ui:search-container>
 
-<aui:button-row cssClass="back">
-    <portlet:renderURL var="showAllPositions">
-        <portlet:param name="mvcPath" value="/html/positions/allPositions.jsp"/>
-    </portlet:renderURL>
-    <aui:button onClick="<%= showAllPositions %>" value="Show all positions"/>
-
+<aui:button-row>
     <portlet:renderURL var="Archive">
         <portlet:param name="mvcPath" value="/html/positions/archive.jsp"/>
     </portlet:renderURL>
-
     <aui:button onClick="<%= Archive %>" value="Archive"/>
+
     <portlet:renderURL var="backViewURL">
         <portlet:param name="mvcPath" value="/html/positions/main.jsp"/>
     </portlet:renderURL>

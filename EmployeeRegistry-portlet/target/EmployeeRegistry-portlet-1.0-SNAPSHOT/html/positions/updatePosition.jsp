@@ -3,11 +3,6 @@
 <jsp:useBean id="currentPosition" type="ru.kotikov.registry.model.Position" scope="request"/>
 <jsp:useBean id="employeesAvailable" type="java.lang.Integer" scope="request"/>
 
-<%--<% String label;--%>
-<%--    if (employeesAvailable == 1) label = "Attention! There are employees with this position!";--%>
-<%--    else label = "";--%>
-<%--%>--%>
-
 <aui:script use="aui-dialog">
     if (<%=employeesAvailable%> == 1 ) alert("Attention! There are employees with this position!");
 </aui:script>
